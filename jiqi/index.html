@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>军旗在线版 v1.0.0</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #e0e0e0;
+    padding: 20px;
+  }
+  h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+    color: #ffd700;
+    text-shadow: 0 0 20px rgba(255,215,0,0.5);
+  }
+  .subtitle { color: #aaa; margin-bottom: 15px; }
+  #game-container {
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+  #board {
+    display: grid;
+    grid-template-columns: repeat(7, 50px);
+    grid-template-rows: repeat(11, 50px);
+    gap: 2px;
+    margin: 10px auto;
+  }
+  .cell {
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.2s;
+    user-select: none;
+  }
+  .cell:hover { background: rgba(255,255,255,0.15); }
+  .cell.selected { background: rgba(255,215,0,0.3); border-color: #ffd700; }
+  .cell.valid-move { background: rgba(0,255,100,0.2); cursor: pointer; }
+  .cell.river { background: rgba(0,100,255,0.1); color: #4488ff; }
+  .cell.human { color: #4CAF50; }
+  .cell.enemy { color: #ff4444; }
+  .cell.hidden { color: #888; }
+  #message {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 1.1em;
+    min-height: 30px;
+    color: #ffd700;
+  }
+  #controls {
+    text-align: center;
+    margin-top: 10px;
+  }
+  #controls button {
+    background: rgba(255,215,0,0.2);
+    color: #ffd700;
+    border: 1px solid #ffd700;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 5px;
+    transition: all 0.2s;
+  }
+  #controls button:hover { background: rgba(255,215,0,0.4); }
+  .status {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #aaa;
+  }
+</style>
+</head>
+<body>
+<h1>🎮 军旗在线版</h1>
+<div class="subtitle">v1.0.0 | 玩家 vs 电脑</div>
+<div id="game-container">
+  <div id="message">点击棋子开始游戏</div>
+  <div id="board"></div>
+  <div id="controls">
+    <button onclick="game.restart()">重新开始</button>
+    <button onclick="game.showRules()">游戏规则</button>
+  </div>
+  <div class="status" id="status">你的回合</div>
+</div>
+
+<script>
+const PIECE_SYMBOLS = {
+  COMMANDER: '司', ARMY_COMMANDER: '军', DIVISION_COMMANDER: '师',
+  BRIGADE_COMMANDER: '旅', REGIMENT_COMMANDER: '团', BATTALION_COMMANDER: '营',
+  COMPANY_COMMANDER: '连', PLATOON_LEADER: '排', SAPPER: '工',
+  BOMB: '炸', MINE: '地雷', FLAG: '旗'
+};
+const PIECE_NAMES = {
+  COMMANDER: '司令', ARMY_COMMANDER: '军长', DIVISION_COMMANDER: '师长',
+  BRIGADE_COMMANDER: '旅长', REGIMENT_COMMANDER: '团长', BATTALION_COMMANDER: '营长',
+  COMPANY_COMMANDER: '连长', PLATOON_LEADER: '排长', SAPPER: '工兵',
+  BOMB: '炸弹', MINE: '地雷', FLAG: '军旗'
+};
+const PIECE_RANK = {
+  COMMANDER: 1, ARMY_COMMANDER: 2, DIVISION_COMMANDER: 3,
+  BRIGADE_COMMANDER: 4, REGIMENT_COMMANDER: 5, BATTALION_COMMANDER: 6,
+  COMPANY_COMMANDER: 7, PLATOON_LEADER: 8, SAPPER: 9,
+  BOMB: 10, MINE: 11, FLAG: 12
+};
+
+class JunqiGame {
+  constructor() {
+    this.board = [];
+    this.selected = null;
+    this.turn = 'human';
+    this.gameOver = false;
+    this.width = 7;
+    this.height = 11;
+    this.init();
+  }
+
+  init() {
+    this.setupBoard();
+    this.render();
+    this.showMessage('点击己方棋子开始移动');
+  }
+
+  setupBoard() {
+    this.board = Array.from({length: this.height}, () => Array(this.width).fill(null));
+    // Place human pieces (top)
+    const humanSetup = [
+      ['COMMANDER', 'ARMY_COMMANDER', 'DIVISION_COMMANDER', 'DIVISION_COMMANDER', 'BRIGADE_COMMANDER', 'BRIGADE_COMMANDER'],
+      ['REGIMENT_COMMANDER', 'REGIMENT_COMMANDER', 'BATTALION_COMMANDER', 'BATTALION_COMMANDER', 'MINE', 'MINE'],
+      ['COMPANY_COMMANDER', 'COMPANY_COMMANDER', 'PLATOON_LEADER', 'PLATOON_LEADER', 'BOMB', 'BOMB'],
+      ['SAPPER', 'SAPPER', 'SAPPER', 'MINE', 'BOMB']
+    ];
+    for (let row = 0; row < 4; row++) {
+      for (let col = 0; col < humanSetup[row].length; col++) {
+        this.board[row][col] = { type: humanSetup[row][col], side: 'human' };
+      }
+    }
+    // Place flag
+    this.board[0][3] = { type: 'FLAG', side: 'human' };
+    // Place AI pieces (bottom)
+    const aiSetup = [
+      ['COMMANDER', 'ARMY_COMMANDER', 'DIVISION_COMMANDER', 'DIVISION_COMMANDER', 'BRIGADE_COMMANDER', 'BRIGADE_COMMANDER'],
+      ['REGIMENT_COMMANDER', 'REGIMENT_COMMANDER', 'BATTALION_COMMANDER', 'BATTALION_COMMANDER', 'MINE', 'MINE'],
+      ['COMPANY_COMMANDER', 'COMPANY_COMMANDER', 'PLATOON_LEADER', 'PLATOON_LEADER', 'BOMB', 'BOMB'],
+      ['SAPPER', 'SAPPER', 'SAPPER', 'MINE', 'BOMB']
+    ];
+    for (let row = 0; row < 4; row++) {
+      for (let col = 0; col < aiSetup[row].length; col++) {
+        this.board[10 - row][col] = { type: aiSetup[row][col], side: 'ai' };
+      }
+    }
+    this.board[10][3] = { type: 'FLAG', side: 'ai' };
+  }
+
+  render() {
+    const boardEl = document.getElementById('board');
+    boardEl.innerHTML = '';
+    for (let row = 0; row < this.height; row++) {
+      for (let col = 0; col < this.width; col++) {
+        const cell = document.createElement('div');
+        cell.className = 'cell';
+        cell.dataset.col = col;
+        cell.dataset.row = row;
+        const piece = this.board[row][col];
+        if (row === 5) {
+          cell.classList.add('river');
+          cell.textContent = '河';
+        } else if (piece) {
+          if (piece.side === 'human') {
+            cell.classList.add('human');
+            cell.textContent = PIECE_SYMBOLS[piece.type] || '?';
+          } else {
+            cell.classList.add('enemy', 'hidden');
+            cell.textContent = '?';
+          }
+          if (this.selected && this.selected[0] === col && this.selected[1] === row) {
+            cell.classList.add('selected');
+          }
+        } else {
+          cell.textContent = '.';
+        }
+        cell.addEventListener('click', () => this.handleClick(col, row));
+        boardEl.appendChild(cell);
+      }
+    }
+  }
+
+  handleClick(col, row) {
+    if (this.gameOver || this.turn !== 'human') return;
+    const piece = this.board[row][col];
+    if (!this.selected) {
+      if (piece && piece.side === 'human') {
+        this.selected = [col, row];
+        this.render();
+        this.showMessage(`已选择: ${PIECE_NAMES[piece.type]} (${col},${row})`);
+      }
+    } else {
+      const [selCol, selRow] = this.selected;
+      if (this.isValidMove(selCol, selRow, col, row)) {
+        this.executeMove(selCol, selRow, col, row);
+      } else {
+        if (piece && piece.side === 'human') {
+          this.selected = [col, row];
+          this.render();
+          this.showMessage(`已选择: ${PIECE_NAMES[piece.type]} (${col},${row})`);
+        } else {
+          this.selected = null;
+          this.render();
+          this.showMessage('无效移动，请重新选择');
+        }
+      }
+    }
+  }
+
+  isValidMove(srcCol, srcRow, dstCol, dstRow) {
+    if (dstCol < 0 || dstCol >= this.width || dstRow < 0 || dstRow >= this.height) return false;
+    if (srcCol === dstCol && srcRow === dstRow) return false;
+    const dc = Math.abs(srcCol - dstCol);
+    const dr = Math.abs(srcRow - dstRow);
+    if (dc + dr !== 1) return false;
+    const piece = this.board[srcRow][srcCol];
+    const target = this.board[dstRow][dstCol];
+    if (target && target.side === piece.side) return false;
+    if (piece.type === 'FLAG') return false;
+    if (piece.type === 'MINE') return false;
+    if (target && target.type === 'MINE') {
+      return piece.type === 'SAPPER' || piece.type === 'BOMB';
+    }
+    return true;
+  }
+
+  executeMove(srcCol, srcRow, dstCol, dstRow) {
+    const attacker = this.board[srcRow][srcCol];
+    const defender = this.board[dstRow][dstCol];
+    this.board[dstRow][dstCol] = attacker;
+    this.board[srcRow][srcCol] = null;
+    this.selected = null;
+    if (defender) {
+      const result = this.resolveBattle(attacker, defender);
+      if (result === 'both_die') {
+        this.board[dstRow][dstCol] = null;
+        this.showMessage('同归于尽!');
+      } else if (result === 'defender_wins') {
+        this.board[srcRow][srcCol] = attacker;
+        this.board[dstRow][dstCol] = defender;
+        this.showMessage(`攻击失败! ${PIECE_NAMES[defender.type]} 守住了!`);
+      } else {
+        if (defender.type === 'FLAG') {
+          this.gameOver = true;
+          this.showMessage('🎉 你赢了! 吃掉了对方军旗!');
+          this.render();
+          return;
+        }
+        this.showMessage(`攻击成功! ${PIECE_NAMES[attacker.type]} 吃掉了 ${PIECE_NAMES[defender.type]}!`);
+      }
+    } else {
+      this.showMessage('移动成功!');
+    }
+    this.checkWin();
+    if (!this.gameOver) {
+      if (this.turn === 'human') {
+        this.turn = 'ai';
+        document.getElementById('status').textContent = '电脑思考中...';
+        setTimeout(() => this.aiMove(), 1000);
+      } else {
+        this.turn = 'human';
+        document.getElementById('status').textContent = '你的回合';
+        this.showMessage('轮到你了!');
+      }
+    }
+    this.render();
+  }
+
+  resolveBattle(attacker, defender) {
+    if (attacker.type === 'BOMB' || defender.type === 'BOMB') return 'both_die';
+    if (attacker.type === 'SAPPER' && defender.type === 'MINE') return 'attacker_wins';
+    if (attacker.type === 'FLAG' || defender.type === 'FLAG') return 'invalid';
+    const aRank = PIECE_RANK[attacker.type] || 99;
+    const dRank = PIECE_RANK[defender.type] || 99;
+    if (aRank < dRank) return 'attacker_wins';
+    if (aRank > dRank) return 'defender_wins';
+    return 'both_die';
+  }
+
+  checkWin() {
+    let humanFlag = false, aiFlag = false;
+    for (let r = 0; r < this.height; r++) {
+      for (let c = 0; c < this.width; c++) {
+        const p = this.board[r][c];
+        if (p && p.type === 'FLAG') {
+          if (p.side === 'human') humanFlag = true;
+          else aiFlag = true;
+        }
+      }
+    }
+    if (!aiFlag) {
+      this.gameOver = true;
+      this.showMessage('🎉 你赢了! 吃掉了对方军旗!');
+    } else if (!humanFlag) {
+      this.gameOver = true;
+      this.showMessage('💀 你输了! 军旗被吃掉!');
+    }
+  }
+
+  aiMove() {
+    if (this.gameOver) return;
+    const moves = [];
+    for (let r = 0; r < this.height; r++) {
+      for (let c = 0; c < this.width; c++) {
+        const piece = this.board[r][c];
+        if (!piece || piece.side !== 'ai') continue;
+        if (piece.type === 'FLAG' || piece.type === 'MINE') continue;
+        const dirs = [[0,1],[0,-1],[1,0],[-1,0]];
+        for (const [dc, dr] of dirs) {
+          const nc = c + dc, nr = r + dr;
+          if (nc >= 0 && nc < this.width && nr >= 0 && nr < this.height) {
+            const target = this.board[nr][nc];
+            if (!target || target.side === 'human') {
+              // Check if the move is valid considering battle outcomes
+              if (target && target.type === 'MINE') {
+                // Only SAPPER or BOMB can move onto MINE
+                if (piece.type === 'SAPPER' || piece.type === 'BOMB') {
+                  moves.push([c, r, nc, nr]);
+                }
+              } else {
+                moves.push([c, r, nc, nr]);
+              }
+            }
+          }
+        }
+      }
+    }
+    if (moves.length === 0) {
+      this.showMessage('电脑没有可走的棋了!');
+      this.turn = 'human';
+      document.getElementById('status').textContent = '你的回合';
+      return;
+    }
+    const move = moves[Math.floor(Math.random() * moves.length)];
+    this.executeMove(move[0], move[1], move[2], move[3]);
+  }
+
+  showMessage(msg) {
+    document.getElementById('message').textContent = msg;
+  }
+
+  restart() {
+    this.selected = null;
+    this.turn = 'human';
+    this.gameOver = false;
+    this.init();
+    document.getElementById('status').textContent = '你的回合';
+  }
+
+  showRules() {
+    alert(`军旗规则:\n\n1. 点击己方棋子选中，再点击目标位置移动\n2. 目标位置有敌方棋子时会发生战斗\n3. 棋子等级: 司令>军长>师长>旅长>团长>营长>连长>排长>工兵\n4. 炸弹与任何棋子相撞同归于尽\n5. 工兵可拆除地雷\n6. 地雷不能被非工兵/炸弹棋子吃掉\n7. 军旗不可移动，被吃掉即输\n8. 先吃掉对方军旗者获胜`);
+  }
+}
+
+const game = new JunqiGame();
+</script>
+</body>
+</html>
