@@ -178,6 +178,13 @@ echo "<THEIR_TOKEN>" | gh auth login --with-token
 gh auth setup-git
 ```
 
+**⚠ Pitfall: `gh auth login --with-token` requires `read:org` scope.**
+If the PAT lacks `read:org`, `gh auth login --with-token` fails with:
+```
+error validating token: missing required scope 'read:org'
+```
+**Fix**: Either regenerate the token with `read:org` scope, OR use `gh api user` directly to verify the token works (it does — `gh` just requires extra scopes for its CLI wrapper).
+
 ### Verify
 
 ```bash

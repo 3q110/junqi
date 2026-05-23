@@ -348,3 +348,22 @@
 2026-05-23 19:03:48,469 INFO gateway.platforms.base: [Weixin] Sending response (189 chars) to o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat
 2026-05-23 19:04:06,624 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
 2026-05-23 19:04:06,624 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='要'
+2026-05-23 19:06:15,836 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 19:06:15,837 INFO gateway.run: User approved 1 dangerous command(s) via /approve (always)
+2026-05-23 19:07:27,164 INFO gateway.memory_monitor: [MEMORY] rss=236MB gc=(33, 2, 6) threads=11 uptime=5100s
+2026-05-23 19:07:51,819 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 19:07:51,820 INFO gateway.run: User approved 1 dangerous command(s) via /approve (always)
+2026-05-23 19:09:09,565 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 19:09:09,565 INFO gateway.run: Gateway intercepted clarify text response (session=agent:main:weixin:dm:o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat, id=0b7bf3922e)
+2026-05-23 19:10:15,431 INFO gateway.run: response ready: platform=weixin chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat time=368.8s api_calls=32 response=48 chars
+2026-05-23 19:10:15,437 INFO gateway.platforms.base: [Weixin] Sending response (48 chars) to o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat
+2026-05-23 19:11:55,198 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 19:11:55,199 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='成功了吗。'
+2026-05-23 19:12:27,165 INFO gateway.memory_monitor: [MEMORY] rss=238MB gc=(127, 4, 11) threads=11 uptime=5400s
+2026-05-23 19:14:24,544 INFO [20260523_190328_9758c8] gateway.run: Session split detected: 20260523_190328_9758c8 → 20260523_191245_cde798 (compression)
+2026-05-23 19:14:24,652 INFO gateway.run: response ready: platform=weixin chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat time=149.5s api_calls=11 response=267 chars
+2026-05-23 19:14:24,658 INFO gateway.platforms.base: [Weixin] Sending response (267 chars) to o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat
+2026-05-23 19:17:27,165 INFO gateway.memory_monitor: [MEMORY] rss=243MB gc=(400, 10, 15) threads=11 uptime=5700s
+2026-05-23 19:22:27,166 INFO gateway.memory_monitor: [MEMORY] rss=243MB gc=(459, 11, 15) threads=11 uptime=6000s
+2026-05-23 19:25:20,513 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 19:25:20,514 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='这是在线游戏吗？为什么点链接玩不了'

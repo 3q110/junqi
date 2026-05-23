@@ -410,9 +410,11 @@ approvals:
   mcp_reload_confirm: true
   destructive_slash_confirm: true
 command_allowlist:
-- overwrite system file via tee
+- git force push (rewrites remote history)
 - recursive delete
 - script execution via -e/-c flag
+- git reset --hard (destroys uncommitted changes)
+- overwrite system file via tee
 quick_commands: {}
 hooks: {}
 hooks_auto_accept: false
