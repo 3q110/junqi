@@ -94,3 +94,13 @@
 2026-05-23 18:06:42,524 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
 2026-05-23 18:06:42,524 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='快点干活啊'
 2026-05-23 18:07:27,158 INFO gateway.memory_monitor: [MEMORY] rss=188MB gc=(1, 11, 5) threads=12 uptime=1500s
+2026-05-23 18:10:06,966 INFO gateway.run: Reconnecting discord (attempt 9)...
+2026-05-23 18:10:06,968 ERROR hermes_plugins.discord_platform.adapter: [Discord] No bot token configured
+2026-05-23 18:10:06,971 INFO gateway.run: Reconnect discord failed, next retry in 300s
+2026-05-23 18:12:27,158 INFO gateway.memory_monitor: [MEMORY] rss=203MB gc=(504, 0, 9) threads=12 uptime=1800s
+2026-05-23 18:14:16,310 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 18:14:16,314 INFO gateway.run: User approved 1 dangerous command(s) via /approve (always)
+2026-05-23 18:15:07,233 INFO gateway.run: Reconnecting discord (attempt 10)...
+2026-05-23 18:15:07,234 ERROR hermes_plugins.discord_platform.adapter: [Discord] No bot token configured
+2026-05-23 18:15:07,238 INFO gateway.run: Reconnect discord failed, next retry in 300s
+2026-05-23 18:15:07,240 WARNING gateway.run: discord paused after 10 consecutive failures (failed to reconnect) — fix the underlying issue then run `/platform resume discord` to retry, or `hermes gateway restart` to restart the gateway.
