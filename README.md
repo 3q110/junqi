@@ -4,10 +4,8 @@
 
 ## 在线试玩
 
-直接在浏览器中打开 `index.html` 即可游玩，无需服务器：
-
-- 双击 `index.html` 文件
-- 或通过 GitHub 直接查看：[在线试玩](https://github.com/3q110/junqi/blob/main/index.html)（右键 → "Open in new tab" 可交互）
+- **直接在线玩**：[点击这里开始游戏](https://raw.githubusercontent.com/3q110/junqi/main/index.html)
+- **本地运行**：下载 `index.html` 后双击打开，无需服务器
 
 ## 游戏规则
 
