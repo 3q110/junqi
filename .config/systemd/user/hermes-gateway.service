@@ -1,0 +1,27 @@
+[Unit]
+Description=Hermes Agent Gateway - Messaging Platform Integration
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+ExecStart=/home/loveback1987/.hermes/hermes-agent/venv/bin/python -m hermes_cli.main gateway run --replace
+WorkingDirectory=/home/loveback1987/.hermes/hermes-agent
+Environment="PATH=/home/loveback1987/.hermes/hermes-agent/venv/bin:/home/loveback1987/.hermes/hermes-agent/node_modules/.bin:/usr/bin:/home/loveback1987/.local/bin:/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin/x64:/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v13.2/bin:/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.8/bin:/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.8/libnvvp:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/Tailscale/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Go/bin:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/GitHub CLI/:/mnt/c/Program Files/CMake/bin:/mnt/c/Program Files/NVIDIA Corporation/Nsight Compute 2026.1.1/:/mnt/c/Users/loveb/.unsloth/studio/bin:/mnt/c/Users/loveb/AppData/Local/Programs/Trae CN/bin:/mnt/c/Users/loveb/AppData/Local/Programs/Trae/bin:/mnt/c/Users/loveb/.cargo/bin:/mnt/c/Users/loveb/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/loveb/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/loveb/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/loveb/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/loveb/AppData/Local/Programs/Ollama:/mnt/c/Users/loveb/.local/bin:/mnt/c/Users/loveb/go/bin:/mnt/c/Users/loveb/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-8.1-full_build/bin:/mnt/c/Program Files/Tesseract-OCR:/mnt/c/Users/loveb/AppData/Roaming/npm:/mnt/c/Users/loveb/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/loveb/AppData/Local/Python/bin:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+Environment="VIRTUAL_ENV=/home/loveback1987/.hermes/hermes-agent/venv"
+Environment="HERMES_HOME=/home/loveback1987/.hermes"
+Restart=always
+RestartSec=5
+RestartMaxDelaySec=300
+RestartSteps=5
+RestartForceExitStatus=75
+KillMode=mixed
+KillSignal=SIGTERM
+ExecReload=/bin/kill -USR1 $MAINPID
+TimeoutStopSec=210
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target

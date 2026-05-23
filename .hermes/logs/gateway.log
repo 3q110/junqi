@@ -1,0 +1,95 @@
+2026-05-23 17:42:27,154 INFO gateway.memory_monitor: [MEMORY] baseline rss=114MB gc=(103, 5, 3) threads=1 uptime=0s
+2026-05-23 17:42:27,155 INFO gateway.memory_monitor: [MEMORY] Periodic memory monitoring started (interval: 300s)
+2026-05-23 17:42:34,218 INFO gateway.run: Starting Hermes Gateway...
+2026-05-23 17:42:34,218 INFO gateway.run: Session storage: /home/loveback1987/.hermes/sessions
+2026-05-23 17:42:34,232 INFO gateway.run: Agent budget: max_iterations=90 (agent.max_turns from config.yaml, or HERMES_MAX_ITERATIONS from .env, or default 90)
+2026-05-23 17:42:34,232 INFO gateway.run: Secret redaction: ENABLED (tool output, logs, and chat responses are scrubbed before delivery)
+2026-05-23 17:42:34,236 WARNING gateway.run: No user allowlists configured. All unauthorized users will be denied. Set GATEWAY_ALLOW_ALL_USERS=true in ~/.hermes/.env to allow open access, or configure platform allowlists (e.g., TELEGRAM_ALLOWED_USERS=your_id).
+2026-05-23 17:42:34,238 INFO gateway.run: Connecting to discord...
+2026-05-23 17:42:34,249 ERROR hermes_plugins.discord_platform.adapter: [Discord] No bot token configured
+2026-05-23 17:42:34,249 WARNING gateway.run: ✗ discord failed to connect
+2026-05-23 17:42:34,249 INFO hermes_plugins.discord_platform.adapter: [Discord] Disconnected
+2026-05-23 17:42:34,257 INFO gateway.run: Connecting to weixin...
+2026-05-23 17:42:34,271 INFO gateway.platforms.weixin: [Weixin] Connected account=67150495 base=https://ilinkai.weixin.qq.com
+2026-05-23 17:42:34,274 INFO gateway.run: ✓ weixin connected
+2026-05-23 17:42:34,276 INFO gateway.run: Gateway running with 1 platform(s)
+2026-05-23 17:42:34,280 INFO gateway.run: Channel directory built: 0 target(s)
+2026-05-23 17:42:34,540 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 17:42:34,541 WARNING gateway.run: Unauthorized user: o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat (o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat) on weixin
+2026-05-23 17:42:35,282 INFO gateway.run: Starting reconnection watcher for 1 failed platform(s): discord
+2026-05-23 17:42:35,282 INFO gateway.run: Press Ctrl+C to stop
+2026-05-23 17:42:35,320 INFO gateway.run: Cron ticker started (interval=60s)
+2026-05-23 17:42:40,285 INFO gateway.run: kanban dispatcher: embedded in gateway (interval=60.0s)
+2026-05-23 17:42:58,162 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 17:42:58,162 WARNING gateway.run: Unauthorized user: o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat (o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat) on weixin
+2026-05-23 17:43:05,307 INFO gateway.run: Reconnecting discord (attempt 2)...
+2026-05-23 17:43:05,308 ERROR hermes_plugins.discord_platform.adapter: [Discord] No bot token configured
+2026-05-23 17:43:05,314 INFO gateway.run: Reconnect discord failed, next retry in 60s
+2026-05-23 17:44:05,359 INFO gateway.run: Reconnecting discord (attempt 3)...
+2026-05-23 17:44:05,359 ERROR hermes_plugins.discord_platform.adapter: [Discord] No bot token configured
+2026-05-23 17:44:05,372 INFO gateway.run: Reconnect discord failed, next retry in 120s
+2026-05-23 17:46:05,486 INFO gateway.run: Reconnecting discord (attempt 4)...
+2026-05-23 17:46:05,487 ERROR hermes_plugins.discord_platform.adapter: [Discord] No bot token configured
+2026-05-23 17:46:05,489 INFO gateway.run: Reconnect discord failed, next retry in 240s
+2026-05-23 17:47:23,839 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 17:47:23,883 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='在吗'
+2026-05-23 17:47:26,482 INFO gateway.run: response ready: platform=weixin chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat time=2.6s api_calls=1 response=14 chars
+2026-05-23 17:47:26,494 INFO gateway.platforms.base: [Weixin] Sending response (14 chars) to o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat
+2026-05-23 17:47:27,155 INFO gateway.memory_monitor: [MEMORY] rss=168MB gc=(272, 1, 9) threads=6 uptime=300s
+2026-05-23 17:48:07,331 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 17:48:07,332 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='我想创建一个军旗游戏，可以吗'
+2026-05-23 17:48:27,484 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 17:48:27,484 INFO gateway.run: Gateway intercepted clarify text response (session=agent:main:weixin:dm:o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat, id=5cbb65ffd3)
+2026-05-23 17:48:47,783 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 17:48:47,783 INFO gateway.run: Gateway intercepted clarify text response (session=agent:main:weixin:dm:o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat, id=43708f52d8)
+2026-05-23 17:50:05,707 INFO gateway.run: Reconnecting discord (attempt 5)...
+2026-05-23 17:50:05,707 ERROR hermes_plugins.discord_platform.adapter: [Discord] No bot token configured
+2026-05-23 17:50:05,714 INFO gateway.run: Reconnect discord failed, next retry in 300s
+2026-05-23 17:50:56,025 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 17:50:56,025 INFO gateway.run: Gateway intercepted clarify text response (session=agent:main:weixin:dm:o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat, id=4765c08ee0)
+2026-05-23 17:52:27,156 INFO gateway.memory_monitor: [MEMORY] rss=174MB gc=(378, 10, 10) threads=7 uptime=600s
+2026-05-23 17:55:05,976 INFO gateway.run: Reconnecting discord (attempt 6)...
+2026-05-23 17:55:05,977 ERROR hermes_plugins.discord_platform.adapter: [Discord] No bot token configured
+2026-05-23 17:55:05,982 INFO gateway.run: Reconnect discord failed, next retry in 300s
+2026-05-23 17:57:27,157 INFO gateway.memory_monitor: [MEMORY] rss=174MB gc=(546, 11, 10) threads=7 uptime=900s
+2026-05-23 18:00:06,259 INFO gateway.run: Reconnecting discord (attempt 7)...
+2026-05-23 18:00:06,259 ERROR hermes_plugins.discord_platform.adapter: [Discord] No bot token configured
+2026-05-23 18:00:06,266 INFO gateway.run: Reconnect discord failed, next retry in 300s
+2026-05-23 18:00:08,324 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:00:11,430 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:00:14,560 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:00:17,691 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:00:20,856 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:01:04,960 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:01:08,092 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:01:11,227 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:01:14,345 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:01:17,453 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:01:48,934 INFO gateway.run: response ready: platform=weixin chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat time=821.6s api_calls=13 response=987 chars
+2026-05-23 18:01:48,940 INFO gateway.platforms.base: [Weixin] Sending response (987 chars) to o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat
+2026-05-23 18:01:49,143 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:01:52,278 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:01:55,428 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:01:58,561 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:02:01,684 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:02:01,684 WARNING gateway.platforms.base: [Weixin] Send failed: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited — trying plain-text fallback
+2026-05-23 18:02:01,803 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:02:04,942 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:02:08,087 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:02:11,222 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:02:14,359 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:02:14,360 ERROR gateway.platforms.base: [Weixin] Fallback send also failed: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:02:27,157 INFO gateway.memory_monitor: [MEMORY] rss=180MB gc=(68, 3, 0) threads=9 uptime=1200s
+2026-05-23 18:04:10,114 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 18:04:10,115 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='还在吗'
+2026-05-23 18:04:25,237 INFO gateway.run: response ready: platform=weixin chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat time=15.1s api_calls=1 response=15 chars
+2026-05-23 18:04:25,242 INFO gateway.platforms.base: [Weixin] Sending response (15 chars) to o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat
+2026-05-23 18:05:06,651 INFO gateway.run: Reconnecting discord (attempt 8)...
+2026-05-23 18:05:06,652 ERROR hermes_plugins.discord_platform.adapter: [Discord] No bot token configured
+2026-05-23 18:05:06,655 INFO gateway.run: Reconnect discord failed, next retry in 300s
+2026-05-23 18:06:15,244 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 18:06:15,244 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='做好了吗'
+2026-05-23 18:06:22,444 INFO gateway.run: response ready: platform=weixin chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat time=7.2s api_calls=1 response=24 chars
+2026-05-23 18:06:22,450 INFO gateway.platforms.base: [Weixin] Sending response (24 chars) to o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat
+2026-05-23 18:06:42,524 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 18:06:42,524 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='快点干活啊'

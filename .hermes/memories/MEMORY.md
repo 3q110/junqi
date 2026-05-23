@@ -1,0 +1,1 @@
+User is working on a 军旗 (Chinese military chess) human-vs-AI terminal game project in jiqi/ directory. Started 2026-05-23. Plan saved at ~/.hermes/plans/2026-05-23-军旗人机对战.md. Simple mode AI (random moves), standard 40-piece rules.

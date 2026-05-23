@@ -1,0 +1,57 @@
+0 verbose cli /usr/bin/node /usr/lib/node_modules/npm/bin/npm-cli.js
+1 info using npm@10.9.7
+2 info using node@v22.22.2
+3 silly config load:file:/usr/lib/node_modules/npm/npmrc
+4 silly config load:file:/home/loveback1987/.hermes/hermes-agent/.npmrc
+5 silly config load:file:/home/loveback1987/.npmrc
+6 silly config load:file:/usr/etc/npmrc
+7 verbose title npm exec playwright install --with-deps chromium
+8 verbose argv "exec" "--" "playwright" "install" "--with-deps" "chromium"
+9 verbose logfile logs-max:10 dir:/home/loveback1987/.npm/_logs/2026-05-23T06_57_15_280Z-
+10 verbose logfile /home/loveback1987/.npm/_logs/2026-05-23T06_57_15_280Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 http fetch GET 200 https://registry.npmjs.org/playwright 9013ms (cache miss)
+14 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+15 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+16 warn exec The following package was not found and will be installed: playwright@1.60.0
+17 silly idealTree buildDeps
+18 silly fetch manifest playwright@1.60.0
+19 silly packumentCache full:https://registry.npmjs.org/playwright cache-miss
+20 http fetch GET 200 https://registry.npmjs.org/playwright 3356ms (cache miss)
+21 silly packumentCache full:https://registry.npmjs.org/playwright set size:undefined disposed:false
+22 silly placeDep ROOT playwright@1.60.0 OK for:  want: 1.60.0
+23 silly fetch manifest playwright-core@1.60.0
+24 silly packumentCache full:https://registry.npmjs.org/playwright-core cache-miss
+25 silly fetch manifest fsevents@2.3.2
+26 silly packumentCache full:https://registry.npmjs.org/fsevents cache-miss
+27 http fetch GET 200 https://registry.npmjs.org/playwright-core 2228ms (cache miss)
+28 silly packumentCache full:https://registry.npmjs.org/playwright-core set size:undefined disposed:false
+29 http fetch GET 200 https://registry.npmjs.org/fsevents 2965ms (cache miss)
+30 silly packumentCache full:https://registry.npmjs.org/fsevents set size:undefined disposed:false
+31 silly placeDep ROOT fsevents@2.3.2 OK for: playwright@1.60.0 want: 2.3.2
+32 silly placeDep ROOT playwright-core@1.60.0 OK for: playwright@1.60.0 want: 1.60.0
+33 silly reify moves {}
+34 silly audit bulk request {
+34 silly audit   playwright: [ '1.60.0' ],
+34 silly audit   fsevents: [ '2.3.2' ],
+34 silly audit   'playwright-core': [ '1.60.0' ]
+34 silly audit }
+35 verbose reify failed optional dependency /home/loveback1987/.npm/_npx/e41f203b7505f1fb/node_modules/fsevents
+36 silly reify mark deleted [
+36 silly reify   '/home/loveback1987/.npm/_npx/e41f203b7505f1fb/node_modules/fsevents'
+36 silly reify ]
+37 http cache playwright-core@https://registry.npmjs.org/playwright-core/-/playwright-core-1.60.0.tgz 0ms (cache hit)
+38 http cache playwright@https://registry.npmjs.org/playwright/-/playwright-1.60.0.tgz 0ms (cache hit)
+39 silly tarball no local data for playwright-core@https://registry.npmjs.org/playwright-core/-/playwright-core-1.60.0.tgz. Extracting by manifest.
+40 silly tarball no local data for playwright@https://registry.npmjs.org/playwright/-/playwright-1.60.0.tgz. Extracting by manifest.
+41 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 542ms
+42 silly audit report {}
+43 http fetch GET 200 https://registry.npmjs.org/playwright-core/-/playwright-core-1.60.0.tgz 3075ms (cache miss)
+44 http fetch GET 200 https://registry.npmjs.org/playwright/-/playwright-1.60.0.tgz 4462ms (cache miss)
+45 verbose cwd /home/loveback1987/.hermes/hermes-agent
+46 verbose os Linux 6.6.87.2-microsoft-standard-WSL2
+47 verbose node v22.22.2
+48 verbose npm  v10.9.7
+49 verbose exit 1
+50 verbose code 1

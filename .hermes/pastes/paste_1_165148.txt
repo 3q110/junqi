@@ -1,0 +1,18 @@
+
+    支持的连接渠道
+
+    官方支持的平台：
+    - 📱 Telegram — 最成熟
+    - 💬 微信 (Weixin) — 支持！
+    - 💼 企业微信 (WeCom) — 支持！
+    - 💬 Discord — 支持！
+    - 💼 Slack — 支持！
+    - 📲 WhatsApp — 支持！
+    - 📡 Signal — 支持！
+    - 📧 Email — 支持！
+    - 📱 SMS — 支持！
+    - 🪽 飞书 (Feishu/Lark) — 支持！
+    - 📱 QQ Bot — 支持！
+    - 🎮 Google Chat — 支持！
+    - 💚 LINE — 支持！
+    - 等等...

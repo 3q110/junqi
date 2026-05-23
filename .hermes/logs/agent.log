@@ -1,0 +1,998 @@
+2026-05-23 15:05:37,155 INFO tools.lazy_deps: Lazy-installing boto3==1.42.89 for feature 'provider.bedrock'
+2026-05-23 15:06:00,485 INFO tools.lazy_deps: Lazy install complete for feature 'provider.bedrock'
+2026-05-23 15:11:19,857 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-05-23 15:11:19,859 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-05-23 15:11:19,861 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-05-23 15:11:19,865 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-05-23 15:11:19,866 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-05-23 15:11:19,868 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-05-23 15:11:19,870 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-05-23 15:11:19,880 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-05-23 15:11:19,882 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-05-23 15:11:19,886 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-05-23 15:11:19,888 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-05-23 15:11:19,890 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-05-23 15:11:19,894 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-05-23 15:11:19,896 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-05-23 15:11:19,898 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-05-23 15:11:19,900 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-05-23 15:11:19,903 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-05-23 15:11:20,139 INFO hermes_cli.plugins: Plugin discovery complete: 28 found, 24 enabled
+2026-05-23 15:11:37,278 WARNING agent.auxiliary_client: Auxiliary: marking openrouter unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 15:12:37.
+2026-05-23 15:11:37,281 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-05-23 15:11:37,281 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 15:12:37.
+2026-05-23 15:26:34,357 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-05-23 15:26:34,357 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-05-23 15:26:34,358 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-05-23 15:26:34,358 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-05-23 15:26:34,359 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-05-23 15:26:34,359 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-05-23 15:26:34,359 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-05-23 15:26:34,389 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-05-23 15:26:34,389 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-05-23 15:26:34,390 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-05-23 15:26:34,390 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-05-23 15:26:34,391 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-05-23 15:26:34,392 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-05-23 15:26:34,392 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-05-23 15:26:34,392 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-05-23 15:26:34,393 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-05-23 15:26:34,393 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-05-23 15:26:34,455 INFO hermes_cli.plugins: Plugin discovery complete: 28 found, 24 enabled
+2026-05-23 15:26:36,781 INFO tools.lazy_deps: Lazy-installing edge-tts==7.2.7 for feature 'tts.edge'
+2026-05-23 15:26:47,486 INFO tools.lazy_deps: Lazy install complete for feature 'tts.edge'
+2026-05-23 15:26:48,042 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 15:26:48,070 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 15:26:48,083 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 15:26:48,183 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 15:26:48,197 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 15:26:48,373 INFO tools.tirith_security: tirith not found — downloading latest release for x86_64-unknown-linux-gnu...
+2026-05-23 15:26:58,416 INFO run_agent: Loaded environment variables from /home/loveback1987/.hermes/.env
+2026-05-23 15:26:58,506 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-4 (process_loop):134557319055040 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:26:58,528 INFO agent.model_metadata: Could not detect context length for model 'Qwen3.6-35B-A3B-UD-IQ4_NL-MTP' at http://localhost:8888/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-05-23 15:26:58,576 INFO [20260523_152635_d81900] agent.conversation_loop: conversation turn: session=20260523_152635_d81900 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=cli history=0 msg='你好'
+2026-05-23 15:26:58,680 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-6 (_call):134557088081600 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:26:59,078 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:26:59,078 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-6 (_call):134557088081600 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:26:59,079 WARNING [20260523_152635_d81900] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIConnectionError thread=Thread-5 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:26:59,080 WARNING [20260523_152635_d81900] agent.conversation_loop: Retrying API call in 2.9602148513192064s (attempt 1/3) thread=Thread-5 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Connection error.
+2026-05-23 15:27:02,089 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-7 (_call):134557088081600 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:27:02,091 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:27:02,091 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-7 (_call):134557088081600 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:27:02,092 WARNING [20260523_152635_d81900] agent.conversation_loop: API call failed (attempt 2/3) error_type=APIConnectionError thread=Thread-5 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:27:02,092 WARNING [20260523_152635_d81900] agent.conversation_loop: Retrying API call in 4.944141434080485s (attempt 2/3) thread=Thread-5 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Connection error.
+2026-05-23 15:27:07,103 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-8 (_call):134557088081600 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:27:07,106 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:27:07,106 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-8 (_call):134557088081600 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:27:07,106 WARNING [20260523_152635_d81900] agent.conversation_loop: API call failed (attempt 3/3) error_type=APIConnectionError thread=Thread-5 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:27:07,106 INFO [20260523_152635_d81900] run_agent: OpenAI client closed (primary_recovery, shared=True, tcp_force_closed=0) thread=Thread-5 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:27:07,111 INFO [20260523_152635_d81900] run_agent: OpenAI client created (primary_recovery, shared=True) thread=Thread-5 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:27:13,119 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-9 (_call):134557354780352 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:27:13,122 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:27:13,122 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-9 (_call):134557354780352 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:27:13,122 WARNING [20260523_152635_d81900] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIConnectionError thread=Thread-5 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:27:13,122 WARNING [20260523_152635_d81900] agent.conversation_loop: Retrying API call in 2.5255008637452385s (attempt 1/3) thread=Thread-5 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Connection error.
+2026-05-23 15:27:15,732 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-10 (_call):134557354780352 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:27:15,734 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:27:15,734 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-10 (_call):134557354780352 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:27:15,735 WARNING [20260523_152635_d81900] agent.conversation_loop: API call failed (attempt 2/3) error_type=APIConnectionError thread=Thread-5 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:27:15,735 WARNING [20260523_152635_d81900] agent.conversation_loop: Retrying API call in 4.487221268480609s (attempt 2/3) thread=Thread-5 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Connection error.
+2026-05-23 15:27:20,346 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-11 (_call):134557354780352 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:27:20,349 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:27:20,349 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-11 (_call):134557354780352 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:27:20,349 WARNING [20260523_152635_d81900] agent.conversation_loop: API call failed (attempt 3/3) error_type=APIConnectionError thread=Thread-5 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:27:20,350 ERROR [20260523_152635_d81900] root: API call failed after 3 retries. Connection error. | provider=custom model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP msgs=2 tokens=~3,914
+2026-05-23 15:30:47,697 INFO [20260523_152635_d81900] agent.conversation_loop: conversation turn: session=20260523_152635_d81900 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=cli history=1 msg='你好'
+2026-05-23 15:30:47,698 INFO [20260523_152635_d81900] agent.conversation_loop: Repaired 1 message-alternation violations before request (session=20260523_152635_d81900)
+2026-05-23 15:30:47,714 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-13 (_call):134557354780352 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:30:47,717 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:30:47,717 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-13 (_call):134557354780352 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:30:47,717 WARNING [20260523_152635_d81900] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIConnectionError thread=Thread-12 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:30:47,718 WARNING [20260523_152635_d81900] agent.conversation_loop: Retrying API call in 2.8202523280425433s (attempt 1/3) thread=Thread-12 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Connection error.
+2026-05-23 15:30:50,727 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-14 (_call):134557354780352 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:30:50,729 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:30:50,729 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-14 (_call):134557354780352 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:30:50,730 WARNING [20260523_152635_d81900] agent.conversation_loop: API call failed (attempt 2/3) error_type=APIConnectionError thread=Thread-12 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:30:50,730 WARNING [20260523_152635_d81900] agent.conversation_loop: Retrying API call in 4.772056592199444s (attempt 2/3) thread=Thread-12 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Connection error.
+2026-05-23 15:30:55,545 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-15 (_call):134557354780352 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:30:55,548 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:30:55,548 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-15 (_call):134557354780352 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:30:55,549 WARNING [20260523_152635_d81900] agent.conversation_loop: API call failed (attempt 3/3) error_type=APIConnectionError thread=Thread-12 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:30:55,549 INFO [20260523_152635_d81900] run_agent: OpenAI client closed (primary_recovery, shared=True, tcp_force_closed=0) thread=Thread-12 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:30:55,554 INFO [20260523_152635_d81900] run_agent: OpenAI client created (primary_recovery, shared=True) thread=Thread-12 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:31:01,562 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-16 (_call):134557354780352 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:31:01,564 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:31:01,564 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-16 (_call):134557354780352 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:31:01,565 WARNING [20260523_152635_d81900] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIConnectionError thread=Thread-12 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:31:01,565 WARNING [20260523_152635_d81900] agent.conversation_loop: Retrying API call in 2.3529963299741365s (attempt 1/3) thread=Thread-12 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Connection error.
+2026-05-23 15:31:03,976 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-17 (_call):134557354780352 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:31:03,979 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:31:03,979 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-17 (_call):134557354780352 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:31:03,979 WARNING [20260523_152635_d81900] agent.conversation_loop: API call failed (attempt 2/3) error_type=APIConnectionError thread=Thread-12 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:31:03,980 WARNING [20260523_152635_d81900] agent.conversation_loop: Retrying API call in 5.211337211079525s (attempt 2/3) thread=Thread-12 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Connection error.
+2026-05-23 15:31:09,390 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-18 (_call):134557354780352 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:31:09,393 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:31:09,393 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-18 (_call):134557354780352 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:31:09,393 WARNING [20260523_152635_d81900] agent.conversation_loop: API call failed (attempt 3/3) error_type=APIConnectionError thread=Thread-12 (run_agent):134557097522880 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:31:09,394 ERROR [20260523_152635_d81900] root: API call failed after 3 retries. Connection error. | provider=custom model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP msgs=2 tokens=~3,916
+2026-05-23 15:34:52,339 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-05-23 15:34:52,340 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-05-23 15:34:52,340 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-05-23 15:34:52,341 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-05-23 15:34:52,342 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-05-23 15:34:52,342 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-05-23 15:34:52,343 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-05-23 15:34:52,373 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-05-23 15:34:52,374 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-05-23 15:34:52,375 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-05-23 15:34:52,376 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-05-23 15:34:52,377 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-05-23 15:34:52,378 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-05-23 15:34:52,378 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-05-23 15:34:52,379 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-05-23 15:34:52,380 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-05-23 15:34:52,381 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-05-23 15:34:52,462 INFO hermes_cli.plugins: Plugin discovery complete: 28 found, 24 enabled
+2026-05-23 15:34:54,390 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 15:34:54,415 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 15:34:54,428 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 15:34:54,586 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 15:34:54,598 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 15:34:59,024 INFO run_agent: Loaded environment variables from /home/loveback1987/.hermes/.env
+2026-05-23 15:34:59,069 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-3 (process_loop):132079197443776 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:34:59,093 INFO agent.model_metadata: Could not detect context length for model 'Qwen3.6-35B-A3B-UD-IQ4_NL-MTP' at http://localhost:8888/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-05-23 15:34:59,113 INFO [20260523_153453_d1ee56] agent.conversation_loop: conversation turn: session=20260523_153453_d1ee56 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=cli history=0 msg='你好'
+2026-05-23 15:34:59,170 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-5 (_call):132078967453376 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:34:59,343 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:34:59,344 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-5 (_call):132078967453376 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:34:59,344 WARNING [20260523_153453_d1ee56] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIConnectionError thread=Thread-4 (run_agent):132079178561216 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:34:59,345 WARNING [20260523_153453_d1ee56] agent.conversation_loop: Retrying API call in 2.4215213607344097s (attempt 1/3) thread=Thread-4 (run_agent):132079178561216 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Connection error.
+2026-05-23 15:35:01,954 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-6 (_call):132078967453376 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:01,956 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:35:01,957 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-6 (_call):132078967453376 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:01,957 WARNING [20260523_153453_d1ee56] agent.conversation_loop: API call failed (attempt 2/3) error_type=APIConnectionError thread=Thread-4 (run_agent):132079178561216 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:35:01,957 WARNING [20260523_153453_d1ee56] agent.conversation_loop: Retrying API call in 4.2159510730709435s (attempt 2/3) thread=Thread-4 (run_agent):132079178561216 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Connection error.
+2026-05-23 15:35:06,368 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-7 (_call):132078967453376 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:06,370 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:35:06,370 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-7 (_call):132078967453376 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:06,371 WARNING [20260523_153453_d1ee56] agent.conversation_loop: API call failed (attempt 3/3) error_type=APIConnectionError thread=Thread-4 (run_agent):132079178561216 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:35:06,372 INFO [20260523_153453_d1ee56] run_agent: OpenAI client closed (primary_recovery, shared=True, tcp_force_closed=0) thread=Thread-4 (run_agent):132079178561216 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:06,377 INFO [20260523_153453_d1ee56] run_agent: OpenAI client created (primary_recovery, shared=True) thread=Thread-4 (run_agent):132079178561216 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:30,581 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-05-23 15:35:30,581 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-05-23 15:35:30,582 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-05-23 15:35:30,582 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-05-23 15:35:30,582 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-05-23 15:35:30,583 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-05-23 15:35:30,583 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-05-23 15:35:30,612 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-05-23 15:35:30,612 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-05-23 15:35:30,613 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-05-23 15:35:30,613 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-05-23 15:35:30,614 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-05-23 15:35:30,614 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-05-23 15:35:30,614 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-05-23 15:35:30,615 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-05-23 15:35:30,615 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-05-23 15:35:30,616 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-05-23 15:35:30,674 INFO hermes_cli.plugins: Plugin discovery complete: 28 found, 24 enabled
+2026-05-23 15:35:32,122 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 15:35:32,145 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 15:35:32,158 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 15:35:32,281 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 15:35:32,295 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 15:35:39,706 INFO run_agent: Loaded environment variables from /home/loveback1987/.hermes/.env
+2026-05-23 15:35:39,745 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-3 (process_loop):135959194629824 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:39,769 INFO agent.model_metadata: Could not detect context length for model 'Qwen3.6-35B-A3B-UD-IQ4_NL-MTP' at http://localhost:8888/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-05-23 15:35:39,785 INFO [20260523_153531_bc7132] agent.conversation_loop: conversation turn: session=20260523_153531_bc7132 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=cli history=0 msg='你好'
+2026-05-23 15:35:39,831 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-5 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:39,957 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:35:39,958 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-5 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:39,958 WARNING [20260523_153531_bc7132] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIConnectionError thread=Thread-4 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:35:39,959 WARNING [20260523_153531_bc7132] agent.conversation_loop: Retrying API call in 2.507275316048048s (attempt 1/3) thread=Thread-4 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Connection error.
+2026-05-23 15:35:42,568 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-6 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:42,570 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:35:42,570 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-6 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:42,571 WARNING [20260523_153531_bc7132] agent.conversation_loop: API call failed (attempt 2/3) error_type=APIConnectionError thread=Thread-4 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:35:42,571 WARNING [20260523_153531_bc7132] agent.conversation_loop: Retrying API call in 4.394211219690993s (attempt 2/3) thread=Thread-4 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Connection error.
+2026-05-23 15:35:46,982 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-7 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:46,984 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:35:46,985 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-7 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:46,985 WARNING [20260523_153531_bc7132] agent.conversation_loop: API call failed (attempt 3/3) error_type=APIConnectionError thread=Thread-4 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:35:46,985 INFO [20260523_153531_bc7132] run_agent: OpenAI client closed (primary_recovery, shared=True, tcp_force_closed=0) thread=Thread-4 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:46,991 INFO [20260523_153531_bc7132] run_agent: OpenAI client created (primary_recovery, shared=True) thread=Thread-4 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:52,998 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-8 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:53,001 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:35:53,001 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-8 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:53,001 WARNING [20260523_153531_bc7132] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIConnectionError thread=Thread-4 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:35:53,002 WARNING [20260523_153531_bc7132] agent.conversation_loop: Retrying API call in 2.088291488967595s (attempt 1/3) thread=Thread-4 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Connection error.
+2026-05-23 15:35:55,211 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-9 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:55,213 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:35:55,213 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-9 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:55,214 WARNING [20260523_153531_bc7132] agent.conversation_loop: API call failed (attempt 2/3) error_type=APIConnectionError thread=Thread-4 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:35:55,214 WARNING [20260523_153531_bc7132] agent.conversation_loop: Retrying API call in 4.101306401968808s (attempt 2/3) thread=Thread-4 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Connection error.
+2026-05-23 15:35:59,424 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-10 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:59,427 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:35:59,427 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-10 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:35:59,427 WARNING [20260523_153531_bc7132] agent.conversation_loop: API call failed (attempt 3/3) error_type=APIConnectionError thread=Thread-4 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:35:59,428 ERROR [20260523_153531_bc7132] root: API call failed after 3 retries. Connection error. | provider=custom model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP msgs=2 tokens=~3,914
+2026-05-23 15:49:46,309 INFO [20260523_153531_bc7132] agent.conversation_loop: conversation turn: session=20260523_153531_bc7132 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=cli history=1 msg='你好'
+2026-05-23 15:49:46,309 INFO [20260523_153531_bc7132] agent.conversation_loop: Repaired 1 message-alternation violations before request (session=20260523_153531_bc7132)
+2026-05-23 15:49:46,325 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-12 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:49:46,327 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:49:46,327 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-12 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:49:46,328 WARNING [20260523_153531_bc7132] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIConnectionError thread=Thread-11 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:49:46,328 WARNING [20260523_153531_bc7132] agent.conversation_loop: Retrying API call in 2.5077082921154226s (attempt 1/3) thread=Thread-11 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Connection error.
+2026-05-23 15:49:48,937 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-13 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:49:48,940 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:49:48,940 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-13 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:49:48,940 WARNING [20260523_153531_bc7132] agent.conversation_loop: API call failed (attempt 2/3) error_type=APIConnectionError thread=Thread-11 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:49:48,941 WARNING [20260523_153531_bc7132] agent.conversation_loop: Retrying API call in 5.458835428853032s (attempt 2/3) thread=Thread-11 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Connection error.
+2026-05-23 15:49:54,552 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-14 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:49:54,554 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:49:54,554 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-14 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:49:54,554 WARNING [20260523_153531_bc7132] agent.conversation_loop: API call failed (attempt 3/3) error_type=APIConnectionError thread=Thread-11 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:49:54,555 INFO [20260523_153531_bc7132] run_agent: OpenAI client closed (primary_recovery, shared=True, tcp_force_closed=0) thread=Thread-11 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:49:54,560 INFO [20260523_153531_bc7132] run_agent: OpenAI client created (primary_recovery, shared=True) thread=Thread-11 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:50:00,568 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-15 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:50:00,571 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:50:00,571 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-15 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:50:00,572 WARNING [20260523_153531_bc7132] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIConnectionError thread=Thread-11 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:50:00,572 WARNING [20260523_153531_bc7132] agent.conversation_loop: Retrying API call in 2.5274802112077506s (attempt 1/3) thread=Thread-11 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Connection error.
+2026-05-23 15:50:03,182 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-16 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:50:03,184 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:50:03,185 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-16 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:50:03,185 WARNING [20260523_153531_bc7132] agent.conversation_loop: API call failed (attempt 2/3) error_type=APIConnectionError thread=Thread-11 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:50:03,186 WARNING [20260523_153531_bc7132] agent.conversation_loop: Retrying API call in 5.395274132754403s (attempt 2/3) thread=Thread-11 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Connection error.
+2026-05-23 15:50:08,596 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-17 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:50:08,599 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 15:50:08,599 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-17 (_call):135959167354560 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:50:08,600 WARNING [20260523_153531_bc7132] agent.conversation_loop: API call failed (attempt 3/3) error_type=APIConnectionError thread=Thread-11 (run_agent):135959175747264 provider=custom base_url=http://localhost:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Connection error.
+2026-05-23 15:50:08,600 ERROR [20260523_153531_bc7132] root: API call failed after 3 retries. Connection error. | provider=custom model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP msgs=2 tokens=~3,916
+2026-05-23 15:55:07,628 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-3 (process_loop):135959194629824 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:55:07,668 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 15:55:51,743 INFO agent.model_metadata: Could not detect context length for model 'Qwen3.6-35B-A3B-UD-IQ4_NL-MTP' at http://192.168.1.58:8888/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-05-23 15:55:59,761 INFO [20260523_153531_bc7132] agent.conversation_loop: conversation turn: session=20260523_153531_bc7132 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=cli history=1 msg='你好'
+2026-05-23 15:55:59,763 INFO [20260523_153531_bc7132] agent.conversation_loop: Repaired 1 message-alternation violations before request (session=20260523_153531_bc7132)
+2026-05-23 15:55:59,780 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-19 (_call):135959167354560 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:56:29,813 INFO agent.chat_completion_helpers: Streaming failed before delivery: Request timed out.
+2026-05-23 15:56:29,813 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-19 (_call):135959167354560 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:56:29,813 WARNING [20260523_153531_bc7132] agent.conversation_loop: API call failed (attempt 1/3) error_type=APITimeoutError thread=Thread-18 (run_agent):135959175747264 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Request timed out.
+2026-05-23 15:56:29,814 WARNING [20260523_153531_bc7132] agent.conversation_loop: Retrying API call in 2.1272304137693228s (attempt 1/3) thread=Thread-18 (run_agent):135959175747264 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Request timed out.
+2026-05-23 15:56:32,023 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-20 (_call):135959167354560 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:57:02,056 INFO agent.chat_completion_helpers: Streaming failed before delivery: Request timed out.
+2026-05-23 15:57:02,057 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-20 (_call):135959167354560 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:57:02,057 WARNING [20260523_153531_bc7132] agent.conversation_loop: API call failed (attempt 2/3) error_type=APITimeoutError thread=Thread-18 (run_agent):135959175747264 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Request timed out.
+2026-05-23 15:57:02,058 WARNING [20260523_153531_bc7132] agent.conversation_loop: Retrying API call in 5.680814498971326s (attempt 2/3) thread=Thread-18 (run_agent):135959175747264 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Request timed out.
+2026-05-23 15:57:07,889 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-21 (_call):135959167354560 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:57:37,921 INFO agent.chat_completion_helpers: Streaming failed before delivery: Request timed out.
+2026-05-23 15:57:37,921 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-21 (_call):135959167354560 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:57:37,922 WARNING [20260523_153531_bc7132] agent.conversation_loop: API call failed (attempt 3/3) error_type=APITimeoutError thread=Thread-18 (run_agent):135959175747264 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Request timed out.
+2026-05-23 15:57:37,922 INFO [20260523_153531_bc7132] run_agent: OpenAI client closed (primary_recovery, shared=True, tcp_force_closed=0) thread=Thread-18 (run_agent):135959175747264 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:57:37,927 INFO [20260523_153531_bc7132] run_agent: OpenAI client created (primary_recovery, shared=True) thread=Thread-18 (run_agent):135959175747264 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:57:43,936 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-22 (_call):135959167354560 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:58:13,968 INFO agent.chat_completion_helpers: Streaming failed before delivery: Request timed out.
+2026-05-23 15:58:13,968 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-22 (_call):135959167354560 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:58:13,969 WARNING [20260523_153531_bc7132] agent.conversation_loop: API call failed (attempt 1/3) error_type=APITimeoutError thread=Thread-18 (run_agent):135959175747264 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Request timed out.
+2026-05-23 15:58:13,970 WARNING [20260523_153531_bc7132] agent.conversation_loop: Retrying API call in 2.9939620998088072s (attempt 1/3) thread=Thread-18 (run_agent):135959175747264 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Request timed out.
+2026-05-23 15:58:16,981 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-23 (_call):135959167354560 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:58:47,014 INFO agent.chat_completion_helpers: Streaming failed before delivery: Request timed out.
+2026-05-23 15:58:47,014 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-23 (_call):135959167354560 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:58:47,015 WARNING [20260523_153531_bc7132] agent.conversation_loop: API call failed (attempt 2/3) error_type=APITimeoutError thread=Thread-18 (run_agent):135959175747264 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Request timed out.
+2026-05-23 15:58:47,016 WARNING [20260523_153531_bc7132] agent.conversation_loop: Retrying API call in 5.629413645448876s (attempt 2/3) thread=Thread-18 (run_agent):135959175747264 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP error=Request timed out.
+2026-05-23 15:58:52,827 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-24 (_call):135959167354560 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:59:22,859 INFO agent.chat_completion_helpers: Streaming failed before delivery: Request timed out.
+2026-05-23 15:59:22,859 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-24 (_call):135959167354560 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 15:59:22,860 WARNING [20260523_153531_bc7132] agent.conversation_loop: API call failed (attempt 3/3) error_type=APITimeoutError thread=Thread-18 (run_agent):135959175747264 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=Request timed out.
+2026-05-23 15:59:22,861 ERROR [20260523_153531_bc7132] root: API call failed after 3 retries. Request timed out. | provider=custom model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP msgs=2 tokens=~3,917
+2026-05-23 16:10:40,147 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-05-23 16:10:40,148 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-05-23 16:10:40,149 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-05-23 16:10:40,151 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-05-23 16:10:40,152 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-05-23 16:10:40,153 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-05-23 16:10:40,154 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-05-23 16:10:40,211 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-05-23 16:10:40,212 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-05-23 16:10:40,214 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-05-23 16:10:40,215 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-05-23 16:10:40,216 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-05-23 16:10:40,218 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-05-23 16:10:40,219 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-05-23 16:10:40,220 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-05-23 16:10:40,221 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-05-23 16:10:40,222 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-05-23 16:10:40,335 INFO hermes_cli.plugins: Plugin discovery complete: 28 found, 24 enabled
+2026-05-23 16:10:42,644 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 16:10:42,669 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 16:10:42,682 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 16:10:42,848 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 16:10:42,861 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 16:10:47,266 INFO run_agent: Loaded environment variables from /home/loveback1987/.hermes/.env
+2026-05-23 16:10:47,315 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-3 (process_loop):137164726032064 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:10:47,477 INFO agent.model_metadata: Could not detect context length for model 'Qwen3.6-35B-A3B-UD-IQ4_NL-MTP' at http://192.168.1.58:8888/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-05-23 16:10:47,498 INFO [20260523_161041_b24109] agent.conversation_loop: conversation turn: session=20260523_161041_b24109 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=cli history=0 msg='你好'
+2026-05-23 16:10:47,551 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-5 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:10:53,769 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-5 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:10:53,770 INFO [20260523_161041_b24109] agent.conversation_loop: API call #1: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=14552 out=9 total=14561 latency=6.2s
+2026-05-23 16:10:53,778 INFO [20260523_161041_b24109] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP api_calls=1/90 budget=1/90 tool_turns=0 last_msg_role=assistant response_len=14 session=20260523_161041_b24109
+2026-05-23 16:10:53,970 INFO agent.auxiliary_client: Auxiliary auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 16:10:53,970 INFO agent.auxiliary_client: Auxiliary title_generation: using auto (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP) at http://192.168.1.58:8888/v1/
+2026-05-23 16:27:12,543 INFO [20260523_161041_b24109] agent.conversation_loop: conversation turn: session=20260523_161041_b24109 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=cli history=2 msg='您能做什么'
+2026-05-23 16:27:12,560 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-18 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:27:15,013 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-18 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:27:15,014 INFO [20260523_161041_b24109] agent.conversation_loop: API call #2: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=14573 out=219 total=14792 latency=2.5s cache=14036/14573 (96%)
+2026-05-23 16:27:15,034 INFO [20260523_161041_b24109] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP api_calls=1/90 budget=1/90 tool_turns=0 last_msg_role=assistant response_len=381 session=20260523_161041_b24109
+2026-05-23 16:28:02,037 INFO [20260523_161041_b24109] agent.conversation_loop: conversation turn: session=20260523_161041_b24109 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=cli history=4 msg='我需要你生成一只猫的照片'
+2026-05-23 16:28:02,054 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-20 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:28:02,956 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-20 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:28:02,956 INFO [20260523_161041_b24109] agent.conversation_loop: API call #3: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=14807 out=28 total=14835 latency=0.9s cache=14036/14807 (95%)
+2026-05-23 16:28:03,015 INFO [20260523_161041_b24109] agent.tool_executor: tool skill_view completed (0.05s, 26425 chars)
+2026-05-23 16:28:03,035 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-21 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:28:08,336 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-21 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:28:08,337 INFO [20260523_161041_b24109] agent.conversation_loop: API call #4: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=22300 out=300 total=22600 latency=5.3s cache=14803/22300 (66%)
+2026-05-23 16:28:11,559 WARNING [20260523_161041_b24109] agent.tool_executor: Tool execute_code returned error (3.22s): {"status": "error", "output": "\n--- stderr ---\nTraceback (most recent call last):\n  File \"/tmp/hermes_sandbox_8zz1i4ku/script.py\", line 4, in <module>\n    result = subprocess.run([\"command\", \
+2026-05-23 16:28:11,579 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-25 (_call):137164343998144 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:28:14,755 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-25 (_call):137164343998144 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:28:14,756 INFO [20260523_161041_b24109] agent.conversation_loop: API call #5: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=23328 out=364 total=23692 latency=3.2s cache=22296/23328 (96%)
+2026-05-23 16:28:17,972 INFO [20260523_161041_b24109] agent.tool_executor: tool execute_code completed (3.21s, 384 chars)
+2026-05-23 16:28:17,992 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-29 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:28:19,513 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-29 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:28:19,513 INFO [20260523_161041_b24109] agent.conversation_loop: API call #6: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=23836 out=148 total=23984 latency=1.5s cache=23324/23836 (98%)
+2026-05-23 16:28:22,930 INFO [20260523_161041_b24109] agent.tool_executor: tool execute_code completed (3.41s, 1037 chars)
+2026-05-23 16:28:22,950 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-33 (_call):137164343998144 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:28:24,303 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-33 (_call):137164343998144 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:28:24,303 INFO [20260523_161041_b24109] agent.conversation_loop: API call #7: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=24367 out=88 total=24455 latency=1.4s cache=23832/24367 (98%)
+2026-05-23 16:28:24,311 INFO [20260523_161041_b24109] tools.terminal_tool: Creating new local environment for task default...
+2026-05-23 16:28:24,343 INFO [20260523_161041_b24109] tools.environments.base: Session snapshot created (session=4eead500c1e8, cwd=/home/loveback1987)
+2026-05-23 16:28:24,343 INFO [20260523_161041_b24109] tools.terminal_tool: local environment ready for task default
+2026-05-23 16:28:24,474 WARNING [20260523_161041_b24109] tools.tirith_security: tirith spawn failed: [Errno 2] No such file or directory: 'tirith'
+2026-05-23 16:28:24,591 INFO [20260523_161041_b24109] agent.tool_executor: tool terminal completed (0.28s, 91 chars)
+2026-05-23 16:28:24,611 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-37 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:28:25,434 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-37 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:28:25,434 INFO [20260523_161041_b24109] agent.conversation_loop: API call #8: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=24503 out=54 total=24557 latency=0.8s cache=24363/24503 (99%)
+2026-05-23 16:28:25,683 INFO [20260523_161041_b24109] agent.tool_executor: tool terminal completed (0.25s, 90 chars)
+2026-05-23 16:28:25,705 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-39 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:28:25,998 INFO [20260523_161041_b24109] run_agent: OpenAI client closed (stream_interrupt_abort, shared=False, tcp_force_closed=1) thread=Thread-19 (run_agent):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:28:25,998 INFO agent.chat_completion_helpers: Streaming failed before delivery: Connection error.
+2026-05-23 16:28:26,033 INFO [20260523_161041_b24109] agent.conversation_loop: Turn ended: reason=interrupted_during_api_call model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP api_calls=7/90 budget=4/90 tool_turns=6 last_msg_role=tool response_len=65 session=20260523_161041_b24109
+2026-05-23 16:34:24,353 INFO tools.terminal_tool: Cleaned up inactive environment for task: default
+2026-05-23 16:42:53,832 INFO [20260523_161041_b24109] agent.conversation_loop: conversation turn: session=20260523_161041_b24109 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=cli history=17 msg='怎么转语音'
+2026-05-23 16:42:53,849 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-45 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:42:59,963 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-45 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:42:59,964 INFO [20260523_161041_b24109] agent.conversation_loop: API call #9: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=24588 out=110 total=24698 latency=6.1s cache=14291/24588 (58%)
+2026-05-23 16:42:59,980 INFO [20260523_161041_b24109] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP api_calls=1/90 budget=1/90 tool_turns=6 last_msg_role=assistant response_len=195 session=20260523_161041_b24109
+2026-05-23 16:43:29,679 INFO [20260523_161041_b24109] agent.conversation_loop: conversation turn: session=20260523_161041_b24109 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=cli history=19 msg='怎么连接我微信'
+2026-05-23 16:43:29,697 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-47 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:43:32,014 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-47 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:43:32,014 INFO [20260523_161041_b24109] agent.conversation_loop: API call #10: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=24711 out=178 total=24889 latency=2.3s cache=24072/24711 (97%)
+2026-05-23 16:43:32,024 INFO [20260523_161041_b24109] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP api_calls=1/90 budget=1/90 tool_turns=6 last_msg_role=assistant response_len=350 session=20260523_161041_b24109
+2026-05-23 16:44:27,753 INFO [20260523_161041_b24109] agent.conversation_loop: conversation turn: session=20260523_161041_b24109 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=cli history=21 msg='转到连接渠道设置'
+2026-05-23 16:44:27,771 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-49 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:44:28,722 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-49 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:44:28,722 INFO [20260523_161041_b24109] agent.conversation_loop: API call #11: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=24902 out=28 total=24930 latency=1.0s cache=24195/24902 (97%)
+2026-05-23 16:44:28,741 INFO [20260523_161041_b24109] agent.tool_executor: tool skill_view completed (0.01s, 48016 chars)
+2026-05-23 16:44:28,759 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-50 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:44:35,249 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-50 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:44:35,250 INFO [20260523_161041_b24109] agent.conversation_loop: API call #12: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=37425 out=60 total=37485 latency=6.5s cache=24898/37425 (67%)
+2026-05-23 16:44:35,253 INFO [20260523_161041_b24109] tools.terminal_tool: Creating new local environment for task default...
+2026-05-23 16:44:35,274 INFO [20260523_161041_b24109] tools.environments.base: Session snapshot created (session=f9fe46343285, cwd=/home/loveback1987)
+2026-05-23 16:44:35,274 INFO [20260523_161041_b24109] tools.terminal_tool: local environment ready for task default
+2026-05-23 16:44:35,956 INFO [20260523_161041_b24109] agent.tool_executor: tool terminal completed (0.70s, 280 chars)
+2026-05-23 16:44:35,979 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-53 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:44:36,960 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-53 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:44:36,960 INFO [20260523_161041_b24109] agent.conversation_loop: API call #13: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=37587 out=51 total=37638 latency=1.0s cache=37421/37587 (100%)
+2026-05-23 16:44:37,475 INFO [20260523_161041_b24109] agent.tool_executor: tool terminal completed (0.50s, 1619 chars)
+2026-05-23 16:44:37,495 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-55 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:44:38,737 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-55 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:44:38,738 INFO [20260523_161041_b24109] agent.conversation_loop: API call #14: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=38170 out=59 total=38229 latency=1.3s cache=37583/38170 (98%)
+2026-05-23 16:44:39,221 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-05-23 16:44:39,222 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-05-23 16:44:39,223 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-05-23 16:44:39,224 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-05-23 16:44:39,224 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-05-23 16:44:39,225 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-05-23 16:44:39,225 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-05-23 16:44:39,228 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-05-23 16:44:39,228 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-05-23 16:44:39,229 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-05-23 16:44:39,230 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-05-23 16:44:39,231 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-05-23 16:44:39,232 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-05-23 16:44:39,233 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-05-23 16:44:39,234 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-05-23 16:44:39,235 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-05-23 16:44:39,237 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-05-23 16:44:39,323 INFO hermes_cli.plugins: Plugin discovery complete: 28 found, 24 enabled
+2026-05-23 16:44:39,438 INFO [20260523_161041_b24109] agent.tool_executor: tool terminal completed (0.69s, 1462 chars)
+2026-05-23 16:44:39,457 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-57 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:44:42,676 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-57 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:44:42,676 INFO [20260523_161041_b24109] agent.conversation_loop: API call #15: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=38700 out=310 total=39010 latency=3.2s cache=38166/38700 (99%)
+2026-05-23 16:44:42,866 INFO [20260523_161041_b24109] agent.tool_executor: tool terminal completed (0.19s, 90 chars)
+2026-05-23 16:44:42,888 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-59 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:44:43,880 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-59 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:44:43,881 INFO [20260523_161041_b24109] agent.conversation_loop: API call #16: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=39057 out=56 total=39113 latency=1.0s cache=38696/39057 (99%)
+2026-05-23 16:44:44,036 INFO [20260523_161041_b24109] agent.tool_executor: tool terminal completed (0.15s, 82 chars)
+2026-05-23 16:44:44,058 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-61 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:44:44,892 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-61 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:44:44,892 INFO [20260523_161041_b24109] agent.conversation_loop: API call #17: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=39156 out=46 total=39202 latency=0.9s cache=39053/39156 (100%)
+2026-05-23 16:44:45,025 INFO [20260523_161041_b24109] agent.tool_executor: tool terminal completed (0.13s, 76 chars)
+2026-05-23 16:44:45,048 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-63 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:44:46,026 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-63 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:44:46,027 INFO [20260523_161041_b24109] agent.conversation_loop: API call #18: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=39249 out=60 total=39309 latency=1.0s cache=39152/39249 (100%)
+2026-05-23 16:44:46,253 WARNING [20260523_161041_b24109] agent.tool_executor: Tool terminal returned error (0.22s): {"output": "Reading package lists...\nE: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)\nE: Unable to lock directory /var/lib/apt/lists/\nW: Problem unlinking the file
+2026-05-23 16:44:46,274 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-65 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:44:47,294 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-65 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:44:47,294 INFO [20260523_161041_b24109] agent.conversation_loop: API call #19: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=39438 out=62 total=39500 latency=1.0s cache=39245/39438 (100%)
+2026-05-23 16:45:32,454 WARNING [20260523_161041_b24109] agent.tool_executor: Tool terminal returned error (45.15s): {"output": "sudo: A terminal is required to authenticate", "exit_code": 1, "error": null}
+2026-05-23 16:45:32,534 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-67 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:45:33,560 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-67 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:45:33,561 INFO [20260523_161041_b24109] agent.conversation_loop: API call #20: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=39542 out=61 total=39603 latency=1.1s cache=39434/39542 (100%)
+2026-05-23 16:46:33,690 WARNING [20260523_161041_b24109] agent.tool_executor: Tool terminal returned error (60.12s): {"output": "", "exit_code": -1, "error": "BLOCKED: User denied. Do NOT retry.", "status": "blocked"}
+
+[Tool loop warning: same_tool_failure_warning; count=3; terminal has failed 3 times this turn. Thi
+2026-05-23 16:46:33,714 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-68 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:46:34,675 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-68 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:46:34,676 INFO [20260523_161041_b24109] agent.conversation_loop: API call #21: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=39760 out=50 total=39810 latency=1.0s cache=39538/39760 (99%)
+2026-05-23 16:47:34,802 WARNING [20260523_161041_b24109] agent.tool_executor: Tool terminal returned error (60.12s): {"output": "", "exit_code": -1, "error": "BLOCKED: User denied. Do NOT retry.", "status": "blocked"}
+
+[Tool loop warning: same_tool_failure_warning; count=4; terminal has failed 4 times this turn. Thi
+2026-05-23 16:47:34,829 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-69 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:47:36,004 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-69 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:47:36,005 INFO [20260523_161041_b24109] agent.conversation_loop: API call #22: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=39967 out=76 total=40043 latency=1.2s cache=39756/39967 (99%)
+2026-05-23 16:47:39,238 INFO [20260523_161041_b24109] agent.tool_executor: tool execute_code completed (3.23s, 154 chars)
+2026-05-23 16:47:39,259 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-73 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:47:42,236 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-73 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:47:42,237 INFO [20260523_161041_b24109] agent.conversation_loop: API call #23: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=40138 out=294 total=40432 latency=3.0s cache=39963/40138 (100%)
+2026-05-23 16:47:42,288 INFO [20260523_161041_b24109] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP api_calls=13/90 budget=12/90 tool_turns=18 last_msg_role=assistant response_len=655 session=20260523_161041_b24109
+2026-05-23 16:47:42,314 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=bg-review:137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:47:42,335 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 16:47:42,485 INFO agent.model_metadata: Could not detect context length for model 'Qwen3.6-35B-A3B-UD-IQ4_NL-MTP' at http://192.168.1.58:8888/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-05-23 16:47:42,494 INFO [20260523_161041_b24109] agent.conversation_loop: conversation turn: session=20260523_161041_b24109 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=cli history=47 msg='Review the conversation above and update the skill library. Be ACTIVE — most ses...'
+2026-05-23 16:47:42,504 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-74 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:47:52,922 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-74 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:47:52,923 INFO [20260523_161041_b24109] agent.conversation_loop: API call #1: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=41678 out=250 total=41928 latency=10.4s cache=24386/41678 (59%)
+2026-05-23 16:47:52,935 WARNING [20260523_161041_b24109] agent.tool_executor: Tool skill_view returned error (0.01s): {"success": false, "error": "File 'references/official-cli.md' not found in skill 'hermes-agent'.", "available_files": {}, "hint": "Use one of the available file paths listed above"}
+2026-05-23 16:47:52,945 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-75 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:47:53,823 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-75 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:47:53,824 INFO [20260523_161041_b24109] agent.conversation_loop: API call #2: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=41991 out=28 total=42019 latency=0.9s cache=41674/41991 (99%)
+2026-05-23 16:47:53,834 INFO [20260523_161041_b24109] agent.tool_executor: tool skill_view completed (0.01s, 48016 chars)
+2026-05-23 16:47:53,844 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-76 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:48:01,455 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-76 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:48:01,456 INFO [20260523_161041_b24109] agent.conversation_loop: API call #3: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=54514 out=56 total=54570 latency=7.6s cache=41987/54514 (77%)
+2026-05-23 16:48:01,475 INFO [20260523_161041_b24109] agent.tool_executor: tool skill_view completed (0.01s, 26425 chars)
+2026-05-23 16:48:01,486 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-77 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:48:06,741 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-77 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:48:06,742 INFO [20260523_161041_b24109] agent.conversation_loop: API call #4: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=62035 out=61 total=62096 latency=5.3s cache=54510/62035 (88%)
+2026-05-23 16:48:06,750 WARNING [20260523_161041_b24109] agent.tool_executor: Tool skill_view returned error (0.01s): {"success": false, "error": "File 'references/official-cli.md' not found in skill 'hermes-agent'.", "available_files": {}, "hint": "Use one of the available file paths listed above"}
+
+[Tool loop warni
+2026-05-23 16:48:06,761 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-78 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:48:08,718 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-78 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:48:08,718 INFO [20260523_161041_b24109] agent.conversation_loop: API call #5: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=62204 out=174 total=62378 latency=2.0s cache=62031/62204 (100%)
+2026-05-23 16:48:08,719 WARNING [20260523_161041_b24109] agent.tool_executor: Tool execute_code returned error (0.00s): {"error": "Background review denied non-whitelisted tool: execute_code. Only memory/skill tools are allowed."}
+2026-05-23 16:48:08,729 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-79 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:48:09,942 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-79 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:48:09,943 INFO [20260523_161041_b24109] agent.conversation_loop: API call #6: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=62420 out=68 total=62488 latency=1.2s cache=62200/62420 (100%)
+2026-05-23 16:48:09,943 INFO [20260523_161041_b24109] agent.tool_executor: tool terminal completed (0.00s, 106 chars)
+2026-05-23 16:48:09,953 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-80 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:48:13,097 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-80 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:48:13,097 INFO [20260523_161041_b24109] agent.conversation_loop: API call #7: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=62529 out=296 total=62825 latency=3.2s cache=62416/62529 (100%)
+2026-05-23 16:48:13,098 INFO [20260523_161041_b24109] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP api_calls=7/16 budget=6/16 tool_turns=24 last_msg_role=assistant response_len=1261 session=20260523_161041_b24109
+2026-05-23 16:48:13,098 INFO [20260523_161041_b24109] run_agent: OpenAI client closed (agent_close, shared=True, tcp_force_closed=0) thread=bg-review:137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:48:40,409 INFO [20260523_161041_b24109] agent.conversation_loop: conversation turn: session=20260523_161041_b24109 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=cli history=47 msg='扫码登录微信'
+2026-05-23 16:48:40,428 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-82 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:48:45,554 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-82 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:48:45,554 INFO [20260523_161041_b24109] agent.conversation_loop: API call #24: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=40395 out=118 total=40513 latency=5.1s cache=32578/40395 (81%)
+2026-05-23 16:48:48,771 INFO [20260523_161041_b24109] agent.tool_executor: tool execute_code completed (3.21s, 297 chars)
+2026-05-23 16:48:48,792 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-86 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:48:50,198 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-86 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:48:50,199 INFO [20260523_161041_b24109] agent.conversation_loop: API call #25: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=40621 out=105 total=40726 latency=1.4s cache=40391/40621 (99%)
+2026-05-23 16:48:53,416 INFO [20260523_161041_b24109] agent.tool_executor: tool execute_code completed (3.21s, 126 chars)
+2026-05-23 16:48:53,437 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-90 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:48:54,461 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-90 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:48:54,462 INFO [20260523_161041_b24109] agent.conversation_loop: API call #26: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=40785 out=66 total=40851 latency=1.0s cache=40617/40785 (100%)
+2026-05-23 16:48:57,680 INFO [20260523_161041_b24109] agent.tool_executor: tool execute_code completed (3.21s, 132 chars)
+2026-05-23 16:48:57,702 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-94 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:48:58,722 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-94 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:48:58,722 INFO [20260523_161041_b24109] agent.conversation_loop: API call #27: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=40911 out=64 total=40975 latency=1.0s cache=40781/40911 (100%)
+2026-05-23 16:49:01,938 INFO [20260523_161041_b24109] agent.tool_executor: tool execute_code completed (3.21s, 101 chars)
+2026-05-23 16:49:01,960 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-98 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:03,981 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-98 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:03,981 INFO [20260523_161041_b24109] agent.conversation_loop: API call #28: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=41027 out=191 total=41218 latency=2.0s cache=40907/41027 (100%)
+2026-05-23 16:49:07,194 WARNING [20260523_161041_b24109] agent.tool_executor: Tool execute_code returned error (3.21s): {"status": "error", "output": "The virtual environment was not created successfully because ensurepip is not\navailable.  On Debian/Ubuntu systems, you need to install the python3-venv\npackage using 
+2026-05-23 16:49:07,216 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-102 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:09,262 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-102 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:09,262 INFO [20260523_161041_b24109] agent.conversation_loop: API call #29: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=41733 out=167 total=41900 latency=2.1s cache=41023/41733 (98%)
+2026-05-23 16:49:12,680 INFO [20260523_161041_b24109] agent.tool_executor: tool execute_code completed (3.41s, 307 chars)
+2026-05-23 16:49:12,701 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-106 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:14,801 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-106 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:14,802 INFO [20260523_161041_b24109] agent.conversation_loop: API call #30: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=42009 out=216 total=42225 latency=2.1s cache=41729/42009 (99%)
+2026-05-23 16:49:18,015 WARNING [20260523_161041_b24109] agent.tool_executor: Tool execute_code returned error (3.21s): {"status": "error", "output": "\n--- stderr ---\nUsing CPython 3.11.15\nCreating virtual environment at: .hermes/weixin_venv\nerror: Failed to create virtual environment\n  Caused by: A virtual enviro
+2026-05-23 16:49:18,038 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-110 (_call):137164327212736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:20,648 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-110 (_call):137164327212736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:20,648 INFO [20260523_161041_b24109] agent.conversation_loop: API call #31: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=42805 out=257 total=43062 latency=2.6s cache=42005/42805 (98%)
+2026-05-23 16:49:23,865 WARNING [20260523_161041_b24109] agent.tool_executor: Tool execute_code returned error (3.21s): {"status": "error", "output": "\n--- stderr ---\nUsing CPython 3.11.15\nCreating virtual environment at: .hermes/weixin_venv\nActivate with: source .hermes/weixin_venv/bin/activate\nTraceback (most re
+2026-05-23 16:49:23,888 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-114 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:26,298 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-114 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:26,299 INFO [20260523_161041_b24109] agent.conversation_loop: API call #32: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=43844 out=209 total=44053 latency=2.4s cache=42801/43844 (98%)
+2026-05-23 16:49:29,517 INFO [20260523_161041_b24109] agent.tool_executor: tool execute_code completed (3.21s, 429 chars)
+2026-05-23 16:49:29,538 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-118 (_call):137164327212736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:31,536 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-118 (_call):137164327212736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:31,537 INFO [20260523_161041_b24109] agent.conversation_loop: API call #33: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=44194 out=208 total=44402 latency=2.0s cache=43840/44194 (99%)
+2026-05-23 16:49:45,164 INFO [20260523_161041_b24109] agent.tool_executor: tool execute_code completed (13.62s, 536 chars)
+2026-05-23 16:49:45,185 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-122 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:51,279 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-122 (_call):137164335605440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:51,279 INFO [20260523_161041_b24109] agent.conversation_loop: API call #34: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=44652 out=723 total=45375 latency=6.1s cache=44190/44652 (99%)
+2026-05-23 16:49:51,364 INFO [20260523_161041_b24109] agent.tool_executor: tool write_file completed (0.08s, 85 chars)
+2026-05-23 16:49:51,398 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-128 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:53,215 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-128 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:53,215 INFO [20260523_161041_b24109] agent.conversation_loop: API call #35: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=45422 out=99 total=45521 latency=1.8s cache=44648/45422 (98%)
+2026-05-23 16:49:53,455 WARNING [20260523_161041_b24109] agent.tool_executor: Tool terminal returned error (0.23s): {"output": "Traceback (most recent call last):\n  File \"/home/loveback1987/.hermes/weixin_login.py\", line 7, in <module>\n    import itchat\nModuleNotFoundError: No module named 'itchat'", "exit_cod
+2026-05-23 16:49:53,478 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-130 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:54,874 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-130 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:54,875 INFO [20260523_161041_b24109] agent.conversation_loop: API call #36: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=45607 out=104 total=45711 latency=1.4s cache=45418/45607 (100%)
+2026-05-23 16:49:55,249 WARNING [20260523_161041_b24109] agent.tool_executor: Tool terminal returned error (0.37s): {"output": "█\r==================================================\nHermes Agent - 微信登录\n==================================================\n\n请用微信扫描下方二维码登录...\n\nTraceback (most recent call last):\n  
+2026-05-23 16:49:55,271 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-132 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:57,013 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-132 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:57,014 INFO [20260523_161041_b24109] agent.conversation_loop: API call #37: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=45863 out=153 total=46016 latency=1.8s cache=45603/45863 (99%)
+2026-05-23 16:49:57,161 INFO [20260523_161041_b24109] agent.tool_executor: tool patch completed (0.14s, 468 chars)
+2026-05-23 16:49:57,190 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-140 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:58,679 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-140 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:49:58,679 INFO [20260523_161041_b24109] agent.conversation_loop: API call #38: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=46201 out=104 total=46305 latency=1.5s cache=45859/46201 (99%)
+2026-05-23 16:51:48,633 INFO cli: Collapsed paste #1: 19 lines, 336 chars -> /home/loveback1987/.hermes/pastes/paste_1_165148.txt
+2026-05-23 16:51:58,859 WARNING [20260523_161041_b24109] agent.tool_executor: Tool terminal returned error (120.18s): {"output": "█\rGetting uuid of QR code.\nDownloading QR code.\n==================================================\nHermes Agent - 微信登录\n==================================================\n\n请用微信扫描下方二维
+2026-05-23 16:51:58,879 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-142 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:52:00,762 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-142 (_call):137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:52:00,763 INFO [20260523_161041_b24109] agent.conversation_loop: API call #39: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=47646 out=64 total=47710 latency=1.9s cache=46197/47646 (97%)
+2026-05-23 16:52:00,815 INFO [20260523_161041_b24109] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP api_calls=16/90 budget=6/90 tool_turns=33 last_msg_role=assistant response_len=124 session=20260523_161041_b24109
+2026-05-23 16:52:00,841 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=bg-review:137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:52:00,989 INFO agent.model_metadata: Could not detect context length for model 'Qwen3.6-35B-A3B-UD-IQ4_NL-MTP' at http://192.168.1.58:8888/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-05-23 16:52:00,996 INFO [20260523_161041_b24109] agent.conversation_loop: conversation turn: session=20260523_161041_b24109 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=cli history=79 msg='Review the conversation above and update the skill library. Be ACTIVE — most ses...'
+2026-05-23 16:52:01,007 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-143 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:52:06,665 INFO [20260523_161041_b24109] agent.conversation_loop: conversation turn: session=20260523_161041_b24109 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=cli history=79 msg='     支持的连接渠道      官方支持的平台：     - 📱 Telegram — 最成熟     - 💬 微信 (Weixin) — 支持！     ...'
+2026-05-23 16:52:06,695 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-145 (_call):137164312893120 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:52:07,147 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-143 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:52:07,148 INFO [20260523_161041_b24109] agent.conversation_loop: API call #1: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=48945 out=111 total=49056 latency=6.1s cache=39879/48945 (81%)
+2026-05-23 16:52:07,160 INFO [20260523_161041_b24109] agent.tool_executor: tool skill_view completed (0.01s, 48016 chars)
+2026-05-23 16:52:07,171 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-146 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:52:12,150 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-145 (_call):137164312893120 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:52:12,151 INFO [20260523_161041_b24109] agent.conversation_loop: API call #40: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=47839 out=100 total=47939 latency=5.5s cache=39879/47839 (83%)
+2026-05-23 16:52:15,371 INFO [20260523_161041_b24109] agent.tool_executor: tool execute_code completed (3.21s, 2151 chars)
+2026-05-23 16:52:15,399 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-150 (_call):137164304500416 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:52:21,575 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-146 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:52:21,575 INFO [20260523_161041_b24109] agent.conversation_loop: API call #2: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=61551 out=199 total=61750 latency=14.4s cache=47323/61551 (77%)
+2026-05-23 16:52:21,576 WARNING [20260523_161041_b24109] agent.tool_executor: Tool execute_code returned error (0.00s): {"error": "Background review denied non-whitelisted tool: execute_code. Only memory/skill tools are allowed."}
+2026-05-23 16:52:21,590 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-151 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:52:23,910 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-150 (_call):137164304500416 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:52:23,912 INFO [20260523_161041_b24109] agent.conversation_loop: API call #41: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=48640 out=200 total=48840 latency=8.5s cache=47323/48640 (97%)
+2026-05-23 16:52:27,129 INFO [20260523_161041_b24109] agent.tool_executor: tool execute_code completed (3.21s, 749 chars)
+2026-05-23 16:52:27,151 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-155 (_call):137164312893120 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:52:32,747 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-151 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:52:32,747 INFO [20260523_161041_b24109] agent.conversation_loop: API call #3: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=61792 out=63 total=61855 latency=11.2s cache=47323/61792 (77%)
+2026-05-23 16:52:32,748 INFO [20260523_161041_b24109] agent.tool_executor: tool terminal completed (0.00s, 106 chars)
+2026-05-23 16:52:32,761 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-156 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:52:34,729 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-155 (_call):137164312893120 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:52:34,730 INFO [20260523_161041_b24109] agent.conversation_loop: API call #42: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=49107 out=113 total=49220 latency=7.6s cache=47323/49107 (96%)
+2026-05-23 16:52:37,950 INFO [20260523_161041_b24109] agent.tool_executor: tool execute_code completed (3.21s, 3025 chars)
+2026-05-23 16:52:37,972 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-160 (_call):137164304500416 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:52:53,146 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-156 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:52:53,147 INFO [20260523_161041_b24109] agent.conversation_loop: API call #4: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=61896 out=1219 total=63115 latency=20.4s cache=47323/61896 (76%)
+2026-05-23 16:52:53,168 INFO [20260523_161041_b24109] agent.tool_executor: tool skill_manage completed (0.02s, 397 chars)
+2026-05-23 16:52:53,186 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-161 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:52:56,289 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-160 (_call):137164304500416 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:52:56,290 INFO [20260523_161041_b24109] agent.conversation_loop: API call #43: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=50081 out=202 total=50283 latency=18.3s cache=47323/50081 (94%)
+2026-05-23 16:52:59,515 INFO [20260523_161041_b24109] agent.tool_executor: tool execute_code completed (3.22s, 47856 chars)
+2026-05-23 16:52:59,539 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-165 (_call):137164312893120 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:53:07,437 WARNING agent.message_sanitization: Unrepairable tool_call arguments for skill_manage — replaced with empty object (was: {"action":"write_file","name":"wechat-integration","file_path":"templates/weixin)
+2026-05-23 16:53:07,437 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-161 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:53:07,446 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-166 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:53:19,130 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-165 (_call):137164312893120 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:53:19,131 INFO [20260523_161041_b24109] agent.conversation_loop: API call #44: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=63146 out=256 total=63402 latency=19.6s cache=47323/63146 (75%)
+2026-05-23 16:53:22,357 INFO [20260523_161041_b24109] agent.tool_executor: tool execute_code completed (3.21s, 141 chars)
+2026-05-23 16:53:22,380 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-170 (_call):137164304500416 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:53:30,551 WARNING agent.message_sanitization: Unrepairable tool_call arguments for skill_manage — replaced with empty object (was: {"action":"write_file","name":"wechat-integration","file_path":"templates/weixin)
+2026-05-23 16:53:30,552 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-166 (_call):137164697708224 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:53:30,553 INFO [20260523_161041_b24109] run_agent: OpenAI client closed (agent_close, shared=True, tcp_force_closed=0) thread=bg-review:137164707149504 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:53:40,494 WARNING agent.message_sanitization: Unrepairable tool_call arguments for execute_code — replaced with empty object (was: {"code":"import subprocess, os\n\n# Check the full config)
+2026-05-23 16:53:40,495 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-170 (_call):137164304500416 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:53:40,518 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-171 (_call):137164304500416 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:53:41,250 WARNING agent.message_sanitization: Unrepairable tool_call arguments for execute_code — replaced with empty object (was: {"code":"import subprocess, os\n\n# Check the full config for any gateway)
+2026-05-23 16:53:41,251 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-171 (_call):137164304500416 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:55:24,536 INFO tools.terminal_tool: Cleaned up inactive environment for task: default
+2026-05-23 16:58:37,293 INFO [20260523_161041_b24109] agent.conversation_loop: conversation turn: session=20260523_161041_b24109 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=cli history=90 msg='回到你的菜单设置'
+2026-05-23 16:58:37,315 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-173 (_call):137164304500416 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:58:47,049 WARNING agent.message_sanitization: Unrepairable tool_call arguments for todo — replaced with empty object (was: {"todos":[{"id": "main_menu", "content": "显示主菜单", ")
+2026-05-23 16:58:47,049 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-173 (_call):137164304500416 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:58:47,071 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-174 (_call):137164304500416 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 16:58:47,903 WARNING agent.message_sanitization: Unrepairable tool_call arguments for todo — replaced with empty object (was: {"todos":[{"id": "menu", "content": "显示主菜单", ")
+2026-05-23 16:58:47,903 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-174 (_call):137164304500416 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:01:09,028 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-05-23 17:01:09,028 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-05-23 17:01:09,029 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-05-23 17:01:09,029 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-05-23 17:01:09,029 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-05-23 17:01:09,030 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-05-23 17:01:09,030 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-05-23 17:01:09,059 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-05-23 17:01:09,060 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-05-23 17:01:09,060 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-05-23 17:01:09,061 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-05-23 17:01:09,061 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-05-23 17:01:09,062 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-05-23 17:01:09,062 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-05-23 17:01:09,063 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-05-23 17:01:09,063 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-05-23 17:01:09,064 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-05-23 17:01:09,122 INFO hermes_cli.plugins: Plugin discovery complete: 28 found, 24 enabled
+2026-05-23 17:01:11,108 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 17:01:11,133 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 17:01:11,147 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 17:01:11,305 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 17:01:11,318 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 17:01:49,859 INFO run_agent: Loaded environment variables from /home/loveback1987/.hermes/.env
+2026-05-23 17:01:49,905 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-3 (process_loop):128831261595328 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:01:50,061 INFO agent.model_metadata: Could not detect context length for model 'Qwen3.6-35B-A3B-UD-IQ4_NL-MTP' at http://192.168.1.58:8888/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-05-23 17:01:50,081 INFO [20260523_170110_4ce7ec] agent.conversation_loop: conversation turn: session=20260523_170110_4ce7ec model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=cli history=0 msg='连接微信机器人'
+2026-05-23 17:01:50,158 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-5 (_call):128831025309376 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:01:54,488 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-5 (_call):128831025309376 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:01:54,489 INFO [20260523_170110_4ce7ec] agent.conversation_loop: API call #1: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=14583 out=42 total=14625 latency=4.3s cache=8192/14583 (56%)
+2026-05-23 17:01:54,511 INFO [20260523_170110_4ce7ec] agent.tool_executor: tool skill_view completed (0.02s, 5007 chars)
+2026-05-23 17:01:54,530 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-6 (_call):128831025309376 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:01:56,053 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-6 (_call):128831025309376 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:01:56,054 INFO [20260523_170110_4ce7ec] agent.conversation_loop: API call #2: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=16009 out=83 total=16092 latency=1.5s cache=14579/16009 (91%)
+2026-05-23 17:01:56,057 INFO [20260523_170110_4ce7ec] tools.terminal_tool: Creating new local environment for task default...
+2026-05-23 17:01:56,091 INFO [20260523_170110_4ce7ec] tools.environments.base: Session snapshot created (session=135c1f98f5af, cwd=/home/loveback1987)
+2026-05-23 17:01:56,092 INFO [20260523_170110_4ce7ec] tools.terminal_tool: local environment ready for task default
+2026-05-23 17:01:56,207 WARNING [20260523_170110_4ce7ec] tools.tirith_security: tirith spawn failed: [Errno 2] No such file or directory: 'tirith'
+2026-05-23 17:01:56,243 WARNING [20260523_170110_4ce7ec] agent.tool_executor: Tool terminal returned error (0.19s): {"output": "Using CPython 3.11.15\nCreating virtual environment at: .hermes/weixin_venv\nerror: Failed to create virtual environment\n  Caused by: A virtual environment already exists at: .hermes/weix
+2026-05-23 17:01:56,263 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-10 (_call):128831016916672 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:01:57,292 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-10 (_call):128831016916672 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:01:57,293 INFO [20260523_170110_4ce7ec] agent.conversation_loop: API call #3: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=16207 out=80 total=16287 latency=1.0s cache=16005/16207 (99%)
+2026-05-23 17:02:02,857 INFO [20260523_170110_4ce7ec] agent.tool_executor: tool terminal completed (5.56s, 468 chars)
+2026-05-23 17:02:02,877 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-12 (_call):128831016916672 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:02:03,961 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-12 (_call):128831016916672 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:02:03,962 INFO [20260523_170110_4ce7ec] agent.conversation_loop: API call #4: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=16501 out=80 total=16581 latency=1.1s cache=16203/16501 (98%)
+2026-05-23 17:03:04,096 WARNING [20260523_170110_4ce7ec] agent.tool_executor: Tool terminal returned error (60.13s): {"output": "", "exit_code": -1, "error": "BLOCKED: User denied. Do NOT retry.", "status": "blocked"}
+2026-05-23 17:03:04,123 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-13 (_call):128831016916672 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:03:05,053 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-13 (_call):128831016916672 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:03:05,054 INFO [20260523_170110_4ce7ec] agent.conversation_loop: API call #5: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=16629 out=64 total=16693 latency=1.0s cache=16497/16629 (99%)
+2026-05-23 17:03:05,191 INFO [20260523_170110_4ce7ec] agent.tool_executor: tool terminal completed (0.13s, 144 chars)
+2026-05-23 17:03:05,212 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-15 (_call):128831016916672 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:03:05,991 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-15 (_call):128831016916672 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:03:05,991 INFO [20260523_170110_4ce7ec] agent.conversation_loop: API call #6: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=16777 out=48 total=16825 latency=0.8s cache=16625/16777 (99%)
+2026-05-23 17:03:06,074 INFO [20260523_170110_4ce7ec] agent.tool_executor: tool read_file completed (0.08s, 2855 chars)
+2026-05-23 17:03:06,096 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-20 (_call):128831016916672 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:03:07,643 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-20 (_call):128831016916672 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:03:07,643 INFO [20260523_170110_4ce7ec] agent.conversation_loop: API call #7: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=18022 out=92 total=18114 latency=1.6s cache=16773/18022 (93%)
+2026-05-23 17:05:07,823 WARNING [20260523_170110_4ce7ec] agent.tool_executor: Tool terminal returned error (120.18s): {"output": "█\rGetting uuid of QR code.\nDownloading QR code.\n==================================================\nHermes Agent - 微信登录\n==================================================\n\n请用微信扫描下方二维
+2026-05-23 17:05:07,843 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-22 (_call):128831016916672 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:05:09,523 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-22 (_call):128831016916672 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:05:09,524 INFO [20260523_170110_4ce7ec] agent.conversation_loop: API call #8: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=19430 out=96 total=19526 latency=1.7s cache=18018/19430 (93%)
+2026-05-23 17:08:09,768 WARNING [20260523_170110_4ce7ec] agent.tool_executor: Tool terminal returned error (180.24s): {"output": "█\rGetting uuid of QR code.\nDownloading QR code.\n==================================================\nHermes Agent - 微信登录\n==================================================\n\n请用微信扫描下方二维
+2026-05-23 17:08:09,787 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-24 (_call):128831016916672 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:08:12,046 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-24 (_call):128831016916672 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:08:12,046 INFO [20260523_170110_4ce7ec] agent.conversation_loop: API call #9: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=20811 out=168 total=20979 latency=2.3s cache=19426/20811 (93%)
+2026-05-23 17:08:12,103 INFO [20260523_170110_4ce7ec] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP api_calls=9/90 budget=9/90 tool_turns=8 last_msg_role=assistant response_len=316 session=20260523_170110_4ce7ec
+2026-05-23 17:08:12,281 INFO agent.auxiliary_client: Auxiliary auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 17:08:12,281 INFO agent.auxiliary_client: Auxiliary title_generation: using auto (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP) at http://192.168.1.58:8888/v1/
+2026-05-23 17:08:44,927 INFO tools.terminal_tool: Manually cleaned up environment for task: default
+2026-05-23 17:08:44,928 INFO tools.terminal_tool: Cleaned 1 environments
+2026-05-23 17:09:20,746 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-05-23 17:09:20,746 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-05-23 17:09:20,747 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-05-23 17:09:20,747 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-05-23 17:09:20,748 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-05-23 17:09:20,748 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-05-23 17:09:20,748 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-05-23 17:09:20,750 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-05-23 17:09:20,750 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-05-23 17:09:20,751 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-05-23 17:09:20,751 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-05-23 17:09:20,752 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-05-23 17:09:20,752 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-05-23 17:09:20,753 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-05-23 17:09:20,753 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-05-23 17:09:20,753 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-05-23 17:09:20,754 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-05-23 17:09:20,809 INFO hermes_cli.plugins: Plugin discovery complete: 28 found, 24 enabled
+2026-05-23 17:42:26,437 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-05-23 17:42:26,437 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-05-23 17:42:26,438 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-05-23 17:42:26,438 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-05-23 17:42:26,439 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-05-23 17:42:26,439 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-05-23 17:42:26,439 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-05-23 17:42:26,469 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-05-23 17:42:26,469 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-05-23 17:42:26,470 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-05-23 17:42:26,471 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-05-23 17:42:26,471 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-05-23 17:42:26,472 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-05-23 17:42:26,472 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-05-23 17:42:26,472 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-05-23 17:42:26,473 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-05-23 17:42:26,473 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-05-23 17:42:26,531 INFO hermes_cli.plugins: Plugin discovery complete: 28 found, 24 enabled
+2026-05-23 17:42:27,154 INFO gateway.memory_monitor: [MEMORY] baseline rss=114MB gc=(103, 5, 3) threads=1 uptime=0s
+2026-05-23 17:42:27,155 INFO gateway.memory_monitor: [MEMORY] Periodic memory monitoring started (interval: 300s)
+2026-05-23 17:42:27,175 INFO tools.lazy_deps: Lazy-installing discord.py[voice]==2.7.1 brotlicffi==1.2.0.1 for feature 'platform.discord'
+2026-05-23 17:42:33,660 INFO tools.lazy_deps: Lazy install complete for feature 'platform.discord'
+2026-05-23 17:42:34,218 INFO gateway.run: Starting Hermes Gateway...
+2026-05-23 17:42:34,218 INFO gateway.run: Session storage: /home/loveback1987/.hermes/sessions
+2026-05-23 17:42:34,232 INFO gateway.run: Agent budget: max_iterations=90 (agent.max_turns from config.yaml, or HERMES_MAX_ITERATIONS from .env, or default 90)
+2026-05-23 17:42:34,232 INFO gateway.run: Secret redaction: ENABLED (tool output, logs, and chat responses are scrubbed before delivery)
+2026-05-23 17:42:34,236 WARNING gateway.run: No user allowlists configured. All unauthorized users will be denied. Set GATEWAY_ALLOW_ALL_USERS=true in ~/.hermes/.env to allow open access, or configure platform allowlists (e.g., TELEGRAM_ALLOWED_USERS=your_id).
+2026-05-23 17:42:34,238 INFO gateway.run: Connecting to discord...
+2026-05-23 17:42:34,249 ERROR hermes_plugins.discord_platform.adapter: [Discord] No bot token configured
+2026-05-23 17:42:34,249 WARNING gateway.run: ✗ discord failed to connect
+2026-05-23 17:42:34,249 INFO hermes_plugins.discord_platform.adapter: [Discord] Disconnected
+2026-05-23 17:42:34,257 INFO gateway.run: Connecting to weixin...
+2026-05-23 17:42:34,271 INFO gateway.platforms.weixin: [Weixin] Connected account=67150495 base=https://ilinkai.weixin.qq.com
+2026-05-23 17:42:34,274 INFO gateway.run: ✓ weixin connected
+2026-05-23 17:42:34,276 INFO gateway.run: Gateway running with 1 platform(s)
+2026-05-23 17:42:34,280 INFO gateway.run: Channel directory built: 0 target(s)
+2026-05-23 17:42:34,540 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 17:42:34,541 WARNING gateway.run: Unauthorized user: o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat (o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat) on weixin
+2026-05-23 17:42:35,282 INFO gateway.run: Starting reconnection watcher for 1 failed platform(s): discord
+2026-05-23 17:42:35,282 INFO gateway.run: Press Ctrl+C to stop
+2026-05-23 17:42:35,320 INFO gateway.run: Cron ticker started (interval=60s)
+2026-05-23 17:42:38,592 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-05-23 17:42:38,592 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-05-23 17:42:38,593 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-05-23 17:42:38,593 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-05-23 17:42:38,593 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-05-23 17:42:38,594 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-05-23 17:42:38,594 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-05-23 17:42:38,625 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-05-23 17:42:38,625 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-05-23 17:42:38,626 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-05-23 17:42:38,626 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-05-23 17:42:38,627 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-05-23 17:42:38,627 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-05-23 17:42:38,628 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-05-23 17:42:38,628 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-05-23 17:42:38,628 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-05-23 17:42:38,629 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-05-23 17:42:38,747 INFO hermes_cli.plugins: Plugin discovery complete: 28 found, 24 enabled
+2026-05-23 17:42:39,127 ERROR gateway.run: Another gateway instance is already running (PID 1875, HERMES_HOME=/home/loveback1987/.hermes). Use 'hermes gateway restart' to replace it, or 'hermes gateway stop' first.
+2026-05-23 17:42:40,285 INFO gateway.run: kanban dispatcher: embedded in gateway (interval=60.0s)
+2026-05-23 17:42:58,162 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 17:42:58,162 WARNING gateway.run: Unauthorized user: o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat (o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat) on weixin
+2026-05-23 17:43:05,307 INFO gateway.run: Reconnecting discord (attempt 2)...
+2026-05-23 17:43:05,308 ERROR hermes_plugins.discord_platform.adapter: [Discord] No bot token configured
+2026-05-23 17:43:05,314 INFO gateway.run: Reconnect discord failed, next retry in 60s
+2026-05-23 17:44:05,359 INFO gateway.run: Reconnecting discord (attempt 3)...
+2026-05-23 17:44:05,359 ERROR hermes_plugins.discord_platform.adapter: [Discord] No bot token configured
+2026-05-23 17:44:05,372 INFO gateway.run: Reconnect discord failed, next retry in 120s
+2026-05-23 17:44:47,652 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-05-23 17:44:47,653 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-05-23 17:44:47,654 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-05-23 17:44:47,655 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-05-23 17:44:47,656 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-05-23 17:44:47,656 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-05-23 17:44:47,657 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-05-23 17:44:47,704 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-05-23 17:44:47,704 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-05-23 17:44:47,706 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-05-23 17:44:47,707 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-05-23 17:44:47,707 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-05-23 17:44:47,709 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-05-23 17:44:47,710 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-05-23 17:44:47,711 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-05-23 17:44:47,712 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-05-23 17:44:47,713 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-05-23 17:44:47,883 INFO hermes_cli.plugins: Plugin discovery complete: 28 found, 24 enabled
+2026-05-23 17:44:49,907 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 17:44:49,934 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 17:44:49,947 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 17:44:50,068 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 17:44:50,081 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 17:44:54,960 INFO run_agent: Loaded environment variables from /home/loveback1987/.hermes/.env
+2026-05-23 17:44:55,004 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-3 (process_loop):134275829593792 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:44:55,169 INFO agent.model_metadata: Could not detect context length for model 'Qwen3.6-35B-A3B-UD-IQ4_NL-MTP' at http://192.168.1.58:8888/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-05-23 17:44:55,190 INFO [20260523_174448_ba943f] agent.conversation_loop: conversation turn: session=20260523_174448_ba943f model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=cli history=0 msg='你好'
+2026-05-23 17:44:55,243 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-5 (_call):134275801269952 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:45:02,103 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-5 (_call):134275801269952 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:45:02,103 INFO [20260523_174448_ba943f] agent.conversation_loop: API call #1: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=14986 out=9 total=14995 latency=6.9s
+2026-05-23 17:45:02,120 INFO [20260523_174448_ba943f] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP api_calls=1/90 budget=1/90 tool_turns=0 last_msg_role=assistant response_len=14 session=20260523_174448_ba943f
+2026-05-23 17:45:02,376 INFO agent.auxiliary_client: Auxiliary auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 17:45:02,376 INFO agent.auxiliary_client: Auxiliary title_generation: using auto (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP) at http://192.168.1.58:8888/v1/
+2026-05-23 17:46:05,486 INFO gateway.run: Reconnecting discord (attempt 4)...
+2026-05-23 17:46:05,487 ERROR hermes_plugins.discord_platform.adapter: [Discord] No bot token configured
+2026-05-23 17:46:05,489 INFO gateway.run: Reconnect discord failed, next retry in 240s
+2026-05-23 17:47:23,839 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 17:47:23,883 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='在吗'
+2026-05-23 17:47:23,915 INFO run_agent: Loaded environment variables from /home/loveback1987/.hermes/.env
+2026-05-23 17:47:24,751 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=asyncio_1:133041999574720 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:47:25,075 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 17:47:25,237 INFO agent.model_metadata: Could not detect context length for model 'Qwen3.6-35B-A3B-UD-IQ4_NL-MTP' at http://192.168.1.58:8888/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-05-23 17:47:25,249 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: conversation turn: session=20260523_174723_cfdd26cc model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=weixin history=0 msg='在吗'
+2026-05-23 17:47:25,275 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-1 (_call):133041752106688 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:47:26,384 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-1 (_call):133041752106688 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:47:26,385 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #1: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=15222 out=10 total=15232 latency=1.1s cache=14470/15222 (95%)
+2026-05-23 17:47:26,401 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP api_calls=1/90 budget=1/90 tool_turns=0 last_msg_role=assistant response_len=14 session=20260523_174723_cfdd26cc
+2026-05-23 17:47:26,410 INFO agent.auxiliary_client: Auxiliary auto-detect: using main provider custom (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP)
+2026-05-23 17:47:26,411 INFO agent.auxiliary_client: Auxiliary title_generation: using auto (Qwen3.6-35B-A3B-UD-IQ4_NL-MTP) at http://192.168.1.58:8888/v1/
+2026-05-23 17:47:26,482 INFO gateway.run: response ready: platform=weixin chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat time=2.6s api_calls=1 response=14 chars
+2026-05-23 17:47:26,494 INFO gateway.platforms.base: [Weixin] Sending response (14 chars) to o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat
+2026-05-23 17:47:27,155 INFO gateway.memory_monitor: [MEMORY] rss=168MB gc=(272, 1, 9) threads=6 uptime=300s
+2026-05-23 17:48:07,331 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 17:48:07,332 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='我想创建一个军旗游戏，可以吗'
+2026-05-23 17:48:07,426 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: conversation turn: session=20260523_174723_cfdd26cc model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=weixin history=2 msg='我想创建一个军旗游戏，可以吗'
+2026-05-23 17:48:07,434 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-2 (_call):133041752106688 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:48:09,215 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-2 (_call):133041752106688 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:48:09,216 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #2: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=15248 out=113 total=15361 latency=1.8s cache=14706/15248 (96%)
+2026-05-23 17:48:27,484 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 17:48:27,484 INFO gateway.run: Gateway intercepted clarify text response (session=agent:main:weixin:dm:o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat, id=5cbb65ffd3)
+2026-05-23 17:48:27,485 INFO [20260523_174723_cfdd26cc] agent.tool_executor: tool clarify completed (18.26s, 187 chars)
+2026-05-23 17:48:27,493 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-3 (_call):133041752106688 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:48:29,158 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-3 (_call):133041752106688 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:48:29,158 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #3: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=15471 out=112 total=15583 latency=1.7s cache=15244/15471 (99%)
+2026-05-23 17:48:47,783 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 17:48:47,783 INFO gateway.run: Gateway intercepted clarify text response (session=agent:main:weixin:dm:o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat, id=43708f52d8)
+2026-05-23 17:48:47,783 INFO [20260523_174723_cfdd26cc] agent.tool_executor: tool clarify completed (18.62s, 170 chars)
+2026-05-23 17:48:47,791 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-4 (_call):133041752106688 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:48:50,136 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-4 (_call):133041752106688 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:48:50,136 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #4: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=15680 out=224 total=15904 latency=2.4s cache=15467/15680 (99%)
+2026-05-23 17:50:05,707 INFO gateway.run: Reconnecting discord (attempt 5)...
+2026-05-23 17:50:05,707 ERROR hermes_plugins.discord_platform.adapter: [Discord] No bot token configured
+2026-05-23 17:50:05,714 INFO gateway.run: Reconnect discord failed, next retry in 300s
+2026-05-23 17:50:56,025 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 17:50:56,025 INFO gateway.run: Gateway intercepted clarify text response (session=agent:main:weixin:dm:o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat, id=4765c08ee0)
+2026-05-23 17:50:56,025 INFO [20260523_174723_cfdd26cc] agent.tool_executor: tool clarify completed (125.88s, 303 chars)
+2026-05-23 17:50:56,035 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-5 (_call):133041737422528 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:50:57,294 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-5 (_call):133041737422528 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:50:57,294 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #5: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=16104 out=62 total=16166 latency=1.3s cache=15676/16104 (97%)
+2026-05-23 17:50:57,316 INFO [20260523_174723_cfdd26cc] agent.tool_executor: tool skill_view completed (0.02s, 8534 chars)
+2026-05-23 17:50:57,323 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-6 (_call):133041737422528 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:50:58,955 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-6 (_call):133041737422528 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:50:58,956 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #6: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=18402 out=42 total=18444 latency=1.6s cache=16100/18402 (87%)
+2026-05-23 17:50:58,974 INFO [20260523_174723_cfdd26cc] agent.tool_executor: tool skill_view completed (0.01s, 10927 chars)
+2026-05-23 17:50:58,981 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-7 (_call):133041737422528 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:51:02,911 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-7 (_call):133041737422528 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 17:51:02,911 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #7: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=21264 out=329 total=21593 latency=3.9s cache=18398/21264 (87%)
+2026-05-23 17:52:27,156 INFO gateway.memory_monitor: [MEMORY] rss=174MB gc=(378, 10, 10) threads=7 uptime=600s
+2026-05-23 17:55:05,976 INFO gateway.run: Reconnecting discord (attempt 6)...
+2026-05-23 17:55:05,977 ERROR hermes_plugins.discord_platform.adapter: [Discord] No bot token configured
+2026-05-23 17:55:05,982 INFO gateway.run: Reconnect discord failed, next retry in 300s
+2026-05-23 17:57:27,157 INFO gateway.memory_monitor: [MEMORY] rss=174MB gc=(546, 11, 10) threads=7 uptime=900s
+2026-05-23 18:00:06,259 INFO gateway.run: Reconnecting discord (attempt 7)...
+2026-05-23 18:00:06,259 ERROR hermes_plugins.discord_platform.adapter: [Discord] No bot token configured
+2026-05-23 18:00:06,266 INFO gateway.run: Reconnect discord failed, next retry in 300s
+2026-05-23 18:00:08,324 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:00:11,430 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:00:14,560 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:00:17,691 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:00:20,856 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:01:03,129 INFO [20260523_174723_cfdd26cc] agent.tool_executor: tool clarify completed (600.21s, 502 chars)
+2026-05-23 18:01:03,137 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-8 (_call):133041737422528 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:01:04,739 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-8 (_call):133041737422528 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:01:04,740 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #8: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=21911 out=66 total=21977 latency=1.6s cache=21260/21911 (97%)
+2026-05-23 18:01:04,753 INFO [20260523_174723_cfdd26cc] agent.tool_executor: tool todo completed (0.00s, 192 chars)
+2026-05-23 18:01:04,762 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-9 (_call):133041737422528 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:01:04,960 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:01:08,092 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:01:11,227 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:01:14,345 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:01:17,453 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:01:23,004 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-9 (_call):133041737422528 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:01:23,005 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #9: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=22059 out=2761 total=24820 latency=18.3s cache=21907/22059 (99%)
+2026-05-23 18:01:23,008 INFO [20260523_174723_cfdd26cc] tools.file_tools: Creating new local environment for task default...
+2026-05-23 18:01:23,043 INFO [20260523_174723_cfdd26cc] tools.environments.base: Session snapshot created (session=5f20eeda23cb, cwd=/home/loveback1987)
+2026-05-23 18:01:23,044 INFO [20260523_174723_cfdd26cc] tools.file_tools: local environment ready for task default
+2026-05-23 18:01:23,088 WARNING [20260523_174723_cfdd26cc] agent.tool_executor: Tool write_file returned error (0.08s): {"bytes_written": 0, "dirs_created": false, "error": "Failed to write file: /usr/bin/bash: line 3: /home/loveback187/.hermes/plans/2026-05-23-军旗人机对战.md: No such file or directory\n"}
+2026-05-23 18:01:23,098 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-15 (_call):133041443829440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:01:24,975 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-15 (_call):133041443829440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:01:24,975 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #10: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=24905 out=41 total=24946 latency=1.9s cache=22055/24905 (89%)
+2026-05-23 18:01:25,099 WARNING [20260523_174723_cfdd26cc] tools.tirith_security: tirith spawn failed: [Errno 2] No such file or directory: 'tirith'
+2026-05-23 18:01:25,125 WARNING [20260523_174723_cfdd26cc] agent.tool_executor: Tool terminal returned error (0.14s): {"output": "mkdir: Permission denied", "exit_code": 1, "error": null}
+2026-05-23 18:01:25,134 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-17 (_call):133041443829440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:01:25,868 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-17 (_call):133041443829440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:01:25,868 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #11: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=24984 out=42 total=25026 latency=0.7s cache=24901/24984 (100%)
+2026-05-23 18:01:26,015 INFO [20260523_174723_cfdd26cc] agent.tool_executor: tool terminal completed (0.14s, 45 chars)
+2026-05-23 18:01:26,025 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-19 (_call):133041443829440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:01:43,298 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-19 (_call):133041443829440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:01:43,299 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #12: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=25059 out=2772 total=27831 latency=17.3s cache=24980/25059 (100%)
+2026-05-23 18:01:43,377 INFO [20260523_174723_cfdd26cc] agent.tool_executor: tool write_file completed (0.07s, 114 chars)
+2026-05-23 18:01:43,393 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-24 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:01:45,614 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-24 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:01:45,614 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #13: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=27885 out=53 total=27938 latency=2.2s cache=25055/27885 (90%)
+2026-05-23 18:01:45,621 INFO [20260523_174723_cfdd26cc] agent.tool_executor: tool todo completed (0.00s, 190 chars)
+2026-05-23 18:01:45,629 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-25 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:01:48,820 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-25 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:01:48,821 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #14: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=28019 out=391 total=28410 latency=3.2s cache=27881/28019 (100%)
+2026-05-23 18:01:48,932 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP api_calls=13/90 budget=13/90 tool_turns=12 last_msg_role=assistant response_len=626 session=20260523_174723_cfdd26cc
+2026-05-23 18:01:48,934 INFO gateway.run: response ready: platform=weixin chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat time=821.6s api_calls=13 response=987 chars
+2026-05-23 18:01:48,940 INFO gateway.platforms.base: [Weixin] Sending response (987 chars) to o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat
+2026-05-23 18:01:49,143 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:01:52,278 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:01:55,428 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:01:58,561 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:02:01,684 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:02:01,684 WARNING gateway.platforms.base: [Weixin] Send failed: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited — trying plain-text fallback
+2026-05-23 18:02:01,803 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:02:04,942 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:02:08,087 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:02:11,222 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:02:14,359 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:02:14,360 ERROR gateway.platforms.base: [Weixin] Fallback send also failed: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:02:27,157 INFO gateway.memory_monitor: [MEMORY] rss=180MB gc=(68, 3, 0) threads=9 uptime=1200s
+2026-05-23 18:04:10,114 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 18:04:10,115 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='还在吗'
+2026-05-23 18:04:10,285 INFO agent.model_metadata: Could not detect context length for model 'Qwen3.6-35B-A3B-UD-IQ4_NL-MTP' at http://192.168.1.58:8888/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-05-23 18:04:10,385 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: conversation turn: session=20260523_174723_cfdd26cc model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=weixin history=28 msg='还在吗'
+2026-05-23 18:04:10,394 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-26 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:04:25,125 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-26 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:04:25,125 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #15: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=28373 out=12 total=28385 latency=14.7s cache=14706/28373 (52%)
+2026-05-23 18:04:25,136 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP api_calls=1/90 budget=1/90 tool_turns=12 last_msg_role=assistant response_len=15 session=20260523_174723_cfdd26cc
+2026-05-23 18:04:25,163 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=bg-review:133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:04:25,237 INFO gateway.run: response ready: platform=weixin chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat time=15.1s api_calls=1 response=15 chars
+2026-05-23 18:04:25,242 INFO gateway.platforms.base: [Weixin] Sending response (15 chars) to o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat
+2026-05-23 18:04:25,313 INFO agent.model_metadata: Could not detect context length for model 'Qwen3.6-35B-A3B-UD-IQ4_NL-MTP' at http://192.168.1.58:8888/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-05-23 18:04:25,321 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: conversation turn: session=20260523_174723_cfdd26cc model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=weixin history=30 msg='Review the conversation above and update the skill library. Be ACTIVE — most ses...'
+2026-05-23 18:04:25,330 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-27 (_call):133041443829440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:04:34,595 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-27 (_call):133041443829440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:04:34,595 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #1: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=29451 out=374 total=29825 latency=9.3s cache=14706/29451 (50%)
+2026-05-23 18:04:34,603 INFO [20260523_174723_cfdd26cc] agent.tool_executor: tool memory completed (0.01s, 363 chars)
+2026-05-23 18:04:34,611 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-28 (_call):133041443829440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:04:35,657 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-28 (_call):133041443829440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:04:35,658 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #2: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=29973 out=35 total=30008 latency=1.1s cache=29447/29973 (98%)
+2026-05-23 18:04:35,658 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP api_calls=2/16 budget=2/16 tool_turns=13 last_msg_role=assistant response_len=184 session=20260523_174723_cfdd26cc
+2026-05-23 18:04:35,658 INFO [20260523_174723_cfdd26cc] run_agent: OpenAI client closed (agent_close, shared=True, tcp_force_closed=0) thread=bg-review:133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:05:06,651 INFO gateway.run: Reconnecting discord (attempt 8)...
+2026-05-23 18:05:06,652 ERROR hermes_plugins.discord_platform.adapter: [Discord] No bot token configured
+2026-05-23 18:05:06,655 INFO gateway.run: Reconnect discord failed, next retry in 300s
+2026-05-23 18:06:15,244 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 18:06:15,244 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='做好了吗'
+2026-05-23 18:06:15,425 INFO agent.model_metadata: Could not detect context length for model 'Qwen3.6-35B-A3B-UD-IQ4_NL-MTP' at http://192.168.1.58:8888/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-05-23 18:06:15,520 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: conversation turn: session=20260523_174723_cfdd26cc model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=weixin history=30 msg='做好了吗'
+2026-05-23 18:06:15,529 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-29 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:06:22,363 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-29 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:06:22,363 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #16: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=28396 out=16 total=28412 latency=6.8s cache=14706/28396 (52%)
+2026-05-23 18:06:22,370 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP api_calls=1/90 budget=1/90 tool_turns=12 last_msg_role=assistant response_len=24 session=20260523_174723_cfdd26cc
+2026-05-23 18:06:22,444 INFO gateway.run: response ready: platform=weixin chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat time=7.2s api_calls=1 response=24 chars
+2026-05-23 18:06:22,450 INFO gateway.platforms.base: [Weixin] Sending response (24 chars) to o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat
+2026-05-23 18:06:42,524 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 18:06:42,524 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='快点干活啊'
+2026-05-23 18:06:42,753 INFO agent.model_metadata: Could not detect context length for model 'Qwen3.6-35B-A3B-UD-IQ4_NL-MTP' at http://192.168.1.58:8888/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-05-23 18:06:42,847 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: conversation turn: session=20260523_174723_cfdd26cc model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom platform=weixin history=32 msg='快点干活啊'
+2026-05-23 18:06:42,856 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-30 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:06:44,034 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-30 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:06:44,035 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #17: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=28424 out=29 total=28453 latency=1.2s cache=27880/28424 (98%)
+2026-05-23 18:06:44,051 INFO [20260523_174723_cfdd26cc] agent.tool_executor: tool skill_view completed (0.01s, 12347 chars)
+2026-05-23 18:06:44,059 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-31 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:06:46,373 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-31 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:06:46,373 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #18: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=31475 out=54 total=31529 latency=2.3s cache=28420/31475 (90%)
+2026-05-23 18:06:46,464 INFO [20260523_174723_cfdd26cc] agent.tool_executor: tool read_file completed (0.09s, 9632 chars)
+2026-05-23 18:06:46,474 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-36 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:06:50,922 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-36 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:06:50,923 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #19: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=36344 out=231 total=36575 latency=4.5s cache=31471/36344 (87%)
+2026-05-23 18:06:50,930 INFO [20260523_174723_cfdd26cc] agent.tool_executor: tool todo completed (0.00s, 599 chars)
+2026-05-23 18:06:50,939 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-37 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:06:52,319 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-37 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:06:52,320 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #20: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=36834 out=75 total=36909 latency=1.4s cache=36340/36834 (99%)
+2026-05-23 18:06:52,323 INFO [20260523_174723_cfdd26cc] agent.tool_executor: tool todo completed (0.00s, 603 chars)
+2026-05-23 18:06:52,333 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-38 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:06:53,390 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-38 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:06:53,390 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #21: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=37169 out=43 total=37212 latency=1.1s cache=36830/37169 (99%)
+2026-05-23 18:06:53,539 INFO [20260523_174723_cfdd26cc] agent.tool_executor: tool terminal completed (0.14s, 45 chars)
+2026-05-23 18:06:53,550 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-40 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:06:54,538 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-40 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:06:54,539 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #22: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=37245 out=58 total=37303 latency=1.0s cache=37165/37245 (100%)
+2026-05-23 18:06:54,643 INFO [20260523_174723_cfdd26cc] agent.tool_executor: tool write_file completed (0.10s, 83 chars)
+2026-05-23 18:06:54,654 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-46 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:06:55,693 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-46 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:06:55,694 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #23: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=37347 out=49 total=37396 latency=1.0s cache=37241/37347 (100%)
+2026-05-23 18:06:55,796 INFO [20260523_174723_cfdd26cc] agent.tool_executor: tool write_file completed (0.10s, 82 chars)
+2026-05-23 18:06:55,807 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-52 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:06:57,159 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-52 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:06:57,160 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #24: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=37439 out=120 total=37559 latency=1.4s cache=37343/37439 (100%)
+2026-05-23 18:06:57,267 INFO [20260523_174723_cfdd26cc] agent.tool_executor: tool write_file completed (0.10s, 84 chars)
+2026-05-23 18:06:57,278 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-58 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:06:58,294 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-58 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:06:58,295 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #25: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=37604 out=55 total=37659 latency=1.0s cache=37435/37604 (100%)
+2026-05-23 18:07:03,596 WARNING [20260523_174723_cfdd26cc] agent.tool_executor: Tool terminal returned error (5.30s): {"output": "hint: Using 'master' as the name for the initial branch. This default branch name\nhint: will change to \"main\" in Git 3.0. To configure the initial branch name\nhint: to use in all of yo
+2026-05-23 18:07:03,607 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-60 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:07:05,166 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-60 (_call):133041435436736 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP
+2026-05-23 18:07:05,167 INFO [20260523_174723_cfdd26cc] agent.conversation_loop: API call #26: model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP provider=custom in=38132 out=74 total=38206 latency=1.6s cache=37600/38132 (99%)
