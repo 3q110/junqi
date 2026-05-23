@@ -104,3 +104,6 @@
 2026-05-23 18:15:07,234 ERROR hermes_plugins.discord_platform.adapter: [Discord] No bot token configured
 2026-05-23 18:15:07,238 INFO gateway.run: Reconnect discord failed, next retry in 300s
 2026-05-23 18:15:07,240 WARNING gateway.run: discord paused after 10 consecutive failures (failed to reconnect) — fix the underlying issue then run `/platform resume discord` to retry, or `hermes gateway restart` to restart the gateway.
+2026-05-23 18:17:27,159 INFO gateway.memory_monitor: [MEMORY] rss=207MB gc=(110, 7, 12) threads=12 uptime=2100s
+2026-05-23 18:21:55,020 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 18:21:55,021 INFO gateway.run: User approved 1 dangerous command(s) via /approve (always)
