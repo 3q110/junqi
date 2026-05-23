@@ -328,7 +328,15 @@ class JunqiGame {
           if (nc >= 0 && nc < this.width && nr >= 0 && nr < this.height) {
             const target = this.board[nr][nc];
             if (!target || target.side === 'human') {
-              moves.push([c, r, nc, nr]);
+              // Check if the move is valid considering battle outcomes
+              if (target && target.type === 'MINE') {
+                // Only SAPPER or BOMB can move onto MINE
+                if (piece.type === 'SAPPER' || piece.type === 'BOMB') {
+                  moves.push([c, r, nc, nr]);
+                }
+              } else {
+                moves.push([c, r, nc, nr]);
+              }
             }
           }
         }
