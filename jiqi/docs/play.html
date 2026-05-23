@@ -276,9 +276,15 @@ class JunqiGame {
     }
     this.checkWin();
     if (!this.gameOver) {
-      this.turn = 'ai';
-      document.getElementById('status').textContent = '电脑思考中...';
-      setTimeout(() => this.aiMove(), 1000);
+      if (this.turn === 'human') {
+        this.turn = 'ai';
+        document.getElementById('status').textContent = '电脑思考中...';
+        setTimeout(() => this.aiMove(), 1000);
+      } else {
+        this.turn = 'human';
+        document.getElementById('status').textContent = '你的回合';
+        this.showMessage('轮到你了!');
+      }
     }
     this.render();
   }
