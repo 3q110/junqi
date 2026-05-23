@@ -107,3 +107,4 @@
 2026-05-23 18:17:27,159 INFO gateway.memory_monitor: [MEMORY] rss=207MB gc=(110, 7, 12) threads=12 uptime=2100s
 2026-05-23 18:21:55,020 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
 2026-05-23 18:21:55,021 INFO gateway.run: User approved 1 dangerous command(s) via /approve (always)
+2026-05-23 18:22:27,159 INFO gateway.memory_monitor: [MEMORY] rss=208MB gc=(434, 1, 14) threads=13 uptime=2400s
