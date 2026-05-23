@@ -93,3 +93,4 @@
 2026-05-23 18:06:22,450 INFO gateway.platforms.base: [Weixin] Sending response (24 chars) to o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat
 2026-05-23 18:06:42,524 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
 2026-05-23 18:06:42,524 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='快点干活啊'
+2026-05-23 18:07:27,158 INFO gateway.memory_monitor: [MEMORY] rss=188MB gc=(1, 11, 5) threads=12 uptime=1500s

@@ -1,0 +1,36 @@
+0 verbose cli /usr/bin/node /usr/bin/npm
+1 info using npm@10.9.7
+2 info using node@v22.22.2
+3 silly config load:file:/usr/lib/node_modules/npm/npmrc
+4 silly config load:file:/home/loveback1987/.hermes/lsp/.npmrc
+5 silly config load:file:/home/loveback1987/.npmrc
+6 silly config load:file:/home/loveback1987/.hermes/lsp/etc/npmrc
+7 verbose title npm install pyright
+8 verbose argv "install" "--prefix" "/home/loveback1987/.hermes/lsp" "--loglevel" "silent" "--no-fund" "--no-audit" "pyright"
+9 verbose logfile logs-max:10 dir:/home/loveback1987/.npm/_logs/2026-05-23T10_07_35_147Z-
+10 verbose logfile /home/loveback1987/.npm/_logs/2026-05-23T10_07_35_147Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 silly idealTree buildDeps
+14 silly fetch manifest pyright@*
+15 silly packumentCache full:https://registry.npmjs.org/pyright cache-miss
+16 http fetch GET 200 https://registry.npmjs.org/pyright 867ms (cache miss)
+17 silly packumentCache full:https://registry.npmjs.org/pyright set size:undefined disposed:false
+18 silly placeDep ROOT pyright@1.1.409 OK for:  want: *
+19 silly fetch manifest fsevents@~2.3.3
+20 silly packumentCache full:https://registry.npmjs.org/fsevents cache-miss
+21 http fetch GET 200 https://registry.npmjs.org/fsevents 114ms (cache revalidated)
+22 silly packumentCache full:https://registry.npmjs.org/fsevents set size:182472 disposed:false
+23 silly placeDep ROOT fsevents@2.3.3 OK for: pyright@1.1.409 want: ~2.3.3
+24 silly reify moves {}
+25 verbose reify failed optional dependency /home/loveback1987/.hermes/lsp/node_modules/fsevents
+26 silly reify mark deleted [ '/home/loveback1987/.hermes/lsp/node_modules/fsevents' ]
+27 http cache pyright@https://registry.npmjs.org/pyright/-/pyright-1.1.409.tgz 0ms (cache hit)
+28 silly tarball no local data for pyright@https://registry.npmjs.org/pyright/-/pyright-1.1.409.tgz. Extracting by manifest.
+29 http fetch GET 200 https://registry.npmjs.org/pyright/-/pyright-1.1.409.tgz 4676ms (cache miss)
+30 verbose cwd /home/loveback1987/.hermes/hermes-agent
+31 verbose os Linux 6.6.87.2-microsoft-standard-WSL2
+32 verbose node v22.22.2
+33 verbose npm  v10.9.7
+34 verbose exit 0
+35 info ok
