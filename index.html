@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>军棋 - 人机对战</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: #1a1a2e;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    user-select: none;
+  }
+  h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: #e94560;
+    text-shadow: 0 0 20px rgba(233,69,96,0.4);
+  }
+  #status {
+    font-size: 16px;
+    margin-bottom: 12px;
+    min-height: 24px;
+    color: #0ff;
+  }
+  #log {
+    width: 460px;
+    max-height: 120px;
+    overflow-y: auto;
+    background: #0f0f23;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 8px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  #log div { border-bottom: 1px solid #1a1a2e; padding: 2px 0; }
+  #log .red { color: #ff6b6b; }
+  #log .black { color: #888; }
+  #log .system { color: #0ff; }
+  #board {
+    display: grid;
+    grid-template-columns: repeat(7, 64px);
+    grid-template-rows: repeat(11, 64px);
+    gap: 2px;
+    background: #16213e;
+    border: 3px solid #e94560;
+    border-radius: 8px;
+    padding: 6px;
+    box-shadow: 0 0 40px rgba(233,69,96,0.2);
+  }
+  .cell {
+    width: 64px;
+    height: 64px;
+    background: #0f3460;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.15s;
+  }
+  .cell:hover { background: #1a4a7a; }
+  .cell.railway {
+    background: #0d2b50;
+    border: 1px dashed #2a5a8a;
+  }
+  .cell.flag-pos::after {
+    content: '★';
+    position: absolute;
+    font-size: 10px;
+    color: #334;
+    bottom: 2px;
+    right: 4px;
+  }
+  .cell.selected {
+    background: #e94560 !important;
+    box-shadow: 0 0 12px rgba(233,69,96,0.6);
+  }
+  .cell.valid-move::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: rgba(0,255,255,0.35);
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .cell.valid-move:hover { background: #1a5a5a; }
+  .cell.last-from { border: 2px solid rgba(255,255,0,0.5); }
+  .cell.last-to { border: 2px solid rgba(0,255,0,0.5); }
+  .piece {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    transition: transform 0.1s;
+  }
+  .piece.red {
+    background: radial-gradient(circle at 35% 35%, #ff8a80, #c62828);
+    color: #fff;
+    border: 2px solid #ff5252;
+  }
+  .piece.black {
+    background: radial-gradient(circle at 35% 35%, #78909c, #263238);
+    color: #e0e0e0;
+    border: 2px solid #546e7a;
+  }
+  .piece .abbr { font-size: 13px; line-height: 1.2; }
+  .piece .rank { font-size: 9px; opacity: 0.7; }
+  #controls {
+    margin-top: 12px;
+    display: flex;
+    gap: 12px;
+  }
+  button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+  }
+  #btn-restart {
+    background: #e94560;
+    color: #fff;
+  }
+  #btn-restart:hover { background: #c73652; }
+  #btn-help {
+    background: #16213e;
+    color: #e0e0e0;
+    border: 1px solid #333;
+  }
+  #btn-help:hover { background: #1a4a7a; }
+  #help-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+  }
+  #help-modal.show { display: flex; }
+  #help-content {
+    background: #16213e;
+    border: 2px solid #e94560;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 420px;
+    line-height: 1.8;
+    font-size: 14px;
+  }
+  #help-content h2 { color: #e94560; margin-bottom: 12px; }
+  #help-content .close { float: right; cursor: pointer; font-size: 20px; color: #888; }
+  #help-content .close:hover { color: #fff; }
+</style>
+</head>
+<body>
+
+<h1>军棋 · 人机对战</h1>
+<div id="status">红方回合 - 请选择棋子</div>
+<div id="log"></div>
+<div id="board"></div>
+<div id="controls">
+  <button id="btn-restart">重新开始</button>
+  <button id="btn-help">规则说明</button>
+</div>
+
+<div id="help-modal">
+  <div id="help-content">
+    <span class="close" onclick="this.parentElement.parentElement.classList.remove('show')">&times;</span>
+    <h2>军棋规则</h2>
+    <b>棋子等级</b>（高→低）：<br>
+    司令 &gt; 军长 &gt; 师长 &gt; 旅长 &gt; 团长 &gt; 营长 &gt; 连长 &gt; 工兵<br><br>
+    <b>特殊规则</b>：<br>
+    • 炸弹：与任何棋子同归于尽<br>
+    • 地雷：只能被工兵或炸弹消灭<br>
+    • 军旗：被敌方棋子走到即输<br>
+    • 工兵：可在铁路线上直线任意行走<br>
+    • 地雷和军旗不可移动<br><br>
+    <b>操作</b>：点击己方棋子选中，再点击目标格子移动。<br>
+    你控制 <span style="color:#ff6b6b">红方</span>，AI 控制 <span style="color:#888">黑方</span>。
+  </div>
+</div>
+
+<script>
+// ========== 棋子定义 ==========
+const PIECE_TYPES = {
+  COMMANDER:         { name: '司令', rank: 1 },
+  ARMY_COMMANDER:    { name: '军长', rank: 2 },
+  DIVISION_COMMANDER:{ name: '师长', rank: 3 },
+  BRIGADE_COMMANDER: { name: '旅长', rank: 4 },
+  REGIMENT_COMMANDER:{ name: '团长', rank: 5 },
+  BATTALION_COMMANDER:{ name:'营长', rank: 6 },
+  COMPANY_COMMANDER: { name: '连长', rank: 7 },
+  SAPPER:            { name: '工兵', rank: 8 },
+  BOMB:              { name: '炸弹', rank: 9 },
+  MINE:              { name: '地雷', rank: 10 },
+  FLAG:              { name: '军旗', rank: 11 },
+};
+
+const PIECE_CONFIG = [
+  ['COMMANDER',4], ['ARMY_COMMANDER',4], ['DIVISION_COMMANDER',4],
+  ['BRIGADE_COMMANDER',4], ['REGIMENT_COMMANDER',4], ['BATTALION_COMMANDER',4],
+  ['COMPANY_COMMANDER',4], ['SAPPER',6], ['BOMB',6], ['MINE',6], ['FLAG',2],
+];
+
+const WIDTH = 7, HEIGHT = 11;
+const RAILWAY_ROWS = new Set([2, 9]);
+const VERTICAL_RAILWAY = new Set();
+for (let r = 1; r <= 3; r++) { VERTICAL_RAILWAY.add(`${r},0`); VERTICAL_RAILWAY.add(`${r},6`); }
+for (let r = 7; r <= 9; r++) { VERTICAL_RAILWAY.add(`${r},0`); VERTICAL_RAILWAY.add(`${r},6`); }
+const FLAG_POSITIONS = [[0,3], [10,3]];
+
+// ========== 游戏状态 ==========
+let board = [];      // board[r][c] = { type, side } or null
+let selected = null; // [r, c]
+let currentSide = 'black'; // black goes first
+let gameOver = false;
+let lastMove = null; // [fr, fc, tr, tc]
+
+// ========== 工具函数 ==========
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function isRailway(r, c) {
+  return RAILWAY_ROWS.has(r) || VERTICAL_RAILWAY.has(`${r},${c}`);
+}
+
+function inBounds(r, c) { return r >= 0 && r < HEIGHT && c >= 0 && c < WIDTH; }
+
+function canEat(attacker, defender) {
+  if (!attacker || !defender) return false;
+  if (attacker.side === defender.side) return false;
+  const at = PIECE_TYPES[attacker.type];
+  const dt = PIECE_TYPES[defender.type];
+  if (attacker.type === 'FLAG') return false;
+  if (attacker.type === 'MINE') return false;
+  if (attacker.type === 'BOMB') return true;
+  if (defender.type === 'FLAG') return true;
+  if (defender.type === 'MINE') return attacker.type === 'SAPPER';
+  return at.rank < dt.rank;
+}
+
+function resolveCombat(attacker, defender) {
+  if (!defender) return 'no_combat';
+  if (attacker.type === 'BOMB' && defender.type !== 'FLAG') return 'mutual';
+  if (defender.type === 'BOMB' && attacker.type !== 'FLAG') return 'mutual';
+  if (canEat(attacker, defender)) return 'attack_wins';
+  return 'defend_wins';
+}
+
+// ========== 移动规则 ==========
+function getValidMoves(r, c) {
+  const piece = board[r][c];
+  if (!piece) return [];
+  if (piece.type === 'MINE' || piece.type === 'FLAG') return [];
+
+  const moves = new Set();
+  const dirs = [[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]];
+
+  for (const [dr, dc] of dirs) {
+    const nr = r + dr, nc = c + dc;
+    if (!inBounds(nr, nc)) continue;
+    const target = board[nr][nc];
+    if (!target) { moves.add(`${nr},${nc}`); continue; }
+    if (target.side !== piece.side && canEat(piece, target)) moves.add(`${nr},${nc}`);
+  }
+
+  // 工兵铁路移动
+  if (piece.type === 'SAPPER' && isRailway(r, c)) {
+    const railDirs = [[-1,0],[1,0],[0,-1],[0,1]];
+    for (const [dr, dc] of railDirs) {
+      let cr = r + dr, cc = c + dc;
+      while (inBounds(cr, cc) && isRailway(cr, cc)) {
+        const target = board[cr][cc];
+        if (!target) { moves.add(`${cr},${cc}`); }
+        else if (target.side !== piece.side && canEat(piece, target)) { moves.add(`${cr},${cc}`); break; }
+        else break;
+        cr += dr; cc += dc;
+      }
+    }
+  }
+
+  return [...moves].map(s => s.split(',').map(Number));
+}
+
+function getAllMoves(side) {
+  const moves = [];
+  for (let r = 0; r < HEIGHT; r++) {
+    for (let c = 0; c < WIDTH; c++) {
+      const p = board[r][c];
+      if (p && p.side === side) {
+        for (const [tr, tc] of getValidMoves(r, c)) {
+          moves.push([r, c, tr, tc]);
+        }
+      }
+    }
+  }
+  return moves;
+}
+
+// ========== AI ==========
+function aiMove() {
+  const moves = getAllMoves('black');
+  if (!moves.length) return null;
+  // 优先吃子
+  const captures = moves.filter(([fr,fc,tr,tc]) => board[tr][tc] && board[tr][tc].side !== 'black');
+  return captures.length ? captures[Math.floor(Math.random() * captures.length)] : moves[Math.floor(Math.random() * moves.length)];
+}
+
+// ========== 初始化棋盘 ==========
+function setupBoard() {
+  board = Array.from({length: HEIGHT}, () => Array(WIDTH).fill(null));
+
+  const placeSide = (side, rows, flagPos) => {
+    let pieces = [];
+    for (const [type, count] of PIECE_CONFIG) {
+      if (type === 'FLAG') { pieces.push(type); continue; }
+      for (let i = 0; i < Math.ceil(count / 2); i++) pieces.push(type);
+    }
+    // Remove flag
+    const fi = pieces.indexOf('FLAG');
+    pieces.splice(fi, 1);
+
+    // Separate mines
+    const mines = [];
+    const remaining = [];
+    for (const t of pieces) {
+      if (t === 'MINE') mines.push(t);
+      else remaining.push(t);
+    }
+    shuffle(remaining);
+    shuffle(mines);
+
+    // Place flag
+    board[flagPos[0]][flagPos[1]] = { type: 'FLAG', side };
+
+    // Place mines in last row
+    const lastRow = rows[rows.length - 1];
+    const cols = [0,1,2,4,5,6]; // exclude col 3 (flag)
+    shuffle(cols);
+    const mineSlots = cols.slice(0, 3).map(c => [lastRow, c]);
+    for (let i = 0; i < mines.length; i++) {
+      board[mineSlots[i][0]][mineSlots[i][1]] = { type: mines[i], side };
+    }
+
+    // Place remaining
+    const positions = [];
+    for (const r of rows) for (let c = 0; c < WIDTH; c++) {
+      const key = `${r},${c}`;
+      if (key === `${flagPos[0]},${flagPos[1]}`) continue;
+      if (mineSlots.some(s => `${s[0]},${s[1]}` === key)) continue;
+      positions.push([r, c]);
+    }
+    shuffle(positions);
+    for (let i = 0; i < remaining.length && i < positions.length; i++) {
+      board[positions[i][0]][positions[i][1]] = { type: remaining[i], side };
+    }
+  };
+
+  placeSide('black', [0,1,2,3], [0,3]);
+  placeSide('red', [7,8,9,10], [10,3]);
+}
+
+// ========== 渲染 ==========
+function render() {
+  const boardEl = document.getElementById('board');
+  boardEl.innerHTML = '';
+
+  for (let r = 0; r < HEIGHT; r++) {
+    for (let c = 0; c < WIDTH; c++) {
+      const cell = document.createElement('div');
+      cell.className = 'cell';
+      cell.dataset.r = r;
+      cell.dataset.c = c;
+
+      if (isRailway(r, c)) cell.classList.add('railway');
+      if (FLAG_POSITIONS.some(f => f[0]===r && f[1]===c)) cell.classList.add('flag-pos');
+      if (selected && selected[0]===r && selected[1]===c) cell.classList.add('selected');
+      if (lastMove) {
+        if (lastMove[0]===r && lastMove[1]===c) cell.classList.add('last-from');
+        if (lastMove[2]===r && lastMove[3]===c) cell.classList.add('last-to');
+      }
+
+      // Show valid moves
+      if (selected && currentSide === 'red' && !gameOver) {
+        const moves = getValidMoves(selected[0], selected[1]);
+        if (moves.some(m => m[0]===r && m[1]===c)) cell.classList.add('valid-move');
+      }
+
+      const piece = board[r][c];
+      if (piece) {
+        const pe = document.createElement('div');
+        pe.className = `piece ${piece.side}`;
+        const info = PIECE_TYPES[piece.type];
+        pe.innerHTML = `<span class="abbr">${info.name}</span>`;
+        cell.appendChild(pe);
+      }
+
+      cell.addEventListener('click', () => onCellClick(r, c));
+      boardEl.appendChild(cell);
+    }
+  }
+
+  updateStatus();
+}
+
+function updateStatus() {
+  const statusEl = document.getElementById('status');
+  if (gameOver) {
+    statusEl.textContent = '游戏结束！';
+    statusEl.style.color = '#e94560';
+    return;
+  }
+  if (currentSide === 'red') {
+    statusEl.textContent = '红方回合 - 请选择棋子';
+    statusEl.style.color = '#ff6b6b';
+  } else {
+    statusEl.textContent = 'AI 思考中...';
+    statusEl.style.color = '#888';
+  }
+}
+
+function addLog(msg, cls) {
+  const log = document.getElementById('log');
+  const d = document.createElement('div');
+  d.className = cls || '';
+  d.textContent = msg;
+  log.appendChild(d);
+  log.scrollTop = log.scrollHeight;
+}
+
+// ========== 游戏逻辑 ==========
+function checkGameOver() {
+  let redFlag = false, blackFlag = false;
+  for (let r = 0; r < HEIGHT; r++)
+    for (let c = 0; c < WIDTH; c++) {
+      const p = board[r][c];
+      if (p && p.type === 'FLAG') {
+        if (p.side === 'red') redFlag = true;
+        else blackFlag = true;
+      }
+    }
+  if (!redFlag) return 'black_wins';
+  if (!blackFlag) return 'red_wins';
+  return null;
+}
+
+function executeMove(fr, fc, tr, tc, side) {
+  const attacker = board[fr][fc];
+  const defender = board[tr][tc];
+  const result = resolveCombat(attacker, defender);
+
+  board[fr][fc] = null;
+  board[tr][tc] = attacker;
+  lastMove = [fr, fc, tr, tc];
+
+  const sideName = side === 'red' ? '红方' : 'AI';
+  const sideCls = side === 'red' ? 'red' : 'black';
+  const atName = PIECE_TYPES[attacker.type].name;
+
+  if (result === 'no_combat') {
+    addLog(`${sideName}: ${atName} (${fr},${fc}) → (${tr},${tc})`, sideCls);
+  } else if (result === 'attack_wins') {
+    const dtName = PIECE_TYPES[defender.type].name;
+    addLog(`${sideName}: ${atName} 吃掉 ${dtName}!`, sideCls);
+  } else if (result === 'mutual') {
+    const dtName = PIECE_TYPES[defender.type].name;
+    addLog(`${sideName}: ${atName} 与 ${dtName} 同归于尽!`, sideCls);
+    board[tr][tc] = null;
+  } else if (result === 'defend_wins') {
+    const dtName = PIECE_TYPES[defender.type].name;
+    addLog(`${sideName}: ${atName} 被 ${dtName} 吃掉!`, sideCls);
+    board[tr][tc] = defender;
+  }
+
+  const go = checkGameOver();
+  if (go) {
+    gameOver = true;
+    const winner = go === 'red_wins' ? '红方' : '黑方(AI)';
+    addLog(`🏆 ${winner} 获胜！`, 'system');
+    render();
+    return;
+  }
+}
+
+function onCellClick(r, c) {
+  if (gameOver || currentSide !== 'red') return;
+
+  const piece = board[r][c];
+
+  // Select own piece
+  if (piece && piece.side === 'red') {
+    selected = [r, c];
+    render();
+    return;
+  }
+
+  // Move to target
+  if (selected) {
+    const moves = getValidMoves(selected[0], selected[1]);
+    if (moves.some(m => m[0]===r && m[1]===c)) {
+      const [fr, fc] = selected;
+      selected = null;
+      executeMove(fr, fc, r, c, 'red');
+      render();
+      currentSide = 'black';
+      render();
+
+      // AI turn
+      setTimeout(() => {
+        const ai = aiMove();
+        if (ai) {
+          executeMove(ai[0], ai[1], ai[2], ai[3], 'black');
+        } else {
+          addLog('AI 无棋可走，跳过回合', 'black');
+        }
+        currentSide = 'red';
+        render();
+      }, 600);
+    } else {
+      selected = null;
+      render();
+    }
+  }
+}
+
+// ========== 启动 ==========
+document.getElementById('btn-restart').addEventListener('click', () => {
+  selected = null;
+  currentSide = 'black';
+  gameOver = false;
+  lastMove = null;
+  document.getElementById('log').innerHTML = '';
+  setupBoard();
+  addLog('游戏开始！你控制红方，AI 控制黑方', 'system');
+  addLog('黑方先手...', 'system');
+  render();
+  // AI goes first
+  setTimeout(() => {
+    const ai = aiMove();
+    if (ai) executeMove(ai[0], ai[1], ai[2], ai[3], 'black');
+    currentSide = 'red';
+    render();
+  }, 500);
+});
+
+document.getElementById('btn-help').addEventListener('click', () => {
+  document.getElementById('help-modal').classList.add('show');
+});
+
+// Start game
+setupBoard();
+addLog('游戏开始！你控制红方，AI 控制黑方', 'system');
+addLog('黑方先手...', 'system');
+render();
+setTimeout(() => {
+  const ai = aiMove();
+  if (ai) executeMove(ai[0], ai[1], ai[2], ai[3], 'black');
+  currentSide = 'red';
+  render();
+}, 500);
+</script>
+</body>
+</html>
