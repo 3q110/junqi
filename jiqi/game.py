@@ -150,7 +150,8 @@ class Game:
     def run(self) -> None:
         """Run the full game loop until someone wins."""
         self.ui.display_message("=" * 40)
-        self.ui.display_message("军旗人机对战 — 开始!")
+        self.ui.display_message(f"军旗人机对战 v{__import__('jiqi').__version__}")
+        self.ui.display_message("开始!")
         self.ui.display_message("=" * 40)
 
         while not self.game_over:

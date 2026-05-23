@@ -1,4 +1,7 @@
-# 军旗人机对战 — Chinese Army Chess (Jiqi)
+# 军旗人机对战 — Chinese Army Chess (Jinqi)
+# Version: 1.0.0
+
+__version__ = "1.0.0"
 
 from jiqi.piece import Piece, PieceType
 from jiqi.board import Board
