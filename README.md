@@ -4,7 +4,7 @@
 
 ## 在线试玩
 
-- **直接在线玩**：[点击这里开始游戏](https://cdn.jsdelivr.net/gh/3q110/junqi/index.html)
+- **直接在线玩**：[点击这里开始游戏](https://htmlpreview.github.io/?https://github.com/3q110/junqi/blob/main/index.html)
 - **本地运行**：下载 `index.html` 后双击打开，无需服务器
 
 ## 游戏规则
