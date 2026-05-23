@@ -221,6 +221,7 @@ class Game:
         move = self.ai_player.get_move()
         if move is None:
             self.ui.display_message("电脑没有可走的棋了!")
+            self._switch_turn()
             return
 
         result = self.process_move(move)
