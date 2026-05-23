@@ -185,14 +185,14 @@ class Game:
 
             # Display result
             src_col, src_row, dst_col, dst_row = move
-            src_piece = self.board.get(dst_col, dst_row)
-            if src_piece is not None:
+            moving_piece = self.board.get(dst_col, dst_row)
+            if moving_piece is not None:
                 self.ui.display_message(
                     f"移动: ({src_col},{src_row}) -> ({dst_col},{dst_row})"
                 )
                 if "attacker_wins" in result:
                     self.ui.display_success(
-                        f"攻击成功! {src_piece.piece_type.name} 吃掉敌人!"
+                        f"攻击成功! {moving_piece.piece_type.name} 吃掉敌人!"
                     )
                 elif "both_die" in result:
                     self.ui.display_message("同归于尽!")
@@ -238,6 +238,8 @@ class Game:
             elif "both_die" in result:
                 self.ui.display_message("同归于尽!")
             elif "attacker_loses" in result:
+                self.ui.display_message("电脑攻击失败!")
+            elif "defender_wins" in result:
                 self.ui.display_message("电脑攻击失败!")
         else:
             self.ui.display_message("电脑移动成功!")

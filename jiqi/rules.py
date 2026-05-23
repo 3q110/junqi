@@ -58,7 +58,11 @@ class RuleEngine:
                 return "attacker_wins"
             return "attacker_loses"
 
-        # --- defender is BOMB ---
+        # --- attacker is BOMB (both die) ---
+        if attacker.piece_type == PieceType.BOMB:
+            return "both_die"
+
+        # --- defender is BOMB (both die) ---
         if defender.piece_type == PieceType.BOMB:
             return "both_die"
 

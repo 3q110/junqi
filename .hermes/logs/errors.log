@@ -149,3 +149,167 @@
 2026-05-23 18:21:43,749 WARNING [20260523_181602_c38243] agent.tool_executor: Tool terminal returned error (300.33s): {"output": "", "exit_code": -1, "error": "BLOCKED: Command timed out. Do NOT retry this command.", "status": "blocked"}
 2026-05-23 18:23:26,166 WARNING [20260523_182216_30d75c] agent.tool_executor: Tool terminal returned error (0.51s): {"output": "============================= test session starts ==============================\nplatform linux -- Python 3.11.15, pytest-9.0.2, pluggy-1.6.0 -- /home/loveback1987/.hermes/hermes-agent/ve
 2026-05-23 18:24:03,527 WARNING [20260523_182216_30d75c] agent.tool_executor: Tool terminal returned error (0.51s): {"output": "============================= test session starts ==============================\nplatform linux -- Python 3.11.15, pytest-9.0.2, pluggy-1.6.0 -- /home/loveback1987/.hermes/hermes-agent/ve
+2026-05-23 18:26:20,425 WARNING [20260523_182453_530835] agent.tool_executor: Tool terminal returned error (0.51s): {"output": "============================= test session starts ==============================\nplatform linux -- Python 3.11.15, pytest-9.0.2, pluggy-1.6.0 -- /home/loveback1987/.hermes/hermes-agent/ve
+2026-05-23 18:26:36,296 WARNING [20260523_182453_530835] agent.conversation_loop: API call failed (attempt 1/3) error_type=BadRequestError thread=ThreadPoolExecutor-16_0:133041443829440 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=HTTP 400: Error code: 400 - {'detail': 'llama-server error: {"error":{"code":400,"message":"request (63685 tokens) exceeds the available context size (63488 tokens), try increasing it","type":"exceed_context_size_error","n_prompt_tokens":63685,"n_ctx":63488}}'}
+2026-05-23 18:27:06,048 WARNING [20260523_182453_530835] agent.tool_executor: Tool terminal returned error (0.52s): {"output": "============================= test session starts ==============================\nplatform linux -- Python 3.11.15, pytest-9.0.2, pluggy-1.6.0 -- /home/loveback1987/.hermes/hermes-agent/ve
+2026-05-23 18:27:51,714 WARNING [20260523_180851_cc1fb0] agent.conversation_loop: API call failed (attempt 1/3) error_type=BadRequestError thread=asyncio_2:133041770985152 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=HTTP 400: Error code: 400 - {'detail': 'llama-server error: {"error":{"code":400,"message":"request (63691 tokens) exceeds the available context size (63488 tokens), try increasing it","type":"exceed_context_size_error","n_prompt_tokens":63691,"n_ctx":63488}}'}
+2026-05-23 18:28:24,737 WARNING [20260523_180851_cc1fb0] agent.tool_executor: Tool terminal returned error (0.38s): {"output": "============================= test session starts ==============================\nplatform linux -- Python 3.11.15, pytest-9.0.2, pluggy-1.6.0 -- /home/loveback1987/.hermes/hermes-agent/ve
+2026-05-23 18:28:34,373 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:28:37,483 WARNING [20260523_180851_cc1fb0] agent.tool_executor: Tool execute_code returned error (3.24s): {"status": "error", "output": "\n--- stderr ---\nTraceback (most recent call last):\n  File \"/tmp/hermes_sandbox_60v6c28r/script.py\", line 1, in <module>\n    from jiqi.board import Board\nModuleNot
+2026-05-23 18:28:37,487 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:28:40,608 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:28:43,732 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:28:44,654 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:28:46,872 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:28:47,785 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:28:50,230 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:28:50,961 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:28:52,219 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:28:53,387 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:28:53,711 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:28:54,107 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:28:55,371 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:28:56,535 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:28:56,836 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:28:57,213 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:28:57,261 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:28:58,513 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:28:58,705 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:28:59,682 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:28:59,959 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:00,337 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:01,645 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:01,847 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:02,836 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:29:03,092 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:03,458 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:04,767 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:29:04,857 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:04,971 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:06,233 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:29:06,485 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:06,557 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:07,980 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:08,100 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:09,633 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:09,706 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:29:11,157 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:11,211 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:29:11,422 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:12,774 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:14,276 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:14,554 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:15,920 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:17,426 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:29:17,508 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:17,714 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:19,066 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:29:19,328 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:19,706 WARNING [20260523_180851_cc1fb0] agent.tool_executor: Tool terminal returned error (0.51s): {"output": "..........................................F............................. [ 83%]\n..............                                                           [100%]\n==========================
+2026-05-23 18:29:20,642 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:20,889 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:22,432 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:23,763 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:24,004 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:29:25,561 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:25,985 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:26,897 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:28,116 WARNING [20260523_180851_cc1fb0] agent.tool_executor: Tool terminal returned error (0.51s): {"output": "..........................................F............................. [ 83%]\n..............                                                           [100%]\n==========================
+2026-05-23 18:29:28,697 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:29,116 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:30,022 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:29:31,797 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:29:32,237 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:35,379 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:36,453 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:38,542 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:29:39,529 WARNING [20260523_180851_cc1fb0] agent.tool_executor: Tool execute_code returned error (3.21s): {"status": "error", "output": "\n--- stderr ---\nTraceback (most recent call last):\n  File \"/tmp/hermes_sandbox_mfz7n7wt/script.py\", line 2, in <module>\n    from jiqi.board import Board\nModuleNot
+2026-05-23 18:29:39,582 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:42,715 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:45,847 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:48,572 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:48,999 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:29:51,709 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:54,179 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:54,881 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:57,234 WARNING [20260523_180851_cc1fb0] agent.tool_executor: Tool execute_code returned error (3.21s): {"status": "error", "output": "\n--- stderr ---\nTraceback (most recent call last):\n  File \"/tmp/hermes_sandbox_nf5qyuck/script.py\", line 2, in <module>\n    from jiqi.board import Board\nModuleNot
+2026-05-23 18:29:57,302 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:29:58,006 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:00,449 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:01,154 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:30:02,187 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:03,613 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:04,951 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:05,330 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:06,728 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:30:08,089 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:08,448 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:11,215 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:11,594 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:13,446 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:13,518 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:14,348 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:14,716 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:30:16,564 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:16,615 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:17,462 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:30:19,568 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:19,685 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:19,751 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:22,658 WARNING [20260523_180851_cc1fb0] agent.tool_executor: Tool execute_code returned error (3.21s): {"status": "error", "output": "\n--- stderr ---\nTraceback (most recent call last):\n  File \"/tmp/hermes_sandbox_02d3bw7_/script.py\", line 9, in <module>\n    from jiqi.board import Board\nModuleNot
+2026-05-23 18:30:22,703 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:22,827 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:22,889 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:25,847 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:25,973 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:30:26,044 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:30:28,987 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:32,101 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:30:33,183 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:36,277 WARNING [20260523_180851_cc1fb0] agent.tool_executor: Tool execute_code returned error (3.21s): {"status": "error", "output": "\n--- stderr ---\nTraceback (most recent call last):\n  File \"/tmp/hermes_sandbox_hcjwofo5/script.py\", line 3, in <module>\n    from jiqi.board import Board\nModuleNot
+2026-05-23 18:30:36,302 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:39,434 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:42,538 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:44,769 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:45,654 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:30:47,907 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:51,033 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:54,171 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:56,941 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:30:57,305 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:31:00,082 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:03,209 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:06,354 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:09,506 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:31:16,371 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:19,524 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:20,432 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:22,685 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:23,578 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:25,845 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:26,690 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:28,046 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:28,445 WARNING [20260523_180851_cc1fb0] agent.conversation_loop: API call failed (attempt 1/3) error_type=BadRequestError thread=asyncio_2:133041770985152 provider=custom base_url=http://192.168.1.58:8888/v1 model=Qwen3.6-35B-A3B-UD-IQ4_NL-MTP summary=HTTP 400: Error code: 400 - {'detail': 'llama-server error: {"error":{"code":400,"message":"request (63519 tokens) exceeds the available context size (63488 tokens), try increasing it","type":"exceed_context_size_error","n_prompt_tokens":63519,"n_ctx":63488}}'}
+2026-05-23 18:31:28,600 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:28,619 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:28,968 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:31:29,826 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:31,163 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:31,705 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:31,739 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:32,951 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:31:34,297 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:34,833 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:35,039 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:37,445 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:37,958 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:38,170 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:40,570 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:31:41,105 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:31:41,310 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:31:44,064 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:47,170 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:50,307 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:53,434 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:31:56,565 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:32:04,211 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
