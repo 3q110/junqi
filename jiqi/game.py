@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from jiqi.board import Board
 from jiqi.piece import Piece, PieceType
@@ -22,7 +24,7 @@ class Game:
         self.human_flag_captured = False
         self.ai_flag_captured = False
         self.ui = TerminalUI()
-        self.human_player = HumanPlayer(self.board)
+        self.human_player = HumanPlayer(self.board, ui=self.ui)
         self.ai_player = AIPlayer(self.board)
 
     # -- win/lose checks --
@@ -254,7 +256,7 @@ def main() -> None:
         game = Game()
         game.run()
         sys.exit(0)
-    except KeyboardInterrupt:
+    except (KeyboardInterrupt, EOFError):
         print("\n游戏退出。")
         sys.exit(0)
     except Exception as exc:

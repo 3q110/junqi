@@ -112,26 +112,84 @@ class TerminalUI:
 
     # -- input --
 
-    def get_coordinates(self, prompt: str = "请输入坐标") -> tuple[int, int, int, int] | None:
-        """Prompt the user for move coordinates.
+    def prompt_move(self, board, selected=None):
+        """Two-step move selection: first select piece, then select destination.
 
-        Expects input in the form ``col1,row1 col2,row2`` (e.g. ``0,0 1,0``).
+        Parameters
+        ----------
+        board:
+            Current board state.
+        selected:
+            Currently selected (col, row) or None.
 
         Returns
         -------
-        A tuple ``(src_col, src_row, dst_col, dst_row)`` on success,
-        or ``None`` if the input is invalid.
+        (src_col, src_row, dst_col, dst_row) or None.
         """
-        try:
-            raw = input(prompt).strip()
-            parts = raw.split()
-            if len(parts) != 2:
-                raise ValueError("Expected two coordinates, e.g. '0,0 1,0'")
+        width = board.width
+        height = board.height
 
-            src_col, src_row = map(int, parts[0].split(","))
-            dst_col, dst_row = map(int, parts[1].split(","))
-            return (src_col, src_row, dst_col, dst_row)
+        if selected is None:
+            # Step 1: select a piece
+            while True:
+                print(f"\n选择棋子 (格式: col,row, 输入 q 退出): ", end="")
+                raw = input().strip()
+                if raw.lower() in ("q", "quit", "exit"):
+                    return None
+                try:
+                    parts = raw.split(",")
+                    if len(parts) != 2:
+                        print("格式错误，请使用 col,row (例如 0,0)")
+                        continue
+                    col, row = int(parts[0]), int(parts[1])
+                    if col < 0 or col >= width or row < 0 or row >= height:
+                        print(f"坐标超出范围 (0-{width-1}, 0-{height-1})")
+                        continue
+                    piece = board.get(col, row)
+                    if piece is None:
+                        print("该位置没有棋子")
+                        continue
+                    if piece.side != "human":
+                        print("这不是你的棋子")
+                        continue
+                    selected = (col, row)
+                    print(f"已选择: ({col},{row}) — 请选择目标位置 (格式: col,row, 输入 c 取消)")
+                except ValueError:
+                    print("格式错误，请使用 col,row (例如 0,0)")
+                else:
+                    break
 
-        except (ValueError, IndexError):
-            print(f"{_RED}Invalid input. Please use format: 'col1,row1 col2,row2'{_RESET}")
-            return None
+            # Step 2: select destination
+            src_col, src_row = selected
+            piece = board.get(src_col, src_row)
+            symbols = {
+                "司": "军长", "军": "司令", "师": "师长", "旅": "旅长",
+                "团": "团长", "营": "营长", "连": "连长", "排": "排长",
+                "工": "工兵", "炸": "炸弹", "地雷": "地雷", "旗": "军旗"
+            }
+            sym = _PIECE_SYMBOLS.get(piece.piece_type, "?")
+            name = symbols.get(sym, piece.piece_type.name)
+            print(f"棋子: {name} at ({src_col},{src_row})")
+            print("可移动方向: ↑(0,-1) ↓(0,1) ←(-1,0) →(1,0)")
+
+            while True:
+                print(f"选择目标 (格式: col,row, 输入 c 取消): ", end="")
+                raw = input().strip()
+                if raw.lower() in ("c", "cancel"):
+                    selected = None
+                    return self.prompt_move(board, selected)
+                try:
+                    parts = raw.split(",")
+                    if len(parts) != 2:
+                        print("格式错误，请使用 col,row (例如 1,0)")
+                        continue
+                    dst_col, dst_row = int(parts[0]), int(parts[1])
+                    if dst_col < 0 or dst_col >= width or dst_row < 0 or dst_row >= height:
+                        print(f"坐标超出范围 (0-{width-1}, 0-{height-1})")
+                        continue
+                    return (src_col, src_row, dst_col, dst_row)
+                except ValueError:
+                    print("格式错误，请使用 col,row (例如 1,0)")
+        else:
+            # Should not reach here, but handle gracefully
+            return self.prompt_move(board, None)

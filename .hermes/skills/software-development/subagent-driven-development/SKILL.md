@@ -350,3 +350,11 @@ When the orchestration involves significant context usage, long review loops, or
 - **`references/gates-taxonomy.md`** — The four canonical gate types (Pre-flight, Revision, Escalation, Abort) with behavior, recovery, and examples. Load when designing or reviewing any workflow that has validation checkpoints — use the vocabulary explicitly so each gate has defined entry, failure behavior, and resumption rules.
 
 Both references adapted from gsd-build/get-shit-done (MIT © 2025 Lex Christopherson).
+
+When working on board game projects or testing game logic, load:
+
+- **`references/board-game-testing-patterns.md`** — Patterns for testing "no valid moves" scenarios, battle resolution edge cases, and common pitfalls when modifying board state in integration tests.
+
+When debugging or testing project code, load:
+
+- **`references/execute-code-sandbox-limitations.md`** — Why `execute_code` fails for project imports and the `terminal` workaround.

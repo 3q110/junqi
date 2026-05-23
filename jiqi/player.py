@@ -136,19 +136,19 @@ class GameSetup:
 
 
 class HumanPlayer:
-    """Human player — move selection via UI (not yet implemented)."""
+    """Human player — move selection via UI."""
 
-    def __init__(self, board: Board, name: str = "玩家") -> None:
+    def __init__(self, board: Board, name: str = "玩家", ui=None) -> None:
         self.board = board
         self.name = name
+        self.ui = ui
+        self._selected = None  # (col, row) of selected piece
 
     def get_move(self) -> Optional[Tuple[int, int, int, int]]:
-        """Request a move from the human player.
-
-        Returns (src_col, src_row, dst_col, dst_row) or None.
-        Raises NotImplementedError until UI is connected.
-        """
-        raise NotImplementedError("HumanPlayer.get_move() requires a UI")
+        """Request a move from the human player via UI."""
+        if self.ui is None:
+            raise NotImplementedError("HumanPlayer.get_move() requires a UI")
+        return self.ui.prompt_move(self.board, self._selected)
 
 
 class AIPlayer:

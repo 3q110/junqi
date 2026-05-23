@@ -1,1 +1,3 @@
 User is working on a 军旗 (Chinese military chess) human-vs-AI terminal game project in jiqi/ directory. Started 2026-05-23. Plan saved at ~/.hermes/plans/2026-05-23-军旗人机对战.md. Simple mode AI (random moves), standard 40-piece rules.
+§
+军旗项目 (jiqi/) uses 24 pieces per side (48 total), not the standard 40. GameSetup.setup_pieces() creates this specific set: 司令/军长/师长/旅长/团长/营长/连长/排长/工兵各1, 地雷×3, 炸弹×3, 军旗×1 per side.
