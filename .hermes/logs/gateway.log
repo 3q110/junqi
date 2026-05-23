@@ -302,3 +302,49 @@
 2026-05-23 18:39:34,984 INFO gateway.platforms.base: [Weixin] Sending response (309 chars) to o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat
 2026-05-23 18:39:53,987 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
 2026-05-23 18:39:53,987 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='我要试玩'
+2026-05-23 18:40:40,996 INFO gateway.run: response ready: platform=weixin chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat time=47.0s api_calls=17 response=263 chars
+2026-05-23 18:40:41,001 INFO gateway.platforms.base: [Weixin] Sending response (263 chars) to o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat
+2026-05-23 18:40:41,141 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:40:44,271 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:40:47,396 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:40:50,530 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:40:53,690 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:40:53,690 WARNING gateway.platforms.base: [Weixin] Send failed: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited — trying plain-text fallback
+2026-05-23 18:40:53,839 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:40:56,952 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:41:00,093 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:41:03,246 WARNING gateway.platforms.weixin: [Weixin] rate limited for o9cq80_V; backing off 3.0s before retry
+2026-05-23 18:41:06,395 ERROR gateway.platforms.weixin: [Weixin] send failed to=o9cq80_V: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:41:06,395 ERROR gateway.platforms.base: [Weixin] Fallback send also failed: iLink sendmessage rate limited: ret=-2 errcode=None errmsg=rate limited
+2026-05-23 18:42:27,162 INFO gateway.memory_monitor: [MEMORY] rss=233MB gc=(228, 9, 14) threads=13 uptime=3600s
+2026-05-23 18:47:27,162 INFO gateway.memory_monitor: [MEMORY] rss=233MB gc=(181, 10, 14) threads=11 uptime=3900s
+2026-05-23 18:50:04,385 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 18:50:04,386 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='提交到哪了？给我看看。'
+2026-05-23 18:50:33,663 INFO gateway.run: response ready: platform=weixin chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat time=29.3s api_calls=2 response=202 chars
+2026-05-23 18:50:33,669 INFO gateway.platforms.base: [Weixin] Sending response (202 chars) to o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat
+2026-05-23 18:52:27,163 INFO gateway.memory_monitor: [MEMORY] rss=233MB gc=(265, 0, 17) threads=11 uptime=4200s
+2026-05-23 18:53:07,171 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 18:53:07,171 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='我的github是https://github.com/3q110'
+2026-05-23 18:53:25,331 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 18:53:25,331 INFO gateway.run: Gateway intercepted clarify text response (session=agent:main:weixin:dm:o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat, id=c3f3f83d66)
+2026-05-23 18:54:14,778 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 18:54:14,778 INFO gateway.run: User approved 1 dangerous command(s) via /approve (always)
+2026-05-23 18:54:30,438 INFO gateway.run: response ready: platform=weixin chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat time=83.3s api_calls=18 response=256 chars
+2026-05-23 18:54:30,444 INFO gateway.platforms.base: [Weixin] Sending response (256 chars) to o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat
+2026-05-23 18:57:27,163 INFO gateway.memory_monitor: [MEMORY] rss=235MB gc=(306, 10, 22) threads=11 uptime=4500s
+2026-05-23 18:58:35,408 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 18:58:35,408 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='ghp_Jb...8E2H'
+2026-05-23 18:59:08,230 INFO gateway.run: response ready: platform=weixin chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat time=32.8s api_calls=3 response=468 chars
+2026-05-23 18:59:08,236 INFO gateway.platforms.base: [Weixin] Sending response (468 chars) to o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat
+2026-05-23 19:01:03,800 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 19:01:03,801 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='ghp_yN...lhLD'
+2026-05-23 19:01:52,034 INFO gateway.run: response ready: platform=weixin chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat time=48.2s api_calls=8 response=48 chars
+2026-05-23 19:01:52,039 INFO gateway.platforms.base: [Weixin] Sending response (48 chars) to o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat
+2026-05-23 19:02:27,164 INFO gateway.memory_monitor: [MEMORY] rss=236MB gc=(72, 1, 27) threads=11 uptime=4800s
+2026-05-23 19:03:10,074 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 19:03:10,074 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='成功了吗'
+2026-05-23 19:03:48,371 INFO [20260523_183143_5b46a3] gateway.run: Session split detected: 20260523_183143_5b46a3 → 20260523_190328_9758c8 (compression)
+2026-05-23 19:03:48,464 INFO gateway.run: response ready: platform=weixin chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat time=38.4s api_calls=1 response=189 chars
+2026-05-23 19:03:48,469 INFO gateway.platforms.base: [Weixin] Sending response (189 chars) to o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat
+2026-05-23 19:04:06,624 INFO gateway.platforms.weixin: [Weixin] inbound from=o9cq80_V type=dm media=0
+2026-05-23 19:04:06,624 INFO gateway.run: inbound message: platform=weixin user=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat chat=o9cq80_VgJsys8a9zCW4e0FXKsvQ@im.wechat msg='要'

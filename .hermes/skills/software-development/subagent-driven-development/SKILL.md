@@ -353,8 +353,24 @@ Both references adapted from gsd-build/get-shit-done (MIT © 2025 Lex Christophe
 
 When working on board game projects or testing game logic, load:
 
-- **`references/board-game-testing-patterns.md`** — Patterns for testing "no valid moves" scenarios, battle resolution edge cases, and common pitfalls when modifying board state in integration tests.
+- **`references/board-game-testing-patterns.md`** — Patterns for testing "no valid moves" scenarios, battle resolution edge cases, common pitfalls when modifying board state, and wiring dependency bugs.
 
 When debugging or testing project code, load:
 
 - **`references/execute-code-sandbox-limitations.md`** — Why `execute_code` fails for project imports and the `terminal` workaround.
+
+## Pitfalls Specific to This User's Projects
+
+### Dependency Wiring During Subagent Implementation
+
+When dispatching subagents for multi-component projects (e.g., Player → UI → Game), always verify that all dependencies are wired at initialization time. A common failure mode: subagent implements a class correctly in isolation, but the game loop instantiates it without required arguments.
+
+**Rule:** After all tasks are complete, check that every `Player`/`UI`/`Game` constructor receives all its dependencies. Look for patterns like `HumanPlayer(self.board)` that should be `HumanPlayer(self.board, ui=self.ui)`.
+
+### Board Game: Battle Rule Symmetry
+
+When implementing battle resolution (`resolve_battle`), always check **both** attacker and defender for special pieces (bomb, sapper vs mine). A common bug: only checking if the *defender* is a bomb, missing the case where the *attacker* is a bomb.
+
+**Rule:** For each special piece interaction, verify both directions:
+- Bomb attacks any piece → `both_die` (not just when defender is bomb)
+- Sapper attacks mine → `attacker_wins` (not just when attacker is sapper)

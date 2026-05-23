@@ -1,6 +1,6 @@
 # Board Game Testing Patterns
 
-Patterns for testing board game logic, especially "no valid moves" scenarios.
+Patterns for testing "no valid moves" scenarios, battle resolution edge cases, common pitfalls when modifying board state, and CLI game interaction patterns.
 
 ## Testing "No Valid Moves"
 
@@ -61,4 +61,93 @@ if defender.piece_type == PieceType.BOMB:
 # FIX: check both
 if attacker.piece_type == PieceType.BOMB or defender.piece_type == PieceType.BOMB:
     return "both_die"
+```
+
+## Testing Player-UI Wiring
+
+**Problem:** Player classes need a UI object for interactive input, but it's often not passed during initialization.
+
+**Pitfall:** `HumanPlayer.__init__()` accepts a `ui` parameter but the game loop creates `HumanPlayer(board)` without passing `ui`, causing `AttributeError: 'HumanPlayer' object has no attribute 'ui'` at runtime.
+
+**Fix:** Always wire the UI at initialization time:
+
+```python
+# In Game.__init__:
+self.ui = TerminalUI()
+self.human_player = HumanPlayer(self.board, ui=self.ui)  # pass ui!
+```
+
+**Debugging tip:** If the game starts but crashes on the first player turn, check that all `Player` objects received their `ui` dependency.
+
+## CLI Game: Two-Step Move Selection Pattern
+
+**Problem:** In a CLI game, players need to select a piece first, then a destination. A single `input()` call that asks for "source destination" is error-prone — players often mistype or don't know valid destinations.
+
+**Solution: Two-step recursive `prompt_move()` method.**
+
+```python
+def prompt_move(self, board, selected=None):
+    """Two-step move selection: first select piece, then select destination.
+
+    Returns (src_col, src_row, dst_col, dst_row) or None.
+    """
+    if selected is None:
+        # Step 1: select a piece
+        while True:
+            print("选择棋子 (格式: col,row, 输入 q 退出): ", end="")
+            raw = input().strip()
+            if raw.lower() in ("q", "quit", "exit"):
+                return None
+            col, row = parse_coords(raw)
+            piece = board.get(col, row)
+            if not piece or piece.side != "human":
+                print("这不是你的棋子")
+                continue
+            selected = (col, row)
+            print(f"已选择: ({col},{row}) — 请选择目标位置 (输入 c 取消)")
+            break
+
+        # Step 2: select destination
+        while True:
+            print("选择目标 (格式: col,row, 输入 c 取消): ", end="")
+            raw = input().strip()
+            if raw.lower() in ("c", "cancel"):
+                selected = None  # restart
+                return self.prompt_move(board, selected)
+            dst_col, dst_row = parse_coords(raw)
+            return (selected[0], selected[1], dst_col, dst_row)
+    else:
+        return self.prompt_move(board, None)
+```
+
+**Key design decisions:**
+- **Recursive restart on cancel:** When the player cancels in step 2, `selected` is reset to `None` and the method recurses back to step 1. This avoids nested state management.
+- **Validation in step 1:** Only allow selecting own pieces. Invalid selections loop without advancing state.
+- **`q` to quit, `c` to cancel:** Distinct escape hatches prevent accidental exits.
+- **Return `None` on quit:** The game loop should check for `None` and exit gracefully.
+
+**Integration with `HumanPlayer`:**
+
+```python
+class HumanPlayer:
+    def __init__(self, board, name="玩家", ui=None):
+        self.board = board
+        self.name = name
+        self.ui = ui
+        self._selected = None
+
+    def get_move(self):
+        if self.ui is None:
+            raise NotImplementedError("HumanPlayer.get_move() requires a UI")
+        return self.ui.prompt_move(self.board, self._selected)
+```
+
+**EOFError handling:** In non-interactive contexts (piped input, CI), `input()` raises `EOFError`. Always catch it in the game loop:
+
+```python
+try:
+    game.run()
+except (KeyboardInterrupt, EOFError):
+    print("\n游戏退出。")
+    sys.exit(0)
 ```

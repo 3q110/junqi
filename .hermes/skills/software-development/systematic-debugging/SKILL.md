@@ -326,6 +326,22 @@ Use these Hermes tools during Phase 1:
 - **`terminal`** — Run tests, check git history, reproduce bugs
 - **`web_search`/`web_extract`** — Research error messages, library docs
 
+### Debugging Integration Tests: The "Why Does My Test Fail?" Pattern
+
+When integration tests fail but unit tests pass, the bug is usually in how components interact. Follow this pattern:
+
+1. **Run the failing test** — get the exact error message
+2. **Read the test code** — understand what it's trying to do
+3. **Trace through the source code** — read the relevant functions that the test exercises
+4. **Add a quick diagnostic** — use `terminal` to run a minimal script that reproduces the scenario step by step
+5. **Identify the mismatch** — the test expects behavior X, the code produces behavior Y
+
+**Common integration test failures:**
+- State was modified before the assertion (e.g., `board.remove()` removed a piece the test still needs)
+- A rule was implemented incorrectly (e.g., bomb attacks only check defender, not attacker)
+- A dependency was not wired (e.g., `HumanPlayer` created without `ui` argument)
+- The game loop logic doesn't match the expected flow (e.g., turn management, win condition checking)
+
 ### With delegate_task
 
 For complex multi-component debugging, dispatch investigation subagents:
