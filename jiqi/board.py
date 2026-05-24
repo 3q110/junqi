@@ -10,16 +10,9 @@ class Board:
     WIDTH = 7
     HEIGHT = 11
 
-    # 铁路线位置（简化版：第2行和第9行为横贯铁路线）
+    # 铁路线位置（第2行和第9行为横贯铁路线）
     RAILWAY_ROWS = {2, 9}
 
-    @property
-    def width(self):
-        return self.WIDTH
-
-    @property
-    def height(self):
-        return self.HEIGHT
     # 竖直线铁路：第0列和第6列的第1-3行和第7-9行
     VERTICAL_RAILWAY = set()
     for r in range(1, 4):
@@ -28,19 +21,35 @@ class Board:
     for r in range(7, 10):
         VERTICAL_RAILWAY.add((r, 0))
         VERTICAL_RAILWAY.add((r, 6))
-    # 大本营
+
+    # 行营（安全区）：棋子在其中不能被攻击
+    # 黑方行营（上半部分）
+    # 红方行营（下半部分）
+    CAMPS = {
+        # 黑方行营
+        (1, 1), (1, 3), (1, 5),
+        (2, 2), (2, 4),
+        # 红方行营
+        (8, 2), (8, 4),
+        (9, 1), (9, 3), (9, 5),
+    }
+
+    # 大本营（军旗放置位置）
     HEADQUARTERS = {
         (0, 2), (0, 4),   # 黑方大本营
         (10, 2), (10, 4),  # 红方大本营
     }
-    # 军旗位置
-    FLAG_POSITIONS = {
-        (0, 3),   # 黑方军旗
-        (10, 3),  # 红方军旗
-    }
 
     def __init__(self):
         self.grid: List[List[Optional[Piece]]] = [[None] * self.WIDTH for _ in range(self.HEIGHT)]
+
+    @property
+    def width(self):
+        return self.WIDTH
+
+    @property
+    def height(self):
+        return self.HEIGHT
 
     def in_bounds(self, row: int, col: int) -> bool:
         """检查坐标是否在棋盘内"""
@@ -103,6 +112,36 @@ class Board:
         if (row, col) in self.VERTICAL_RAILWAY:
             return True
         return False
+
+    def is_camp(self, row: int, col: int) -> bool:
+        """检查位置是否为行营（安全区）"""
+        return (row, col) in self.CAMPS
+
+    def is_headquarter(self, row: int, col: int) -> bool:
+        """检查位置是否为大本营"""
+        return (row, col) in self.HEADQUARTERS
+
+    @staticmethod
+    def get_side_of_headquarter(row: int, col: int) -> Optional[str]:
+        """获取大本营属于哪一方"""
+        if (row, col) in {(0, 2), (0, 4)}:
+            return "black"
+        if (row, col) in {(10, 2), (10, 4)}:
+            return "red"
+        return None
+
+    def is_flag_alive(self, side: str) -> bool:
+        """检查某方的军旗是否还在棋盘上"""
+        for r in range(self.HEIGHT):
+            for c in range(self.WIDTH):
+                p = self.grid[r][c]
+                if p and p.is_alive and p.piece_type == PieceType.FLAG and p.side == side:
+                    return True
+        return False
+
+    def is_camp_or_hq(self, row: int, col: int) -> bool:
+        """检查位置是否为行营或大本营"""
+        return self.is_camp(row, col) or self.is_headquarter(row, col)
 
     def __repr__(self):
         lines = []

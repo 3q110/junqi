@@ -86,11 +86,12 @@ class UI:
     def _render_cell(cls, piece: Optional[Piece], row: int, col: int, board: Board) -> str:
         """渲染单个格子"""
         if piece is None:
-            # 特殊位置标记
-            if (row, col) in board.FLAG_POSITIONS:
-                return "[★]"
-            elif (row, col) in board.HEADQUARTERS:
-                return "[营]"
+            # 行营（安全区）
+            if board.is_camp(row, col):
+                return f"{cls.GREEN}[营]{cls.RESET}"
+            # 大本营
+            elif board.is_headquarter(row, col):
+                return f"{cls.BOLD}[♛]{cls.RESET}"
             else:
                 return "[·]"
 
@@ -174,9 +175,12 @@ class UI:
         print("  棋子等级: 司令 > 军长 > 师长 > 旅长 > 团长")
         print("            > 营长 > 连长 > 排长 > 工兵")
         print("  炸弹: 与任何棋子同归于尽")
-        print("  地雷: 只能被工兵或炸弹消灭")
-        print("  军旗: 被捉即输")
-        print("  工兵: 可在铁路线上任意行走")
+        print("  地雷: 只能被工兵或炸弹消灭，放在后两行")
+        print("  军旗: 被捉即输，放在大本营")
+        print("  行营[营]: 棋子在行营内不能被攻击（安全区）")
+        print("  大本营[♛]: 敌方军旗被灭前不可入内")
+        print("  铁路线: 所有棋子可沿铁路直线移动")
+        print("  工兵: 可在铁路线上拐弯行走")
         print("  移动: 输入 起始行,起始列 目标行,目标列")
         print(f"  {'─'*40}\n")
 

@@ -37,63 +37,76 @@ class GameSetup:
         board = Board()
 
         # 黑方（上方，行 0-3 放置棋子）
-        cls._place_side(board, "black", rows=[0, 1, 2, 3], flag_pos=(0, 3))
+        cls._place_side(board, "black", rows=[0, 1, 2, 3], flag_positions=[(0, 2), (0, 4)])
 
         # 红方（下方，行 7-10 放置棋子）
-        cls._place_side(board, "red", rows=[7, 8, 9, 10], flag_pos=(10, 3))
+        cls._place_side(board, "red", rows=[7, 8, 9, 10], flag_positions=[(10, 2), (10, 4)])
 
         return board
 
     @classmethod
-    def _place_side(cls, board: Board, side: str, rows: list, flag_pos: Tuple[int, int]):
-        """放置一方的棋子（24枚）
+    def _place_side(cls, board: Board, side: str, rows: list, flag_positions: list):
+        """放置一方的棋子（25枚）
 
-        布局策略：
-        - 军旗固定在最后一排中间
-        - 地雷放在最后一排
-        - 其余棋子随机分布在前几排
+        标准布局规则：
+        - 军旗放在大本营（随机从两个大本营选一个）
+        - 地雷放在己方后两行
+        - 炸弹不能放在第一排（己方底线）
+        - 其余棋子随机分布
         """
         # 生成棋子列表
         pieces = []
         for piece_type, count in cls.PIECE_CONFIG:
             pieces.extend([piece_type] * count)
 
-        # 军旗固定位置
+        # 移除军旗（单独放置）
         pieces.remove(PieceType.FLAG)
 
-        # 分离地雷
+        # 分离地雷、炸弹和其余棋子
         mines = [pt for pt in pieces if pt == PieceType.MINE]
-        remaining = [pt for pt in pieces if pt != PieceType.MINE]
+        bombs = [pt for pt in pieces if pt == PieceType.BOMB]
+        remaining = [pt for pt in pieces if pt not in (PieceType.MINE, PieceType.BOMB)]
 
         # 随机打乱
         random.shuffle(mines)
+        random.shuffle(bombs)
         random.shuffle(remaining)
 
-        # 可放位置列表
-        positions = [(r, c) for r in rows for c in range(7)]
+        # 1. 军旗放在随机一个大本营
+        random.shuffle(flag_positions)
+        flag_r, flag_c = flag_positions[0]
+        board.place(Piece(PieceType.FLAG, side), flag_r, flag_c)
 
-        # 先放军旗
-        board.place(Piece(PieceType.FLAG, side), flag_pos[0], flag_pos[1])
+        # 2. 地雷放在己方后两行（最靠近己方底线的两行）
+        if side == "black":
+            back_rows = [rows[0], rows[1]]  # 行 0, 1
+            forbidden_bomb_row = rows[0]    # 炸弹不能放在行 0
+        else:
+            back_rows = [rows[-1], rows[-2]]  # 行 10, 9
+            forbidden_bomb_row = rows[-1]     # 炸弹不能放在行 10
 
-        # 地雷放到最后一排（己方底线）
-        last_row = rows[-1]
-        all_cols = list(range(7))
-        all_cols.remove(3)  # 排除军旗位置
-        random.shuffle(all_cols)
-        mine_slots = [(last_row, c) for c in all_cols[:3]]
-
+        back_positions = [(r, c) for r in back_rows for c in range(7)
+                          if board.get(r, c) is None]
+        random.shuffle(back_positions)
         for i, pt in enumerate(mines):
-            r, c = mine_slots[i]
+            r, c = back_positions[i]
             board.place(Piece(pt, side), r, c)
 
-        # 其余棋子随机放置
-        available = [pos for pos in positions if pos != flag_pos and pos not in mine_slots]
-        random.shuffle(available)
+        # 3. 炸弹不能放在第一排（己方底线）
+        bomb_positions = [(r, c) for r in rows if r != forbidden_bomb_row
+                          for c in range(7) if board.get(r, c) is None]
+        random.shuffle(bomb_positions)
+        for i, pt in enumerate(bombs):
+            r, c = bomb_positions[i]
+            board.place(Piece(pt, side), r, c)
 
+        # 4. 其余棋子随机放置到剩余空位
+        remaining_positions = [(r, c) for r in rows for c in range(7)
+                               if board.get(r, c) is None]
+        random.shuffle(remaining_positions)
         for i, pt in enumerate(remaining):
-            if i < len(available):
-                r, c = available[i]
-                board.place(Piece(pt, side), r, c)
+            r, c = remaining_positions[i]
+            board.place(Piece(pt, side), r, c)
 
 
 class Game:

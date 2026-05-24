@@ -13,6 +13,13 @@ class Rules:
         """
         获取指定位置棋子的所有合法移动目标。
 
+        规则概要：
+        - 8 方向相邻移动（所有可行走棋子）
+        - 铁路线直线移动（任何在铁路线上的棋子）
+        - 工兵可在铁路线拐弯（BFS 遍历整个铁路网）
+        - 行营保护：不能吃掉行营里的棋子
+        - 大本营限制：敌方只能在我军旗被吃后进入大本营
+
         Returns:
             合法目标位置列表 [(row, col), ...]
         """
@@ -22,19 +29,70 @@ class Rules:
         if not piece.is_movable:
             return []
 
+        moves = Rules._normal_moves(board, row, col, piece)
+
+        # 任何在铁路线上的棋子均可沿铁路直线移动
+        if board.is_on_railway(row, col):
+            rail_straight = Rules._railway_straight_moves(board, row, col, piece)
+            seen = set(moves)
+            for m in rail_straight:
+                if m not in seen:
+                    moves.append(m)
+                    seen.add(m)
+
+        # 工兵特权：可在铁路线拐弯（BFS）
         if piece.piece_type == PieceType.SAPPER:
-            return Rules._sapper_moves(board, row, col)
-        else:
-            return Rules._normal_moves(board, row, col)
+            sapper_turns = Rules._railway_sapper_moves(board, row, col, piece)
+            seen = set(moves)
+            for m in sapper_turns:
+                if m not in seen:
+                    moves.append(m)
+                    seen.add(m)
+
+        return moves
 
     @staticmethod
-    def _normal_moves(board: Board, row: int, col: int) -> List[Tuple[int, int]]:
-        """普通棋子的移动（只能走到相邻格）"""
-        piece = board.get(row, col)
-        if not piece:
-            return []
+    def _is_target_valid(board: Board, piece: Piece, nr: int, nc: int) -> bool:
+        """
+        统一的目标位置合法性检查。
 
-        # 8 个方向
+        检查项：
+        1. 不能走到己方棋子位置
+        2. 行营保护：不能攻击行营中的棋子
+        3. 大本营限制：敌方棋子只能在军旗被吃后进入大本营
+        4. 空位可走
+        5. 敌方棋子按吃子规则判断
+        """
+        if not board.in_bounds(nr, nc):
+            return False
+
+        target = board.get(nr, nc)
+
+        # 不能走到己方棋子位置
+        if target and target.side == piece.side:
+            return False
+
+        # 行营保护：不能攻击行营里的棋子
+        if target and target.side != piece.side and board.is_camp(nr, nc):
+            return False
+
+        # 大本营限制：敌方棋子只能在军旗被吃后进入大本营
+        if board.is_headquarter(nr, nc):
+            hq_side = Board.get_side_of_headquarter(nr, nc)
+            if hq_side and hq_side != piece.side:
+                if board.is_flag_alive(hq_side):
+                    return False
+
+        # 空位 → 可走
+        if target is None:
+            return True
+
+        # 敌方棋子 → 按吃子规则判断
+        return piece.can_eat(target)
+
+    @staticmethod
+    def _normal_moves(board: Board, row: int, col: int, piece: Piece) -> List[Tuple[int, int]]:
+        """普通棋子的移动：只能走到 8 方向相邻格"""
         directions = [
             (-1, -1), (-1, 0), (-1, 1),
             (0, -1),           (0, 1),
@@ -44,61 +102,66 @@ class Rules:
         moves = []
         for dr, dc in directions:
             nr, nc = row + dr, col + dc
-            if not board.in_bounds(nr, nc):
-                continue
-            target = board.get(nr, nc)
-            if target is None:
-                moves.append((nr, nc))
-            elif target.side != piece.side and piece.can_eat(target):
+            if Rules._is_target_valid(board, piece, nr, nc):
                 moves.append((nr, nc))
         return moves
 
     @staticmethod
-    def _sapper_moves(board: Board, row: int, col: int) -> List[Tuple[int, int]]:
+    def _railway_straight_moves(board: Board, row: int, col: int, piece: Piece) -> List[Tuple[int, int]]:
         """
-        工兵的移动：
-        - 普通相邻移动（同普通棋子）
-        - 如果在铁路线上，可以沿铁路线直走（可拐弯）
+        所有棋子在铁路线上的直线移动（非工兵专用）。
+        - 只能沿 4 个正方向（上/下/左/右）直走
+        - 不能拐弯
         """
-        piece = board.get(row, col)
-        if not piece:
-            return []
-
-        # 基本相邻移动
-        moves = Rules._normal_moves(board, row, col)
-
-        # 铁路线特殊移动
-        if board.is_on_railway(row, col):
-            rail_moves = Rules._railway_moves(board, row, col, piece)
-            # 合并去重
-            seen = set(moves)
-            for m in rail_moves:
-                if m not in seen:
-                    moves.append(m)
-                    seen.add(m)
-
-        return moves
-
-    @staticmethod
-    def _railway_moves(board: Board, row: int, col: int, piece: Piece) -> List[Tuple[int, int]]:
-        """工兵在铁路线上的移动：可以沿铁路线走到任意远"""
         moves = []
-        # 4 个直线方向
         directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 
         for dr, dc in directions:
             r, c = row + dr, col + dc
             while board.in_bounds(r, c) and board.is_on_railway(r, c):
-                target = board.get(r, c)
-                if target is None:
+                if Rules._is_target_valid(board, piece, r, c):
                     moves.append((r, c))
-                elif target.side != piece.side and piece.can_eat(target):
-                    moves.append((r, c))
-                    break
+                    # 如果目标有棋子，吃掉后停止在这个方向
+                    if board.get(r, c) is not None:
+                        break
                 else:
+                    # 被友方棋子阻挡或违规则停止
                     break
                 r += dr
                 c += dc
+
+        return moves
+
+    @staticmethod
+    def _railway_sapper_moves(board: Board, row: int, col: int, piece: Piece) -> List[Tuple[int, int]]:
+        """
+        工兵铁路线特权移动：BFS 遍历整个铁路网，可拐弯。
+        这是工兵对比其他棋子的核心优势。
+        """
+        moves = []
+        visited = {(row, col)}
+        queue = [(row, col)]
+        directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+
+        while queue:
+            cr, cc = queue.pop(0)
+            for dr, dc in directions:
+                nr, nc = cr + dr, cc + dc
+                if (nr, nc) in visited:
+                    continue
+                visited.add((nr, nc))
+
+                if not board.in_bounds(nr, nc):
+                    continue
+                if not board.is_on_railway(nr, nc):
+                    continue
+
+                if Rules._is_target_valid(board, piece, nr, nc):
+                    moves.append((nr, nc))
+                    # 空位可继续 BFS 扩展
+                    if board.get(nr, nc) is None:
+                        queue.append((nr, nc))
+                # 有棋子（友方或无法吃掉的敌方）→ 阻塞，不继续扩展
 
         return moves
 
@@ -139,16 +202,8 @@ class Rules:
             - "red_wins": 红方获胜
             - "black_wins": 黑方获胜
         """
-        red_flag = False
-        black_flag = False
-        for r in range(board.HEIGHT):
-            for c in range(board.WIDTH):
-                p = board.get(r, c)
-                if p and p.piece_type == PieceType.FLAG:
-                    if p.side == "red":
-                        red_flag = True
-                    else:
-                        black_flag = True
+        red_flag = board.is_flag_alive("red")
+        black_flag = board.is_flag_alive("black")
 
         if not red_flag:
             return "black_wins"

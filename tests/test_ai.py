@@ -29,16 +29,16 @@ class TestRandomAI(unittest.TestCase):
         commander = Piece(PieceType.COMMANDER, 'black')
         sapper = Piece(PieceType.SAPPER, 'red')
         self.board.place(commander, 0, 3)
-        self.board.place(sapper, 1, 3)
+        self.board.place(sapper, 1, 2)  # (1,2) is not a camp, so attack is valid
 
         # Run multiple times — all should be captures since only one move
         for _ in range(10):
             # Reset board for each iteration
             self.board = Board()
             self.board.place(Piece(PieceType.COMMANDER, 'black'), 0, 3)
-            self.board.place(Piece(PieceType.SAPPER, 'red'), 1, 3)
+            self.board.place(Piece(PieceType.SAPPER, 'red'), 1, 2)
             fr, fc, tr, tc = self.ai.make_move(self.board)
-            self.assertEqual((tr, tc), (1, 3))
+            self.assertEqual((tr, tc), (1, 2))
 
     def test_no_moves_raises(self):
         # Only a mine (cannot move)

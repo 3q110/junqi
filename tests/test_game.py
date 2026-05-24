@@ -18,13 +18,22 @@ class TestGameSetup(unittest.TestCase):
 
     def test_flag_positions(self):
         board = GameSetup.setup_board()
-        black_flag = board.get(0, 3)
-        red_flag = board.get(10, 3)
+        # Flag should be in one of the two HQ positions (randomly chosen)
+        black_hq = [(0, 2), (0, 4)]
+        red_hq = [(10, 2), (10, 4)]
+        black_flag = None
+        red_flag = None
+        for r, c in black_hq:
+            p = board.get(r, c)
+            if p and p.piece_type == PieceType.FLAG:
+                black_flag = p
+        for r, c in red_hq:
+            p = board.get(r, c)
+            if p and p.piece_type == PieceType.FLAG:
+                red_flag = p
         self.assertIsNotNone(black_flag)
-        self.assertEqual(black_flag.piece_type, PieceType.FLAG)
         self.assertEqual(black_flag.side, 'black')
         self.assertIsNotNone(red_flag)
-        self.assertEqual(red_flag.piece_type, PieceType.FLAG)
         self.assertEqual(red_flag.side, 'red')
 
     def test_mine_positions(self):
