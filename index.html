@@ -39,8 +39,82 @@
   .subtitle {
     font-size: clamp(0.8rem, 2.5vw, 0.95rem);
     color: #94a3b8;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
+
+  .difficulty-container {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+
+  .diff-btn {
+    padding: 6px 16px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    font-size: clamp(0.75rem, 2vw, 0.85rem);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .diff-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: 0 0 12px currentColor;
+  }
+
+  .diff-btn:hover::after { opacity: 0.5; }
+
+  .diff-btn.easy {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+  }
+  .diff-btn.easy:hover,
+  .diff-btn.easy.active {
+    background: rgba(34, 197, 94, 0.3);
+    border-color: #4ade80;
+    box-shadow: 0 0 16px rgba(34, 197, 94, 0.4);
+  }
+  .diff-btn.easy.active { color: #86efac; }
+
+  .diff-btn.medium {
+    background: rgba(234, 179, 8, 0.15);
+    color: #facc15;
+    border-color: rgba(234, 179, 8, 0.3);
+  }
+  .diff-btn.medium:hover,
+  .diff-btn.medium.active {
+    background: rgba(234, 179, 8, 0.3);
+    border-color: #facc15;
+    box-shadow: 0 0 16px rgba(234, 179, 8, 0.4);
+  }
+  .diff-btn.medium.active { color: #fde047; }
+
+  .diff-btn.hard {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border-color: rgba(239, 68, 68, 0.3);
+  }
+  .diff-btn.hard:hover,
+  .diff-btn.hard.active {
+    background: rgba(239, 68, 68, 0.3);
+    border-color: #f87171;
+    box-shadow: 0 0 16px rgba(239, 68, 68, 0.4);
+  }
+  .diff-btn.hard.active { color: #fca5a5; }
+
+  .diff-btn .diff-icon { font-size: 0.9em; }
+  .diff-btn .diff-label { margin-left: 4px; }
 
   .status-container {
     display: flex;
@@ -472,6 +546,18 @@
   <h1>🏁 军棋 · 人机对战</h1>
   <p class="subtitle">经典军旗游戏，智慧与策略的较量</p>
   
+  <div class="difficulty-container">
+    <button class="diff-btn easy" data-diff="easy" onclick="setDifficulty('easy')">
+      <span class="diff-icon">🟢</span><span class="diff-label">简单</span>
+    </button>
+    <button class="diff-btn medium active" data-diff="medium" onclick="setDifficulty('medium')">
+      <span class="diff-icon">🟡</span><span class="diff-label">普通</span>
+    </button>
+    <button class="diff-btn hard" data-diff="hard" onclick="setDifficulty('hard')">
+      <span class="diff-icon">🔴</span><span class="diff-label">困难</span>
+    </button>
+  </div>
+
   <div class="status-container">
     <div id="status">红方回合 - 请选择棋子</div>
     <div id="move-count">第 0 回合</div>
@@ -592,6 +678,49 @@ for (let r = 1; r <= 3; r++) { VERTICAL_RAILWAY.add(`${r},0`); VERTICAL_RAILWAY.
 for (let r = 7; r <= 9; r++) { VERTICAL_RAILWAY.add(`${r},0`); VERTICAL_RAILWAY.add(`${r},6`); }
 const FLAG_POSITIONS = [[0,3], [10,3]];
 
+// ========== 音效系统 ==========
+const SoundFX = (() => {
+  let ctx = null;
+  function getCtx() {
+    if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+    if (ctx.state === 'suspended') ctx.resume();
+    return ctx;
+  }
+  function tone(freq, duration, type = 'sine', vol = 0.3) {
+    const c = getCtx();
+    const o = c.createOscillator();
+    const g = c.createGain();
+    o.type = type;
+    o.frequency.setValueAtTime(freq, c.currentTime);
+    g.gain.setValueAtTime(vol, c.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, c.currentTime + duration);
+    o.connect(g); g.connect(c.destination);
+    o.start(c.currentTime); o.stop(c.currentTime + duration);
+  }
+  function noise(duration, vol = 0.2) {
+    const c = getCtx();
+    const buf = c.createBuffer(1, c.sampleRate * duration, c.sampleRate);
+    const d = buf.getChannelData(0);
+    for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1);
+    const src = c.createBufferSource();
+    src.buffer = buf;
+    const g = c.createGain();
+    g.gain.setValueAtTime(vol, c.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, c.currentTime + duration);
+    src.connect(g); g.connect(c.destination);
+    src.start(c.currentTime);
+  }
+  return {
+    select()   { tone(660, 0.08, 'sine', 0.25); },
+    move()     { tone(220, 0.1, 'triangle', 0.2); },
+    capture()  { tone(880, 0.05, 'square', 0.15); noise(0.12, 0.15); },
+    bomb()     { tone(120, 0.15, 'sawtooth', 0.25); noise(0.2, 0.25); },
+    win()      { [523, 659, 784, 1047].forEach((f,i) => setTimeout(() => tone(f,0.2,'sine',0.3), i*120)); },
+    lose()     { [784, 659, 523, 392].forEach((f,i) => setTimeout(() => tone(f,0.25,'sine',0.25), i*150)); },
+    error()    { tone(100, 0.15, 'sawtooth', 0.15); }
+  };
+})();
+
 // ========== 游戏状态 ==========
 let board = [];
 let selected = null;
@@ -600,6 +729,7 @@ let gameOver = false;
 let lastMove = null;
 let moveCount = 0;
 let history = []; // 用于悔棋的历史记录
+let currentDifficulty = 'medium'; // 'easy' | 'medium' | 'hard'
 
 // ========== 工具函数 ==========
 function shuffle(arr) {
@@ -713,31 +843,127 @@ function updateStats() {
   document.getElementById('move-count').textContent = `第 ${Math.floor(moveCount / 2)} 回合`;
 }
 
+// ========== AI 棋子价值 ==========
+const PIECE_VALUES = {
+  COMMANDER: 100, ARMY_COMMANDER: 80, DIVISION_COMMANDER: 60,
+  BRIGADE_COMMANDER: 50, REGIMENT_COMMANDER: 40, BATTALION_COMMANDER: 30,
+  COMPANY_COMMANDER: 20, PLATOON_LEADER: 10, SAPPER: 15,
+  BOMB: 35, MINE: 25, FLAG: 999
+};
+
 // ========== AI ==========
-function aiMove() {
+function aiMove(difficulty) {
   const moves = getAllMoves('black');
   if (!moves.length) return null;
-  
-  // 简单策略：优先吃子，优先吃高级别棋子
-  const captures = [];
-  const otherMoves = [];
-  
+  difficulty = difficulty || currentDifficulty;
+
+  // ---- 简单难度：随机为主 ----
+  if (difficulty === 'easy') {
+    const captures = moves.filter(m => board[m[2]][m[3]]);
+    // 30% 概率吃子，70% 随机走
+    if (captures.length && Math.random() < 0.3) {
+      return captures[Math.floor(Math.random() * captures.length)];
+    }
+    return moves[Math.floor(Math.random() * moves.length)];
+  }
+
+  // ---- 普通难度：优先吃子 ----
+  if (difficulty === 'medium') {
+    const captures = [];
+    const otherMoves = [];
+    for (const move of moves) {
+      const [fr, fc, tr, tc] = move;
+      const target = board[tr][tc];
+      if (target) captures.push({move, rank: PIECE_TYPES[target.type].rank});
+      else otherMoves.push(move);
+    }
+    if (captures.length) {
+      captures.sort((a, b) => a.rank - b.rank);
+      return captures[0].move;
+    }
+    return otherMoves[Math.floor(Math.random() * otherMoves.length)];
+  }
+
+  // ---- 困难难度：综合评估 ----
+  // 评分策略：吃子价值 + 进攻推进 + 防守保护 + 风险控制
+  let bestMove = null, bestScore = -Infinity;
+
   for (const move of moves) {
     const [fr, fc, tr, tc] = move;
-    const target = board[tr][tc];
-    if (target) {
-      captures.push({move, rank: PIECE_TYPES[target.type].rank});
+    const attacker = board[fr][fc];
+    const defender = board[tr][tc];
+    let score = Math.random() * 0.1; // 少量随机避免确定性
+
+    // 进攻推进：越靠近对方底线越好
+    score += (10 - tr) * 2;
+
+    // 中央控制：靠近中间列有价值
+    score += (3 - Math.abs(tc - 3)) * 0.5;
+
+    // 吃子评估
+    if (defender) {
+      const atVal = PIECE_VALUES[attacker.type];
+      const dfVal = PIECE_VALUES[defender.type];
+
+      if (attacker.type === 'BOMB') {
+        // 用炸弹炸高级棋子更划算
+        score += dfVal * 1.5;
+      } else if (dfVal > atVal) {
+        // 以小吃大，高收益
+        score += dfVal - atVal + 50;
+      } else if (atVal > dfVal * 1.5 && dfVal > 20) {
+        // 大材小用：高价值棋子吃低价值，扣分（除非低价值已很高）
+        score -= atVal - dfVal;
+      } else {
+        // 正常吃子
+        score += 30;
+      }
+
+      // 特殊处理：吃军旗直接赢
+      if (defender.type === 'FLAG') score += 10000;
+
+      // 避免吃地雷（除非是工兵）
+      if (defender.type === 'MINE' && attacker.type !== 'SAPPER') score -= 100;
+
     } else {
-      otherMoves.push(move);
+      // 移动奖励：向敌军方向前进
+      score += 1;
+    }
+
+    // 风险评估：AI自己的棋子是否会被反吃
+    for (const [nr, nc] of [[tr-1,tc],[tr+1,tc],[tr,tc-1],[tr,tc+1]]) {
+      if (!inBounds(nr, nc)) continue;
+      const neighbor = board[nr][nc];
+      if (neighbor && neighbor.side === 'red') {
+        const atVal = PIECE_VALUES[attacker.type];
+        const nbVal = PIECE_VALUES[neighbor.type];
+        if (neighbor.type === 'BOMB') {
+          score -= atVal * 1.5; // 走到炸弹旁边很危险
+        } else if (neighbor.type === 'SAPPER' && attacker.type === 'MINE') {
+          score -= 50; // 地雷靠近工兵
+        } else if (nbVal <= atVal) {
+          // 对方吃了也会死（同级或更小），风险很小
+        } else {
+          score -= (nbVal - atVal) * 0.5; // 可能被吃，适当扣分
+        }
+      }
+    }
+
+    // 保护军旗：军旗附近尽量不放空
+    if (tr === 10 && tc === 3) score += 100; // 走向敌方军旗
+    const flagRow = 0, flagCol = 3;
+    if (tr >= flagRow && tr <= flagRow + 2 && Math.abs(tc - flagCol) <= 1) {
+      // 防守己方军旗区域
+      if (PIECE_VALUES[attacker.type] >= 30) score += 5;
+    }
+
+    if (score > bestScore) {
+      bestScore = score;
+      bestMove = move;
     }
   }
-  
-  if (captures.length) {
-    // 优先吃等级高的
-    captures.sort((a, b) => a.rank - b.rank);
-    return captures[0].move;
-  }
-  return otherMoves[Math.floor(Math.random() * otherMoves.length)];
+
+  return bestMove;
 }
 
 // ========== 初始化棋盘 ==========
@@ -917,20 +1143,29 @@ function executeMove(fr, fc, tr, tc, side) {
     board[fr][fc] = null;
     board[tr][tc] = attacker;
     addLog(`${sideName}: ${atName} (${fr},${fc}) → (${tr},${tc})`, sideCls);
+    if (side === 'red') SoundFX.move();
   } else if (result === 'attack_wins') {
     const dtName = PIECE_TYPES[defender.type].name;
     board[fr][fc] = null;
     board[tr][tc] = attacker;
     addLog(`${sideName}: ${atName} 吃掉 ${dtName}!`, sideCls + ' capture');
+    SoundFX.capture();
   } else if (result === 'mutual') {
     const dtName = PIECE_TYPES[defender.type].name;
     board[fr][fc] = null;
     board[tr][tc] = null;
     addLog(`${sideName}: ${atName} 与 ${dtName} 同归于尽!`, sideCls + ' capture');
+    if (attacker.type === 'BOMB' || defender.type === 'BOMB') {
+      SoundFX.bomb();
+    } else {
+      SoundFX.capture();
+    }
   } else if (result === 'defend_wins') {
     const dtName = PIECE_TYPES[defender.type].name;
     board[fr][fc] = null;
     addLog(`${sideName}: ${atName} 被 ${dtName} 吃掉!`, sideCls);
+    if (side === 'red') SoundFX.error();
+    else SoundFX.capture();
   }
 
   lastMove = [fr, fc, tr, tc];
@@ -964,6 +1199,8 @@ function undoMove() {
 }
 
 function showGameOver(result) {
+  if (result === 'red_wins') SoundFX.win();
+  else SoundFX.lose();
   const overlay = document.createElement('div');
   overlay.className = 'game-over-overlay';
   overlay.innerHTML = `
@@ -997,6 +1234,7 @@ function onCellClick(r, c) {
   // 选择己方棋子
   if (piece && piece.side === 'red') {
     selected = [r, c];
+    SoundFX.select();
     render();
     return;
   }
@@ -1015,6 +1253,7 @@ function onCellClick(r, c) {
         render();
         
         // AI 回合
+        const aiDelay = currentDifficulty === 'easy' ? 400 : currentDifficulty === 'hard' ? 1000 : 700;
         setTimeout(() => {
           const ai = aiMove();
           if (ai) {
@@ -1024,13 +1263,22 @@ function onCellClick(r, c) {
           }
           currentSide = 'red';
           render();
-        }, 700);
+        }, aiDelay);
       }
     } else {
+      if (piece && piece.side !== 'red') SoundFX.error();
       selected = null;
       render();
     }
   }
+}
+
+function setDifficulty(diff) {
+  currentDifficulty = diff;
+  document.querySelectorAll('.diff-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.diff-btn[data-diff="${diff}"]`).classList.add('active');
+  SoundFX.select();
+  restartGame();
 }
 
 function closeHelp() {
@@ -1044,17 +1292,20 @@ function restartGame() {
   lastMove = null;
   document.getElementById('log').innerHTML = '';
   setupBoard();
-  addLog('🎮 游戏开始！你控制红方，AI 控制黑方', 'system');
+  
+  const diffLabels = { easy: '🟢 简单', medium: '🟡 普通', hard: '🔴 困难' };
+  addLog(`🎮 游戏开始！难度：${diffLabels[currentDifficulty]}`, 'system');
   addLog('⚫ 黑方先手...', 'system');
   render();
   
   // AI 先手
+  const aiDelay = currentDifficulty === 'easy' ? 400 : currentDifficulty === 'hard' ? 1000 : 600;
   setTimeout(() => {
     const ai = aiMove();
     if (ai) executeMove(ai[0], ai[1], ai[2], ai[3], 'black');
     currentSide = 'red';
     render();
-  }, 600);
+  }, aiDelay);
 }
 
 // ========== 事件绑定 ==========
@@ -1070,12 +1321,12 @@ document.getElementById('help-modal').addEventListener('click', (e) => {
 
 // ========== 启动游戏 ==========
 setupBoard();
-addLog('🎮 游戏开始！你控制红方，AI 控制黑方', 'system');
+addLog('🎮 游戏开始！难度：🟡 普通', 'system');
 addLog('⚫ 黑方先手...', 'system');
 render();
 
 setTimeout(() => {
-  const ai = aiMove();
+  const ai = aiMove('medium');
   if (ai) executeMove(ai[0], ai[1], ai[2], ai[3], 'black');
   currentSide = 'red';
   render();
