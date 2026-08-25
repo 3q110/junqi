@@ -10,15 +10,14 @@ class Board:
     WIDTH = 7
     HEIGHT = 11
 
-    # 铁路线位置（第2行和第9行为横贯铁路线）
-    RAILWAY_ROWS = {2, 9}
+    # 铁路线位置（横贯铁路线）
+    # 标准军旗：每方底线附近各有一条横贯铁路，中间界河处也有横向铁路
+    RAILWAY_ROWS = {2, 5, 9}
 
-    # 竖直线铁路：第0列和第6列的第1-3行和第7-9行
+    # 竖直线铁路：第0列和第6列（左右边界）
+    # 从第1行贯穿到第9行，使棋子可以沿边界纵向移动
     VERTICAL_RAILWAY = set()
-    for r in range(1, 4):
-        VERTICAL_RAILWAY.add((r, 0))
-        VERTICAL_RAILWAY.add((r, 6))
-    for r in range(7, 10):
+    for r in range(1, 10):
         VERTICAL_RAILWAY.add((r, 0))
         VERTICAL_RAILWAY.add((r, 6))
 

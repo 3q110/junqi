@@ -7,7 +7,7 @@ from typing import Optional, Tuple
 from jiqi.board import Board
 from jiqi.piece import Piece, PieceType
 from jiqi.rules import Rules
-from jiqi.ai import RandomAI
+from jiqi.ai import HeuristicAI
 from jiqi.ui import UI
 
 
@@ -112,13 +112,14 @@ class GameSetup:
 class Game:
     """游戏主循环"""
 
-    def __init__(self):
+    def __init__(self, difficulty: str = "medium", max_moves: int = 500):
         self.board = GameSetup.setup_board()
         self.human_player = None  # 红方人类玩家
-        self.ai_player = RandomAI(side="black", name="AI")
+        self.ai_player = HeuristicAI(side="black", name="AI", difficulty=difficulty)
         self.current_side = "black"  # 黑方先手
         self.last_move = None
         self.move_count = 0
+        self.max_moves = max_moves  # 步数上限，防止无限僵持
 
     def run(self):
         """运行游戏"""
@@ -126,12 +127,27 @@ class Game:
         input("  按 Enter 开始游戏...")
 
         while True:
+            if not Rules.has_movable_pieces(self.board, self.current_side):
+                # 当前一方无棋可走
+                if Rules.has_movable_pieces(self.board, "red") or Rules.has_movable_pieces(self.board, "black"):
+                    # 仅对方仍有棋可走 → 当前方判负
+                    loser = self.current_side
+                    UI.print_game_over("black_wins" if loser == "red" else "red_wins", self.board)
+                else:
+                    UI.print_game_over("draw", self.board)
+                break
+
             self._play_turn()
             self.move_count += 1
 
             result = Rules.check_game_over(self.board)
             if result:
                 UI.print_game_over(result, self.board)
+                break
+
+            # 步数上限：防止双方无限僵持（以和棋收场）
+            if self.move_count >= self.max_moves:
+                UI.print_game_over("draw", self.board)
                 break
 
     def _play_turn(self):
@@ -146,17 +162,12 @@ class Game:
 
     def _human_turn(self):
         """人类玩家回合"""
-        try:
-            fr, fc, tr, tc = UI.get_human_move(self.board)
-            self._execute_move(fr, fc, tr, tc, "红方")
-        except SystemExit:
-            raise
+        fr, fc, tr, tc = UI.get_human_move(self.board)
+        self._execute_move(fr, fc, tr, tc, "红方")
 
     def _ai_turn(self):
         """AI 回合"""
         print(f"\n  {UI.BLACK}AI 思考中...{UI.RESET}")
-        import time
-        time.sleep(1)
 
         try:
             fr, fc, tr, tc = self.ai_player.make_move(self.board)
@@ -185,15 +196,12 @@ class Game:
             print(f"  {move_str} 吃掉 {target.name}")
         elif result == "defend_wins":
             print(f"  {move_str} 被 {target.name} 吃掉!")
-            # 攻击方被吃，移除攻击方
-            self.board.remove(tr, tc)
-            # 恢复防守方
+            # 攻击方被吃：把攻击方从目标格移除，防守方留在原格
             self.board.grid[tr][tc] = target
-            target.is_alive = True
         elif result == "mutual":
             print(f"  {move_str} 与 {target.name} 同归于尽!")
-            # 同归于尽，移除双方
-            self.board.remove(tr, tc)
+            # 同归于尽：目标格清空（防守方已被 board.move 标记死亡）
+            self.board.grid[tr][tc] = None
 
         # 重新显示棋盘
         UI.display_board(self.board, self.last_move)
@@ -207,7 +215,14 @@ class Game:
 def main():
     """主入口"""
     print("欢迎游玩军旗人机对战！")
-    game = Game()
+    print("难度选择: easy / medium / hard")
+    try:
+        difficulty = input("  请输入难度 (直接回车=medium): ").strip().lower()
+    except (EOFError, KeyboardInterrupt):
+        difficulty = "medium"
+    if difficulty not in ("easy", "medium", "hard"):
+        difficulty = "medium"
+    game = Game(difficulty=difficulty)
     try:
         game.run()
     except KeyboardInterrupt:

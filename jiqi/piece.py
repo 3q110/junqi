@@ -91,7 +91,7 @@ class Piece:
         # 地雷只能被工兵或炸弹消灭
         if target.piece_type == PieceType.MINE:
             return self.piece_type == PieceType.SAPPER
-        # 普通比较：等级高的吃等级低的
+        # 普通比较：等级高的吃等级低的（同级同归于尽，由 resolve_combat 判定）
         return self.rank < target.rank
 
     def __repr__(self):

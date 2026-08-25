@@ -191,8 +191,10 @@ class UI:
         print(f"\n  {cls.BOLD}{'='*50}{cls.RESET}")
         if result == "red_wins":
             print(f"  {cls.RED}{cls.BOLD}        🎉 红方获胜！🎉{cls.RESET}")
-        else:
+        elif result == "black_wins":
             print(f"  {cls.BLACK}{cls.BOLD}        🤖 黑方(AI)获胜！{cls.RESET}")
+        else:
+            print(f"  {cls.YELLOW}{cls.BOLD}        🤝 和棋（双方均无棋可走）{cls.RESET}")
         print(f"  {cls.BOLD}{'='*50}{cls.RESET}\n")
         cls.display_board(board)
 

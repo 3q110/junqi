@@ -23,6 +23,13 @@ class TestPieceCreation(unittest.TestCase):
         self.assertTrue(commander.can_eat(soldier))
         self.assertFalse(soldier.can_eat(commander))
 
+    def test_equal_rank_does_not_eat(self):
+        # 同级不能“吃掉”，相撞同归于尽由 resolve_combat 判定
+        c1 = Piece(PieceType.COMMANDER, "red")
+        c2 = Piece(PieceType.COMMANDER, "black")
+        self.assertFalse(c1.can_eat(c2))
+        self.assertFalse(c2.can_eat(c1))
+
     def test_piece_can_eat_flag(self):
         p = Piece(PieceType.SAPPER, "red")
         flag = Piece(PieceType.FLAG, "black")

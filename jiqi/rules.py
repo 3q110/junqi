@@ -76,8 +76,9 @@ class Rules:
         if target and target.side != piece.side and board.is_camp(nr, nc):
             return False
 
-        # 大本营限制：敌方棋子只能在军旗被吃后进入大本营
-        if board.is_headquarter(nr, nc):
+        # 大本营限制：敌方棋子不能在军旗仍在时进入“空”大本营
+        # 但可以吃掉大本营里的军旗（这是获胜的唯一途径）
+        if board.is_headquarter(nr, nc) and target is None:
             hq_side = Board.get_side_of_headquarter(nr, nc)
             if hq_side and hq_side != piece.side:
                 if board.is_flag_alive(hq_side):
@@ -190,8 +191,20 @@ class Rules:
 
         if attacker.can_eat(defender):
             return "attack_wins"
-        else:
-            return "defend_wins"
+
+        # 同级棋子相撞 → 同归于尽
+        if attacker.rank == defender.rank:
+            return "mutual"
+
+        return "defend_wins"
+
+    @staticmethod
+    def has_movable_pieces(board: Board, side: str) -> bool:
+        """检查某方是否还有可移动的棋子"""
+        for r, c, piece in board.get_side_pieces(side):
+            if piece.is_movable and Rules.get_valid_moves(board, r, c):
+                return True
+        return False
 
     @staticmethod
     def check_game_over(board: Board) -> Optional[str]:
@@ -201,6 +214,7 @@ class Rules:
             - None: 游戏继续
             - "red_wins": 红方获胜
             - "black_wins": 黑方获胜
+            - "draw": 双方均无棋可走（和棋）
         """
         red_flag = board.is_flag_alive("red")
         black_flag = board.is_flag_alive("black")
@@ -209,4 +223,12 @@ class Rules:
             return "black_wins"
         if not black_flag:
             return "red_wins"
+        red_can_move = Rules.has_movable_pieces(board, "red")
+        black_can_move = Rules.has_movable_pieces(board, "black")
+        if not red_can_move and not black_can_move:
+            return "draw"
+        if not red_can_move:
+            return "black_wins"  # 红方无棋可走
+        if not black_can_move:
+            return "red_wins"  # 黑方无棋可走
         return None

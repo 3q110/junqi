@@ -696,10 +696,9 @@ const PIECE_CONFIG = [
 ];
 
 const WIDTH = 7, HEIGHT = 11;
-const RAILWAY_ROWS = new Set([2, 9]);
+const RAILWAY_ROWS = new Set([2, 5, 9]);
 const VERTICAL_RAILWAY = new Set();
-for (let r = 1; r <= 3; r++) { VERTICAL_RAILWAY.add(`${r},0`); VERTICAL_RAILWAY.add(`${r},6`); }
-for (let r = 7; r <= 9; r++) { VERTICAL_RAILWAY.add(`${r},0`); VERTICAL_RAILWAY.add(`${r},6`); }
+for (let r = 1; r <= 9; r++) { VERTICAL_RAILWAY.add(`${r},0`); VERTICAL_RAILWAY.add(`${r},6`); }
 const CAMPS = new Set([
   '1,1', '1,3', '1,5', '2,2', '2,4',
   '8,2', '8,4', '9,1', '9,3', '9,5'
@@ -806,7 +805,7 @@ function canEat(attacker, defender) {
   if (attacker.type === 'BOMB') return true;
   if (defender.type === 'FLAG') return true;
   if (defender.type === 'MINE') return attacker.type === 'SAPPER';
-  return at.rank <= dt.rank;
+  return at.rank < dt.rank;
 }
 
 function resolveCombat(attacker, defender) {
@@ -833,8 +832,8 @@ function isTargetValid(piece, r, c) {
   // 行营保护：不能攻击行营中的棋子
   if (target && target.side !== piece.side && isCamp(r, c)) return false;
 
-  // 大本营限制：敌方军旗仍在时不可进入对方大本营
-  if (isHeadquarter(r, c)) {
+  // 大本营限制：敌方军旗仍在时不可进入“空”大本营，但可以吃掉军旗
+  if (isHeadquarter(r, c) && !target) {
     const hqSide = getHeadquarterSide(r, c);
     if (hqSide && hqSide !== piece.side && isFlagAlive(hqSide)) return false;
   }
@@ -946,6 +945,7 @@ const PIECE_VALUES = {
 };
 
 // ========== AI ==========
+let aiMoveCount = 0; // AI 已走步数，用于打破僵持
 function aiMove(difficulty) {
   const moves = getAllMoves('black');
   if (!moves.length) return null;
@@ -954,115 +954,119 @@ function aiMove(difficulty) {
   // ---- 简单难度：随机为主 ----
   if (difficulty === 'easy') {
     const captures = moves.filter(m => board[m[2]][m[3]]);
-    // 30% 概率吃子，70% 随机走
     if (captures.length && Math.random() < 0.3) {
       return captures[Math.floor(Math.random() * captures.length)];
     }
     return moves[Math.floor(Math.random() * moves.length)];
   }
 
-  // ---- 普通难度：优先吃子 ----
+  aiMoveCount++;
+  const aggression = Math.min(30, aiMoveCount * 0.3);
+  const enemyFlag = getFlagPosition('red');
+  const ownFlag = getFlagPosition('black');
+
+  // ---- 普通难度：吃子价值 + 靠近军旗 ----
   if (difficulty === 'medium') {
-    const captures = [];
-    const otherMoves = [];
+    let bestMove = null, bestScore = -Infinity;
     for (const move of moves) {
       const [fr, fc, tr, tc] = move;
       const target = board[tr][tc];
-      if (target) captures.push({move, rank: PIECE_TYPES[target.type].rank});
-      else otherMoves.push(move);
+      let score = Math.random();
+      if (target) {
+        score += PIECE_VALUES[target.type];
+        if (target.type === 'FLAG') score += 10000;
+        if (target.type === 'MINE') {
+          score += (board[fr][fc].type === 'SAPPER') ? 40 : -100;
+        }
+      } else {
+        if (enemyFlag) {
+          const [er, ec] = enemyFlag;
+          score += (20 - (Math.abs(tr - er) + Math.abs(tc - ec))) * 3;
+        }
+      }
+      if (score > bestScore) { bestScore = score; bestMove = move; }
     }
-    if (captures.length) {
-      captures.sort((a, b) => a.rank - b.rank);
-      return captures[0].move;
-    }
-    return otherMoves[Math.floor(Math.random() * otherMoves.length)];
+    return bestMove;
   }
 
-  // ---- 困难难度：综合评估 ----
-  // 评分策略：吃子价值 + 进攻推进 + 防守保护 + 风险控制
+  // ---- 困难难度：综合评估（军旗驱动 + 吃子 + 风险 + 激进度）----
   let bestMove = null, bestScore = -Infinity;
-
   for (const move of moves) {
     const [fr, fc, tr, tc] = move;
     const attacker = board[fr][fc];
     const defender = board[tr][tc];
-    let score = Math.random() * 0.1; // 少量随机避免确定性
+    let score = Math.random();
 
-    // 进攻推进：越靠近对方底线越好
-    score += (10 - tr) * 2;
-
-    // 中央控制：靠近中间列有价值
-    score += (3 - Math.abs(tc - 3)) * 0.5;
-
-    // 吃子评估
-    if (defender) {
-      const atVal = PIECE_VALUES[attacker.type];
-      const dfVal = PIECE_VALUES[defender.type];
-
-      if (attacker.type === 'BOMB') {
-        // 用炸弹炸高级棋子更划算
-        score += dfVal * 1.5;
-      } else if (dfVal > atVal) {
-        // 以小吃大，高收益
-        score += dfVal - atVal + 50;
-      } else if (atVal > dfVal * 1.5 && dfVal > 20) {
-        // 大材小用：高价值棋子吃低价值，扣分（除非低价值已很高）
-        score -= atVal - dfVal;
-      } else {
-        // 正常吃子
-        score += 30;
-      }
-
-      // 特殊处理：吃军旗直接赢
-      if (defender.type === 'FLAG') score += 10000;
-
-      // 避免吃地雷（除非是工兵）
-      if (defender.type === 'MINE' && attacker.type !== 'SAPPER') score -= 100;
-
-    } else {
-      // 移动奖励：向敌军方向前进
-      score += 1;
+    // 核心驱动：靠近敌方军旗
+    if (enemyFlag) {
+      const [er, ec] = enemyFlag;
+      const dist = Math.abs(tr - er) + Math.abs(tc - ec);
+      score += (20 - dist) * 4;
     }
 
-    // 风险评估：AI自己的棋子是否会被反吃
-    for (const [nr, nc] of [[tr-1,tc],[tr+1,tc],[tr,tc-1],[tr,tc+1]]) {
-      if (!inBounds(nr, nc)) continue;
-      const neighbor = board[nr][nc];
-      if (neighbor && neighbor.side === 'red') {
-        const atVal = PIECE_VALUES[attacker.type];
-        const nbVal = PIECE_VALUES[neighbor.type];
-        if (neighbor.type === 'BOMB') {
-          score -= atVal * 1.5; // 走到炸弹旁边很危险
-        } else if (neighbor.type === 'SAPPER' && attacker.type === 'MINE') {
-          score -= 50; // 地雷靠近工兵
-        } else if (nbVal <= atVal) {
-          // 对方吃了也会死（同级或更小），风险很小
-        } else {
-          score -= (nbVal - atVal) * 0.5; // 可能被吃，适当扣分
+    // 中央控制
+    score += (3 - Math.abs(tc - 3)) * 0.5;
+
+    const atVal = PIECE_VALUES[attacker.type];
+
+    if (defender) {
+      const dfVal = PIECE_VALUES[defender.type];
+      if (attacker.type === 'BOMB') {
+        score += dfVal * 1.5;
+      } else if (dfVal > atVal) {
+        score += dfVal - atVal + 60;
+      } else if (atVal > dfVal * 1.5 && dfVal > 20) {
+        score -= atVal - dfVal * 0.5;
+      } else {
+        score += 40;
+      }
+      if (defender.type === 'FLAG') score += 10000;
+      if (defender.type === 'MINE') {
+        score += (attacker.type === 'SAPPER') ? 40 : -100;
+      }
+    } else {
+      // 风险评估：落点相邻的敌方威胁
+      for (const [nr, nc] of [[tr-1,tc],[tr+1,tc],[tr,tc-1],[tr,tc+1]]) {
+        if (!inBounds(nr, nc)) continue;
+        const neighbor = board[nr][nc];
+        if (neighbor && neighbor.side === 'red') {
+          const nbVal = PIECE_VALUES[neighbor.type];
+          if (neighbor.type === 'BOMB') score -= atVal * 0.8;
+          else if (neighbor.type === 'MINE') score -= 15;
+          else if (nbVal > atVal) score -= Math.min(8, (nbVal - atVal) * 0.15);
         }
       }
     }
 
-    // 保护军旗：靠近敌方军旗加分，己方军旗周边保留防守力量
-    const enemyFlag = getFlagPosition('red');
-    if (enemyFlag) {
-      const [er, ec] = enemyFlag;
-      score += Math.max(0, 8 - (Math.abs(tr - er) + Math.abs(tc - ec))) * 3;
-    }
-    const ownFlag = getFlagPosition('black');
+    // 保护己方军旗
     if (ownFlag) {
       const [frg, fcg] = ownFlag;
-      if (Math.abs(tr - frg) <= 2 && Math.abs(tc - fcg) <= 1) {
-        if (PIECE_VALUES[attacker.type] >= 30) score += 5;
+      if (Math.abs(tr - frg) <= 2 && Math.abs(tc - fcg) <= 1 && atVal >= 30) score += 5;
+    }
+
+    // 工兵/炸弹主动寻雷
+    if (attacker.type === 'SAPPER' || attacker.type === 'BOMB') {
+      for (let r = 0; r < HEIGHT; r++) for (let c = 0; c < WIDTH; c++) {
+        const p = board[r][c];
+        if (p && p.side === 'red' && p.type === 'MINE') {
+          const md = Math.abs(tr - r) + Math.abs(tc - c);
+          if (md <= 3) score += (4 - md) * 4;
+        }
       }
     }
 
-    if (score > bestScore) {
-      bestScore = score;
-      bestMove = move;
-    }
-  }
+    // 低价值棋子压上
+    if (atVal <= 30) score += 12 + aggression * 0.3;
 
+    // 激进度：深入敌阵奖励
+    if (enemyFlag) {
+      const [er, ec] = enemyFlag;
+      const dist = Math.abs(tr - er) + Math.abs(tc - ec);
+      if (dist <= 4) score += aggression;
+    }
+
+    if (score > bestScore) { bestScore = score; bestMove = move; }
+  }
   return bestMove;
 }
 
@@ -1224,6 +1228,18 @@ function updateUndoButton() {
 }
 
 // ========== 游戏逻辑 ==========
+function hasMovablePieces(side) {
+  for (let r = 0; r < HEIGHT; r++) {
+    for (let c = 0; c < WIDTH; c++) {
+      const p = board[r][c];
+      if (p && p.side === side && p.type !== 'MINE' && p.type !== 'FLAG') {
+        if (getValidMoves(r, c).length > 0) return true;
+      }
+    }
+  }
+  return false;
+}
+
 function checkGameOver() {
   let redFlag = false, blackFlag = false;
   for (let r = 0; r < HEIGHT; r++) {
@@ -1237,6 +1253,11 @@ function checkGameOver() {
   }
   if (!redFlag) return 'black_wins';
   if (!blackFlag) return 'red_wins';
+  const redCanMove = hasMovablePieces('red');
+  const blackCanMove = hasMovablePieces('black');
+  if (!redCanMove && !blackCanMove) return 'draw';
+  if (!redCanMove) return 'black_wins';
+  if (!blackCanMove) return 'red_wins';
   return null;
 }
 
@@ -1296,9 +1317,18 @@ function executeMove(fr, fc, tr, tc, side) {
   const go = checkGameOver();
   if (go) {
     gameOver = true;
-    const winner = go === 'red_wins' ? '红方' : '黑方(AI)';
-    addLog(`🏆 ${winner} 获胜!`, 'system');
+    if (go === 'draw') {
+      addLog('🤝 和棋!', 'system');
+    } else {
+      const winner = go === 'red_wins' ? '红方' : '黑方(AI)';
+      addLog(`🏆 ${winner} 获胜!`, 'system');
+    }
     showGameOver(go);
+  } else if (moveCount >= 500) {
+    // 步数上限：防止双方无限僵持（以和棋收场）
+    gameOver = true;
+    addLog('🤝 和棋（步数上限）!', 'system');
+    showGameOver('draw');
   }
 }
 
@@ -1322,13 +1352,14 @@ function undoMove() {
 
 function showGameOver(result) {
   if (result === 'red_wins') SoundFX.win();
+  else if (result === 'draw') SoundFX.move();
   else SoundFX.lose();
   const overlay = document.createElement('div');
   overlay.className = 'game-over-overlay';
   overlay.innerHTML = `
     <div class="game-over-content">
       <div class="game-over-title ${result}">
-        ${result === 'red_wins' ? '🎉 红方获胜！' : '🤖 黑方获胜！'}
+        ${result === 'red_wins' ? '🎉 红方获胜！' : result === 'draw' ? '🤝 和棋！' : '🤖 黑方获胜！'}
       </div>
       <div class="game-over-stats">
         <p><strong>总回合数:</strong> ${Math.floor(moveCount / 2)}</p>
@@ -1381,7 +1412,16 @@ function onCellClick(r, c) {
           if (ai) {
             executeMove(ai[0], ai[1], ai[2], ai[3], 'black');
           } else {
-            addLog('AI 无棋可走，跳过回合', 'black');
+            // AI 无棋可走：根据双方情况判定胜负或和棋
+            const go = checkGameOver();
+            if (go) {
+              gameOver = true;
+              if (go === 'draw') addLog('🤝 和棋!', 'system');
+              else addLog(`🏆 ${go === 'red_wins' ? '红方' : '黑方(AI)'} 获胜!`, 'system');
+              showGameOver(go);
+            } else {
+              addLog('AI 无棋可走，跳过回合', 'black');
+            }
           }
           currentSide = 'red';
           render();

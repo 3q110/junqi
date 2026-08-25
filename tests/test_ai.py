@@ -2,7 +2,7 @@
 import unittest
 from jiqi.board import Board
 from jiqi.piece import Piece, PieceType
-from jiqi.ai import RandomAI
+from jiqi.ai import RandomAI, HeuristicAI
 
 
 class TestRandomAI(unittest.TestCase):
@@ -68,6 +68,51 @@ class TestRandomAI(unittest.TestCase):
         from_pieces = {(m[0], m[1]) for m in moves}
         self.assertIn((5, 0), from_pieces)
         self.assertIn((5, 6), from_pieces)
+
+
+class TestHeuristicAI(unittest.TestCase):
+    def setUp(self):
+        self.board = Board()
+        self.ai = HeuristicAI(side='black', name='TestAI', difficulty='medium')
+
+    def test_init_difficulty(self):
+        self.assertEqual(HeuristicAI('black', difficulty='easy').difficulty, 'easy')
+        self.assertEqual(HeuristicAI('black', difficulty='bogus').difficulty, 'medium')
+
+    def test_make_move_valid(self):
+        self.board.place(Piece(PieceType.COMMANDER, 'black'), 0, 3)
+        fr, fc, tr, tc = self.ai.make_move(self.board)
+        self.assertEqual((fr, fc), (0, 3))
+        self.assertTrue(self.board.in_bounds(tr, tc))
+
+    def test_hard_captures_flag(self):
+        # 黑方司令可吃掉红方军旗 → hard 难度必须吃掉
+        board = Board()
+        board.place(Piece(PieceType.COMMANDER, 'black'), 8, 2)
+        board.place(Piece(PieceType.FLAG, 'red'), 9, 2)
+        ai = HeuristicAI(side='black', name='AI', difficulty='hard')
+        for _ in range(5):
+            b = Board()
+            b.place(Piece(PieceType.COMMANDER, 'black'), 8, 2)
+            b.place(Piece(PieceType.FLAG, 'red'), 9, 2)
+            fr, fc, tr, tc = ai.make_move(b)
+            self.assertEqual((tr, tc), (9, 2))
+
+    def test_hard_avoids_mine(self):
+        # 黑方司令面对地雷，不应去吃（非工兵撞地雷巨亏）
+        b = Board()
+        b.place(Piece(PieceType.COMMANDER, 'black'), 8, 3)
+        b.place(Piece(PieceType.MINE, 'red'), 9, 3)
+        b.place(Piece(PieceType.SAPPER, 'black'), 8, 4)
+        ai = HeuristicAI(side='black', name='AI', difficulty='hard')
+        fr, fc, tr, tc = ai.make_move(b)
+        # 不应选择去撞地雷 (9,3)
+        self.assertNotEqual((tr, tc), (9, 3))
+
+    def test_no_moves_raises(self):
+        self.board.place(Piece(PieceType.MINE, 'black'), 5, 3)
+        with self.assertRaises(ValueError):
+            self.ai.make_move(self.board)
 
 
 if __name__ == "__main__":
